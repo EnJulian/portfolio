@@ -1,0 +1,234 @@
+import ConsultlyLogo from "../images/logos/consultly.svg";
+import AmbitLogo from "../images/logos/ambit.png";
+import BarepapersLogo from "../images/logos/barepapers.svg";
+import BimLogo from "../images/logos/bim.png";
+import CDGOLogo from "../images/logos/cdgo.png";
+import ClevertechLogo from "../images/logos/clevertech.png";
+import EvercastLogo from "../images/logos/evercast.svg";
+import Howdy from "../images/logos/howdy.png";
+import JarockiMeLogo from "../images/logos/jarocki.svg";
+import JojoMobileLogo from "../images/logos/jojomobile.png";
+import MonitoLogo from "../images/logos/monito.svg";
+import MobileVikingsLogo from "../images/logos/mv.png";
+import NSNLogo from "../images/logos/nsn.svg";
+import ParabolLogo from "../images/logos/parabol.svg";
+import TastyCloudLogo from "../images/logos/tastycloud.png";
+import YearProgressLogo from "../images/logos/yearprogress.svg";
+import Minimal from "../images/logos/minimal.svg";
+import { GitHubIcon } from "@/components/icons/GitHubIcon";
+import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
+import { XIcon } from "@/components/icons/XIcon";
+
+export const RESUME_DATA = {
+  name: "Julian Amoah",
+  initials: "JAA",
+  location: "Accra, Ghana",
+  locationLink: "https://www.google.com/maps/place/Accra",
+  about: "I love to build.",
+  summary:
+    "As a Backend Engineer, I have a proven track record of transforming concepts into fully developed products. Currently, I specialize in TypeScript, Node.js, GraphQL, Go, Python, and .NET Core."
+,
+  avatarUrl:
+    "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1724425353/36317786_hkw9f9.png",
+  personalWebsiteUrl: "https://ralphvwilliams.vercel.app",
+  contact: {
+    email: "envern.julian@gmail.com",
+    tel: "+233 553220656",
+    social: [
+      {
+        name: "GitHub",
+        url: "https://github.com/EnJulian",
+        icon: GitHubIcon,
+      },
+      {
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/enjulian",
+        icon: LinkedInIcon,
+      },
+      {
+        name: "X",
+        url: "https://x.com/ralphvwilIiams",
+        icon: XIcon,
+      },
+    ],
+  },
+  education: [
+    {
+      school: "Wrocław University of Technology",
+      degree: "Bachelor's Degree in Control systems engineering and Robotics",
+      start: "2007",
+      end: "2010",
+    },
+  ],
+  work: [
+    // {
+    //   company: "Hubtel",
+    //   link: "https://hubtel.com",
+    //   badges: ["On-Site"],
+    //   title: "Lead Backend Engineer",
+    //   logo: ParabolLogo,
+    //   start: "2024",
+    //   end: "Present",
+    //   description:
+    //     "Built highly scalable applications. Contributed to the growth and success of Hubtel, recently recognized as the 30th fastest-growing company in Africa. Technologies: C#, PostgresQL, Kafka, AKKA.NET",
+    // },
+    {
+      company: "Enyata",
+      link: "https://enyata.com",
+      badges: ["On-Site"],
+      title: "Backend Developer",
+      logo: ParabolLogo,
+      start: "2023",
+      end: "Present",
+      description:
+        "Implemented new features, led squad, worked on improving the way developers ship the code, mentored and tutored students in our company sponsored intitiative 'The Academy'. Technologies: TypeScript, GraphQL, Node.js, MongoDB, PostgresQL",
+    },
+  ],
+  skills: [
+    "C#",
+    "JavaScript",
+    "TypeScript",
+    "React/Next.js",
+    "Node.js",
+    "GraphQL",
+    // "Go",
+    // "Django",
+    ".NET Core",
+    // "Rust",
+  ],
+  projects: [
+    // {
+    //   title: "Gov.MyAssembly",
+    //   techStack: ["C#", ".NET", "Kafka", "AKKA.NET", "USSD"],
+    //   description:
+    //     "This project facilitated the Ghana government's digitization process for the local government authority.",
+    //   logo: ConsultlyLogo,
+    //   link: {
+    //     label: "gov.myassembly",
+    //     href: "https://assembly-citizen.gov-gh.com/",
+    //   },
+    // },
+    // {
+    //   title: "All African Games",
+    //   techStack: ["C#", ".NET", "Kafka", "AKKA.NET", "USSD"],
+    //   description:
+    //     "This project provided ticketing services for the All African Games event",
+    //   logo: ConsultlyLogo,
+    //   link: {
+    //     label: "All African Games",
+    //     href: "https://accra2023ag.hpay.co/",
+    //   },
+    // },
+    // {
+    //   title: "Kredit Africa",
+    //   techStack: ["TypeScript", "Next.js", "Node.js", "Python", "Django"],
+    //   description: "Empowering inclusive financial futures using AI.",
+    //   logo: ConsultlyLogo,
+    //   link: {
+    //     label: "kreditafrica.com",
+    //     href: "https://kreditafrica.com/",
+    //   },
+    // },
+    // {
+    //   title: "Payroll",
+    //   techStack: ["C#", ".NET", "Kafka", "AKKA.NET"],
+    //   description:
+    //     "An efficient app designed to streamline payroll processing for small to medium-sized businesses",
+    //   logo: ConsultlyLogo,
+    //   link: {
+    //     label: "Payroll",
+    //     href: "https://staff-payroll.hubtel.com",
+    //   },
+    // },
+    {
+      title: "HRMS by Enyata",
+      techStack: ["TypeScript", "React", "GraphQL", "MongoDB", "Node.js"],
+      description: "SaaS for Human Resource Management.",
+      logo: MonitoLogo,
+      link: {
+        label: "hrms.enyata.com",
+        href: "https://hrms.enyata.com/",
+      },
+    },
+    {
+      title: "Purple Vest by Enyata",
+      techStack: ["TypeScript", "React", "GraphQL", "MongoDB", "Node.js"],
+      description: "SaaS for Human Resource Management.",
+      logo: MonitoLogo,
+      link: {
+        label: "hrms.enyata.com",
+        href: "https://hrms.enyata.com/",
+      },
+    },
+    // {
+    //   title: "Perry",
+    //   techStack: ["Go"],
+    //   description:
+    //     "A command-line interface (CLI) tool that simplifies the process of initializing a new Go web server.",
+    //   logo: ConsultlyLogo,
+    //   link: {
+    //     label: "github.com",
+    //     href: "https://github.com/ralphvw/perry",
+    //   },
+    // },
+    // {
+    //   title: "Validator",
+    //   techStack: ["Side Project", "Go"],
+    //   description: "Package to validate http request body in net/http",
+    //   logo: JarockiMeLogo,
+    //   link: {
+    //     label: "github.com",
+    //     href: "https://github.com/ralphvw/validator",
+    //   },
+    // },
+    // {
+    //   title: "Sprint Planner",
+    //   techStack: ["Side Project", "Vue", "Go"],
+    //   description:
+    //     "Streamline sprint planning effortlessly with our intuitive web app for software teams.",
+    //   logo: Minimal,
+    //   link: {
+    //     label: "thesprint.vercel.app",
+    //     href: "https://thesprint.vercel.app",
+    //   },
+    // },
+    // {
+    //   title: "Caption Genius",
+    //   techStack: [
+    //     "Side Project",
+    //     "Python",
+    //     "Flask",
+    //     "LangChain",
+    //     "OpenAI",
+    //     "HuggingFace",
+    //   ],
+    //   description: "Generates captions for images",
+    //   logo: BarepapersLogo,
+    //   link: {
+    //     label: "https://caption-frontend-pied.vercel.app/",
+    //     href: "https://caption-frontend-pied.vercel.app/",
+    //   },
+    // },
+    // {
+    //   title: "ReplyBot",
+    //   techStack: ["Side Project", "Python", "Django", "OpenAI"],
+    //   description:
+    //     "Replies customer reviews sent via email. Generates appropriate responses based on the sentiment detected",
+    //   logo: YearProgressLogo,
+    //   link: {
+    //     label: "github.com/ralphvw/replybot",
+    //     href: "https://github.com/ralphvw/replybot",
+    //   },
+    // },
+    {
+      title: "FluxTribe",
+      techStack: ["Typescript", "Node.js", "React"],
+      description: "Social app for collaborating on goals",
+      logo: YearProgressLogo,
+      link: {
+        label: "merifot.enyata.com",
+        href: "https://merifot.enyata.com",
+      },
+    },
+  ],
+} as const;
