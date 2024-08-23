@@ -24,7 +24,7 @@ export const RESUME_DATA = {
   initials: "JAA",
   location: "Accra, Ghana",
   locationLink: "https://www.google.com/maps/place/Accra",
-  about: "I love to build.",
+  about: "Software development thrills me.",
   summary:
     "As a Backend Engineer, I have a proven track record of transforming concepts into fully developed products. Currently, I specialize in TypeScript, Node.js, GraphQL, Go, Python, and .NET Core."
 ,
@@ -81,7 +81,7 @@ export const RESUME_DATA = {
       start: "2023",
       end: "Present",
       description:
-        "Implemented new features, led squad, worked on improving the way developers ship the code, mentored and tutored students in our company sponsored intitiative 'The Academy'. Technologies: TypeScript, GraphQL, Node.js, MongoDB, PostgresQL",
+        "Implemented new features, still developing applications. Technologies: TypeScript, GraphQL, Node.js, MongoDB, PostgresQL",
     },
   ],
   skills: [
@@ -97,49 +97,26 @@ export const RESUME_DATA = {
     // "Rust",
   ],
   projects: [
-    // {
-    //   title: "Gov.MyAssembly",
-    //   techStack: ["C#", ".NET", "Kafka", "AKKA.NET", "USSD"],
-    //   description:
-    //     "This project facilitated the Ghana government's digitization process for the local government authority.",
-    //   logo: ConsultlyLogo,
-    //   link: {
-    //     label: "gov.myassembly",
-    //     href: "https://assembly-citizen.gov-gh.com/",
-    //   },
-    // },
-    // {
-    //   title: "All African Games",
-    //   techStack: ["C#", ".NET", "Kafka", "AKKA.NET", "USSD"],
-    //   description:
-    //     "This project provided ticketing services for the All African Games event",
-    //   logo: ConsultlyLogo,
-    //   link: {
-    //     label: "All African Games",
-    //     href: "https://accra2023ag.hpay.co/",
-    //   },
-    // },
-    // {
-    //   title: "Kredit Africa",
-    //   techStack: ["TypeScript", "Next.js", "Node.js", "Python", "Django"],
-    //   description: "Empowering inclusive financial futures using AI.",
-    //   logo: ConsultlyLogo,
-    //   link: {
-    //     label: "kreditafrica.com",
-    //     href: "https://kreditafrica.com/",
-    //   },
-    // },
-    // {
-    //   title: "Payroll",
-    //   techStack: ["C#", ".NET", "Kafka", "AKKA.NET"],
-    //   description:
-    //     "An efficient app designed to streamline payroll processing for small to medium-sized businesses",
-    //   logo: ConsultlyLogo,
-    //   link: {
-    //     label: "Payroll",
-    //     href: "https://staff-payroll.hubtel.com",
-    //   },
-    // },
+    {
+      title: "Hackathon by Enyata",
+      techStack: ["Typescript", "Node.js", "React"],
+      description: "Hackathon registration platform by Enyata",
+      logo: YearProgressLogo,
+      link: {
+        label: "hack.enyata.com",
+        href: "https://hack.enyata.com",
+      },
+    },
+    {
+      title: "Purple Vest",
+      techStack: ["TypeScript", "React", "PostgresQL", "Node.js"],
+      description: "App for creating and managing savings groups.",
+      logo: MonitoLogo,
+      link: {
+        label: "purple-vest.enyata.com",
+        href: "https://purple-vest.enyata.com/",
+      },
+    },
     {
       title: "HRMS by Enyata",
       techStack: ["TypeScript", "React", "GraphQL", "MongoDB", "Node.js"],
@@ -151,76 +128,6 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Purple Vest by Enyata",
-      techStack: ["TypeScript", "React", "GraphQL", "MongoDB", "Node.js"],
-      description: "SaaS for Human Resource Management.",
-      logo: MonitoLogo,
-      link: {
-        label: "hrms.enyata.com",
-        href: "https://hrms.enyata.com/",
-      },
-    },
-    // {
-    //   title: "Perry",
-    //   techStack: ["Go"],
-    //   description:
-    //     "A command-line interface (CLI) tool that simplifies the process of initializing a new Go web server.",
-    //   logo: ConsultlyLogo,
-    //   link: {
-    //     label: "github.com",
-    //     href: "https://github.com/ralphvw/perry",
-    //   },
-    // },
-    // {
-    //   title: "Validator",
-    //   techStack: ["Side Project", "Go"],
-    //   description: "Package to validate http request body in net/http",
-    //   logo: JarockiMeLogo,
-    //   link: {
-    //     label: "github.com",
-    //     href: "https://github.com/ralphvw/validator",
-    //   },
-    // },
-    // {
-    //   title: "Sprint Planner",
-    //   techStack: ["Side Project", "Vue", "Go"],
-    //   description:
-    //     "Streamline sprint planning effortlessly with our intuitive web app for software teams.",
-    //   logo: Minimal,
-    //   link: {
-    //     label: "thesprint.vercel.app",
-    //     href: "https://thesprint.vercel.app",
-    //   },
-    // },
-    // {
-    //   title: "Caption Genius",
-    //   techStack: [
-    //     "Side Project",
-    //     "Python",
-    //     "Flask",
-    //     "LangChain",
-    //     "OpenAI",
-    //     "HuggingFace",
-    //   ],
-    //   description: "Generates captions for images",
-    //   logo: BarepapersLogo,
-    //   link: {
-    //     label: "https://caption-frontend-pied.vercel.app/",
-    //     href: "https://caption-frontend-pied.vercel.app/",
-    //   },
-    // },
-    // {
-    //   title: "ReplyBot",
-    //   techStack: ["Side Project", "Python", "Django", "OpenAI"],
-    //   description:
-    //     "Replies customer reviews sent via email. Generates appropriate responses based on the sentiment detected",
-    //   logo: YearProgressLogo,
-    //   link: {
-    //     label: "github.com/ralphvw/replybot",
-    //     href: "https://github.com/ralphvw/replybot",
-    //   },
-    // },
-    {
       title: "FluxTribe",
       techStack: ["Typescript", "Node.js", "React"],
       description: "Social app for collaborating on goals",
@@ -228,6 +135,26 @@ export const RESUME_DATA = {
       link: {
         label: "merifot.enyata.com",
         href: "https://merifot.enyata.com",
+      },
+    },
+    {
+      title: "Campus Care",
+      techStack: ["TypeScript", "React", "PostgresQL", "Node.js"],
+      description: "Platform for managing student health.",
+      logo: MonitoLogo,
+      link: {
+        label: "campus-care.onrender.com",
+        href: "https://campus-care.onrender.com/",
+      },
+    },
+    {
+      title: "Digital Devhub",
+      techStack: ["TypeScript", "React", "PostgresQL", "Node.js"],
+      description: "Website for signing up and training Digital Devhub Scrum Masters.",
+      logo: MonitoLogo,
+      link: {
+        label: "digital-devhub.onrender.com",
+        href: "https://digital-devhub.onrender.com",
       },
     },
   ],
