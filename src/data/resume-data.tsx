@@ -30,7 +30,7 @@ export const RESUME_DATA = {
 ,
   avatarUrl:
     "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1724425353/36317786_hkw9f9.png",
-  personalWebsiteUrl: "https://ralphvwilliams.vercel.app",
+  personalWebsiteUrl: "https://enjulian.vercel.app",
   contact: {
     email: "envern.julian@gmail.com",
     tel: "+233 553220656",
@@ -54,10 +54,10 @@ export const RESUME_DATA = {
   },
   education: [
     {
-      school: "Wrocław University of Technology",
-      degree: "Bachelor's Degree in Control systems engineering and Robotics",
-      start: "2007",
-      end: "2010",
+      school: "Kwame Nkrumah University of Science and Technology",
+      degree: "Bachelor's Degree in Computer Science",
+      start: "2019",
+      end: "2023",
     },
   ],
   work: [
@@ -98,7 +98,7 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
-      title: "Hackathon by Enyata",
+      title: "Enyata Hackathon",
       techStack: ["Typescript", "Node.js", "React"],
       description: "Hackathon registration platform by Enyata",
       logo: YearProgressLogo,
@@ -108,7 +108,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Purple Vest",
+      title: "MyPurplePay",
       techStack: ["TypeScript", "React", "PostgresQL", "Node.js"],
       description: "App for creating and managing savings groups.",
       logo: MonitoLogo,

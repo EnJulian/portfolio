@@ -1,6 +1,9 @@
 "use client";
 
 import * as React from "react";
+import Modal from "react-modal";
+
+Modal.setAppElement("html"); // Adjust this selector based on your app's root element
 
 import {
   CommandDialog,
@@ -18,6 +21,7 @@ interface Props {
 
 export const CommandMenu = ({ links }: Props) => {
   const [open, setOpen] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -31,9 +35,13 @@ export const CommandMenu = ({ links }: Props) => {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
+  // const previewDocument = () => {
+  //   setIsModalOpen(true);
+  // };
+
   return (
     <>
-      <p className="fixed bottom-0 left-0 right-0 border-t border-t-muted bg-white p-1 text-center text-sm text-muted-foreground print:hidden">
+      <div className="bg-background text-foreground fixed bottom-0 left-0 right-0 border-t border-t-muted p-1 text-center text-sm print:hidden">
         Press{" "}
         <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
           <span className="text-xs">⌘</span>J
@@ -43,7 +51,7 @@ export const CommandMenu = ({ links }: Props) => {
           <span className="text-xs">Ctrl</span>J
         </kbd>{" "}
         to access the command menu
-      </p>
+      </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
@@ -57,6 +65,14 @@ export const CommandMenu = ({ links }: Props) => {
             >
               <span>Print</span>
             </CommandItem>
+            {/* <CommandItem
+              onSelect={() => {
+                setOpen(false);
+                previewDocument();
+              }}
+            >
+              <span>Preview Document</span>
+            </CommandItem> */}
           </CommandGroup>
           <CommandGroup heading="Links">
             {links.map(({ url, title }) => (
@@ -74,6 +90,31 @@ export const CommandMenu = ({ links }: Props) => {
           <CommandSeparator />
         </CommandList>
       </CommandDialog>
+
+      {/* <Modal
+        isOpen={isModalOpen}
+        onRequestClose={() => setIsModalOpen(false)}
+        contentLabel="Document Preview"
+        style={{
+          content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            width: '80%',
+            height: '80%',
+          },
+        }}
+      >
+        <button onClick={() => setIsModalOpen(false)}>Close</button>
+        <iframe
+          src="https://drive.google.com/file/d/1Q1IHdwWzviYDq1VU-UDOshqIdvno00Js/view?usp=sharing"
+          width="100%"
+          height="100%"
+        />
+      </Modal> */}
     </>
   );
 };
