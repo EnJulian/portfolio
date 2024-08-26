@@ -41,7 +41,7 @@ const FloatingButton = () => {
               transform: 'translate(-50%, -50%)',
               width: '80%',
               height: '80%',
-              backgroundColor: '#333',
+              backgroundColor: '#323639',
               color: '#fff', 
             },
           }}
@@ -50,7 +50,7 @@ const FloatingButton = () => {
           <iframe
             src="/Julian-Ayinbire-Amoah-Resume.pdf"
             width="100%"
-            height="100%"
+            height="97%"
           />
         </Modal>
       )}
