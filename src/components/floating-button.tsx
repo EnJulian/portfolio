@@ -18,7 +18,7 @@ const FloatingButton = () => {
   return (
     <>
       <Button
-        className="fixed bottom-4 right-4 h-16 w-16 rounded-lg bg-green-800 shadow-2xl transition-transform duration-300 transform hover:scale-105 focus:outline-none"
+        className="fixed bottom-12 right-4 h-16 w-16 rounded-lg bg-green-800 shadow-2xl transition-transform duration-300 transform hover:scale-105 focus:outline-none" // Adjusted bottom position
         onClick={handleClick}
       >
         <div className="h-full w-full flex items-center justify-center rounded-lg">
