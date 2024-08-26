@@ -41,6 +41,8 @@ const FloatingButton = () => {
               transform: 'translate(-50%, -50%)',
               width: '80%',
               height: '80%',
+              backgroundColor: '#333',
+              color: '#fff', 
             },
           }}
         >
