@@ -35,9 +35,9 @@ export const CommandMenu = ({ links }: Props) => {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  // const previewDocument = () => {
-  //   setIsModalOpen(true);
-  // };
+  const previewDocument = () => {
+    setIsModalOpen(true);
+  };
 
   return (
     <>
@@ -65,14 +65,14 @@ export const CommandMenu = ({ links }: Props) => {
             >
               <span>Print</span>
             </CommandItem>
-            {/* <CommandItem
+            <CommandItem
               onSelect={() => {
                 setOpen(false);
                 previewDocument();
               }}
             >
-              <span>Preview Document</span>
-            </CommandItem> */}
+              <span>View Resume</span>
+            </CommandItem>
           </CommandGroup>
           <CommandGroup heading="Links">
             {links.map(({ url, title }) => (
@@ -91,7 +91,7 @@ export const CommandMenu = ({ links }: Props) => {
         </CommandList>
       </CommandDialog>
 
-      {/* <Modal
+      <Modal
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
         contentLabel="Document Preview"
@@ -110,11 +110,11 @@ export const CommandMenu = ({ links }: Props) => {
       >
         <button onClick={() => setIsModalOpen(false)}>Close</button>
         <iframe
-          src="https://drive.google.com/file/d/1Q1IHdwWzviYDq1VU-UDOshqIdvno00Js/view?usp=sharing"
+          src="/Julian-Ayinbire-Amoah-Resume.pdf"
           width="100%"
           height="100%"
         />
-      </Modal> */}
+      </Modal>
     </>
   );
 };

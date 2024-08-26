@@ -149,7 +149,7 @@ export const RESUME_DATA = {
     },
     {
       title: "Digital Devhub",
-      techStack: ["TypeScript", "React", "PostgresQL", "Node.js"],
+      techStack: ["C#", ".NET Core", "React", "PostgresQL"],
       description: "Website for signing up and training Digital Devhub Scrum Masters.",
       logo: MonitoLogo,
       link: {
