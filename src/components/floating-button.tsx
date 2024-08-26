@@ -2,24 +2,23 @@
 
 import { Button } from "./ui/button"; 
 import { IoIosFiling } from "react-icons/io";
-import { useState } from "react"; // Added import for useState
-import Modal from "react-modal"; // Added import for Modal
-
+import { useState } from "react";
+import Modal from "react-modal";
 const FloatingButton = () => {
-  const [isModalOpen, setModalOpen] = useState(false); // Added state for modal
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const handleClick = () => {
-    setModalOpen(true); // Open modal instead of opening link
+    setModalOpen(true); 
   };
 
   const closeModal = () => {
-    setModalOpen(false); // Function to close modal
+    setModalOpen(false);
   };
 
   return (
     <>
       <Button
-        className="fixed bottom-4 right-4 h-16 w-16 rounded-lg bg-green-800 shadow-2xl transition-transform duration-300 transform hover:scale-105 focus:outline-none" // Removed white highlight on focus
+        className="fixed bottom-4 right-4 h-16 w-16 rounded-lg bg-green-800 shadow-2xl transition-transform duration-300 transform hover:scale-105 focus:outline-none"
         onClick={handleClick}
       >
         <div className="h-full w-full flex items-center justify-center rounded-lg">
@@ -27,10 +26,10 @@ const FloatingButton = () => {
         </div>
       </Button>
 
-      {isModalOpen && ( // Conditional rendering of modal
+      {isModalOpen && ( 
         <Modal
           isOpen={isModalOpen}
-          onRequestClose={closeModal} // Updated to use closeModal function
+          onRequestClose={closeModal}
           contentLabel="Document Preview"
           style={{
             content: {
@@ -45,7 +44,7 @@ const FloatingButton = () => {
             },
           }}
         >
-          <button onClick={closeModal}>Close</button> // Updated close button
+          <button onClick={closeModal}>Close</button>
           <iframe
             src="/Julian-Ayinbire-Amoah-Resume.pdf"
             width="100%"
