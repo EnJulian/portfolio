@@ -182,6 +182,10 @@ export default function Page() {
                     return 'bg-green-700';
                   case 'graphql':
                     return 'bg-violet-700';
+                  case 'linq':
+                    return 'bg-purple-800'
+                  case 'entity framework':
+                    return 'bg-purple-800';
                   default:
                     return 'bg-gray-700';
                 }
