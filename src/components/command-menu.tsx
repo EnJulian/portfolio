@@ -110,7 +110,7 @@ export const CommandMenu = ({ links }: Props) => {
       >
         <button onClick={() => setIsModalOpen(false)}>Close</button>
         <iframe
-          src="/Julian-Ayinbire-Amoah-Resume.pdf"
+          src="/Julian-Amoah-Resume.pdf"
           width="100%"
           height="100%"
         />

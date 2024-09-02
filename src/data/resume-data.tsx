@@ -29,7 +29,7 @@ export const RESUME_DATA = {
     "As a Backend Engineer, I have a proven track record of transforming concepts into fully developed products. Currently, I specialize in TypeScript, Node.js, GraphQL, Go, Python, and .NET Core."
 ,
   avatarUrl:
-    "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1724425353/36317786_hkw9f9.png",
+    "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1725276739/lqw9jfz9l0wvhf9peiih.jpg",
   personalWebsiteUrl: "https://enjulian.vercel.app",
   contact: {
     email: "envern.julian@gmail.com",
@@ -92,7 +92,6 @@ export const RESUME_DATA = {
     "Node.js",
     "GraphQL",
     // "Go",
-    // "Django",
     ".NET Core",
     // "Rust",
   ],

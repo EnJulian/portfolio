@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "./ui/button"; 
+import { Button } from "./ui/button";
 import { IoIosFiling } from "react-icons/io";
 import { useState } from "react";
 import Modal from "react-modal";
@@ -8,7 +8,7 @@ const FloatingButton = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleClick = () => {
-    setModalOpen(true); 
+    setModalOpen(true);
   };
 
   const closeModal = () => {
@@ -26,7 +26,7 @@ const FloatingButton = () => {
         </div>
       </Button>
 
-      {isModalOpen && ( 
+      {isModalOpen && (
         <Modal
           isOpen={isModalOpen}
           onRequestClose={closeModal}
@@ -42,13 +42,13 @@ const FloatingButton = () => {
               width: '80%',
               height: '80%',
               backgroundColor: '#323639',
-              color: '#fff', 
+              color: '#fff',
             },
           }}
         >
           <button onClick={closeModal}>Close</button>
           <iframe
-            src="/Julian-Ayinbire-Amoah-Resume.pdf"
+            src="/Julian-Amoah-Resume.pdf"
             width="100%"
             height="97%"
           />
