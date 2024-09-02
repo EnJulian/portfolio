@@ -91,9 +91,9 @@ export const RESUME_DATA = {
     "React/Next.js",
     "Node.js",
     "GraphQL",
-    // "Go",
     ".NET Core",
-    // "Rust",
+    "LINQ",
+    "Entity Framework",
   ],
   projects: [
     {
