@@ -153,7 +153,7 @@ export const RESUME_DATA = {
       logo: MonitoLogo,
       link: {
         label: "digital-devhub.onrender.com",
-        href: "https://digital-devhub.onrender.com",
+        href: "https://digitaldevhub.org",
       },
     },
   ],
