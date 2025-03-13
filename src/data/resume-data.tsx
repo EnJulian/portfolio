@@ -75,11 +75,11 @@ export const RESUME_DATA = {
     {
       company: "Enyata",
       link: "https://enyata.com",
-      badges: ["On-Site"],
+      badges: ["Remote/On-Site"],
       title: "Backend Developer",
       logo: ParabolLogo,
       start: "2023",
-      end: "Present",
+      end: "2025",
       description:
         "Implemented new features, still developing applications. Technologies: TypeScript, GraphQL, Node.js, MongoDB, PostgresQL",
     },
