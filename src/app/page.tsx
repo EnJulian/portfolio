@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
@@ -88,10 +88,10 @@ export default function Page() {
             </div>
           </div>
 
-          <Avatar className="h-28 w-28">
-            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
-            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-          </Avatar>
+          {/*<Avatar className="h-28 w-28">*/}
+          {/*  <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />*/}
+          {/*  <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>*/}
+          {/*</Avatar>*/}
         </div>
         <Section>
           <h2 className="text-xl font-bold">About</h2>
@@ -117,7 +117,9 @@ export default function Page() {
                             <Badge
                               variant="secondary"
                               className={`align-middle text-xs ${
-                                badge.toLowerCase() === 'on-site' ? 'bg-blue-600 text-white' : ''
+                                badge.toLowerCase() === "on-site"
+                                  ? "bg-blue-600 text-white"
+                                  : ""
                               }`}
                               key={badge}
                             >
@@ -127,7 +129,8 @@ export default function Page() {
                         </span>
                       </h3>
                       <div className="text-sm tabular-nums text-gray-500">
-                        {work.start} - {work.end}
+                        {work.start}
+                        {work.end ? ` - ${work.end}` : ""}
                       </div>
                     </div>
 

@@ -24,12 +24,12 @@ export const RESUME_DATA = {
   initials: "JAA",
   location: "Accra, Ghana",
   locationLink: "https://www.google.com/maps/place/Accra",
-  about: "Software development thrills me.",
+  // about: "Software development thrills me.",
   summary:
     "As a Backend Engineer, I have a proven track record of transforming concepts into fully developed products. Currently, I specialize in TypeScript, Node.js, GraphQL, Go, Python, and .NET Core."
 ,
-  avatarUrl:
-    "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1724425353/36317786_hkw9f9.png",
+  avatarUrl: "",
+    // "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1724425353/36317786_hkw9f9.png",
   personalWebsiteUrl: "https://enjulian.vercel.app",
   contact: {
     email: "envern.julian@gmail.com",
@@ -73,6 +73,17 @@ export const RESUME_DATA = {
     //     "Built highly scalable applications. Contributed to the growth and success of Hubtel, recently recognized as the 30th fastest-growing company in Africa. Technologies: C#, PostgresQL, Kafka, AKKA.NET",
     // },
     {
+      company: "Plendify",
+      link: "https://plendify.com",
+      badges: ["Remote/On-Site"],
+      title: "Backend Developer",
+      logo: ParabolLogo,
+      start: "2025",
+      // end: "2025",
+      description:
+        "Rebuilt ecommerce webapp with new features Technologies: TypeScript, Node.js, PostgresQL",
+    },
+    {
       company: "Enyata",
       link: "https://enyata.com",
       badges: ["Remote/On-Site"],
@@ -96,6 +107,16 @@ export const RESUME_DATA = {
     "Entity Framework",
   ],
   projects: [
+    {
+      title: "Plendify",
+      techStack: ["TypeScript", "React", "Node.js", "PostgresQL"],
+      description: "An ecommerce website used to shop and ship items outside Ghana.",
+      logo: MonitoLogo,
+      link: {
+        label: "plendify.com",
+        href: "https://plendify.com",
+      },
+    },
     {
       title: "Enyata Hackathon",
       techStack: ["Typescript", "Node.js", "React"],

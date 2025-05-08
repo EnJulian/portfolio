@@ -23,6 +23,7 @@ const getSkillColor = (skill: string) => {
 
 export function ProjectCard({ title, description, tags, link }: Props) {
   const CardWrapper = link ? 'a' : 'div';
+  const isPlendify = title === "Plendify";
 
   return (
     <CardWrapper
@@ -31,7 +32,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
       rel="noopener noreferrer"
       className={`block group ${link ? 'cursor-pointer' : ''}`}
     >
-      <Card className="flex flex-col h-full overflow-hidden border border-muted p-3 transition-all duration-300 ease-in-out group-hover:shadow-lg group-hover:-translate-y-1">
+      <Card className={`flex flex-col h-full overflow-hidden border border-muted p-3 transition-all duration-300 ease-in-out group-hover:shadow-lg group-hover:-translate-y-1 ${isPlendify ? 'shadow-[0_0_10px_rgba(147,51,234,0.3)] border-purple-500/50' : ''}`}>
         <CardHeader className="">
           <div className="space-y-1">
             <CardTitle className="text-base">
