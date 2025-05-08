@@ -14,12 +14,6 @@ interface Props {
   link?: string;
 }
 
-const getSkillColor = (skill: string) => {
-  switch (skill.toLowerCase()) {
-    default:
-      return 'bg-zinc-800';
-  }
-};
 
 export function ProjectCard({ title, description, tags, link }: Props) {
   const CardWrapper = link ? 'a' : 'div';
@@ -32,7 +26,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
       rel="noopener noreferrer"
       className={`block group ${link ? 'cursor-pointer' : ''}`}
     >
-      <Card className={`flex flex-col h-full overflow-hidden border border-muted p-3 transition-all duration-300 ease-in-out group-hover:shadow-lg group-hover:-translate-y-1 ${isPlendify ? 'shadow-[0_0_10px_rgba(147,51,234,0.3)] border-purple-500/50' : ''}`}>
+      <Card className={`flex flex-col h-full overflow-hidden border border-gray-800 bg-black text-white p-3 transition-all duration-300 ease-in-out group-hover:border-gray-700 group-hover:-translate-y-1 ${isPlendify ? 'border-gray-700' : ''}`}>
         <CardHeader className="">
           <div className="space-y-1">
             <CardTitle className="text-base">
@@ -42,7 +36,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
             <div className="hidden font-mono text-xs underline print:visible">
               {link?.replace("https://", "").replace("www.", "").replace("/", "")}
             </div>
-            <CardDescription className="font-mono text-xs">
+            <CardDescription className="text-xs text-gray-500">
               {description}
             </CardDescription>
           </div>
@@ -51,7 +45,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
           <div className="mt-2 flex flex-wrap gap-1">
             {tags.map((tag) => (
               <Badge
-                className={`px-1 py-0 text-[10px] ${getSkillColor(tag)} text-white`}
+                className="px-1 py-0 text-xs bg-zinc-800 text-gray-400"
                 key={tag}
               >
                 {tag}

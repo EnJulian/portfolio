@@ -5,11 +5,11 @@ import { CommandMenu } from "@/components/command-menu";
 import FloatingButton from "@/components/floating-button";
 
 export const metadata: Metadata = {
-  title: `${RESUME_DATA.name}`,
+  title: `About | ${RESUME_DATA.name}`,
   description: RESUME_DATA.summary,
 };
 
-export default function Page() {
+export default function AboutPage() {
   return (
     <main className="min-h-screen bg-black font-sans text-white antialiased">
       <TopNavigation />

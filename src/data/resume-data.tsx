@@ -26,7 +26,7 @@ export const RESUME_DATA = {
   locationLink: "https://www.google.com/maps/place/Accra",
   // about: "Software development thrills me.",
   summary:
-    "As a Backend Engineer, I have a proven track record of transforming concepts into fully developed products. Currently, I specialize in TypeScript, Node.js, GraphQL, Go, Python, and .NET Core."
+    "I'm a Backend Software Engineer with a proven ability to turn concepts into high-performance, fully realized backend solutions. I specialize in C#, .NET Core, TypeScript, Node.js and Python focusing on scalability, reliability, and clean architecture."
 ,
   avatarUrl: "",
     // "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1724425353/36317786_hkw9f9.png",
@@ -96,15 +96,15 @@ export const RESUME_DATA = {
     },
   ],
   skills: [
-    "C#",
-    "JavaScript",
-    "TypeScript",
-    "React/Next.js",
-    "Node.js",
-    "GraphQL",
-    ".NET Core",
-    "LINQ",
-    "Entity Framework",
+    { name: "C#", url: "https://docs.microsoft.com/en-us/dotnet/csharp/" },
+    { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+    { name: "React/Next.js", url: "https://nextjs.org/" },
+    { name: "Node.js", url: "https://nodejs.org/" },
+    { name: "GraphQL", url: "https://graphql.org/" },
+    { name: ".NET Core", url: "https://dotnet.microsoft.com/" },
+    { name: "LINQ", url: "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/" },
+    { name: "Entity Framework", url: "https://docs.microsoft.com/en-us/ef/" },
   ],
   projects: [
     {
