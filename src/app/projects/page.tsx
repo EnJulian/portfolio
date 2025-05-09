@@ -4,6 +4,7 @@ import { TopNavigation } from "@/components/top-navigation";
 import { CommandMenu } from "@/components/command-menu";
 import FloatingButton from "@/components/floating-button";
 import { ProjectCard } from "@/components/project-card";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: `Projects | ${RESUME_DATA.name}`,
@@ -34,11 +35,7 @@ export default function ProjectsPage() {
         </section>
 
         {/* Footer */}
-        <footer className="py-8 text-center text-sm text-gray-600">
-          <p>
-            © {new Date().getFullYear()} {RESUME_DATA.name}
-          </p>
-        </footer>
+        <Footer />
       </div>
 
       <CommandMenu
