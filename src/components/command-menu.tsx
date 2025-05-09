@@ -2,6 +2,8 @@
 
 import * as React from "react";
 import Modal from "react-modal";
+import { useRouter } from "next/navigation";
+import { RESUME_DATA } from "@/data/resume-data";
 
 Modal.setAppElement("html");
 
@@ -13,6 +15,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
+  CommandShortcut,
 } from "@/components/ui/command";
 
 interface Props {
@@ -20,8 +23,10 @@ interface Props {
 }
 
 export const CommandMenu = ({ links }: Props) => {
+  const router = useRouter();
   const [open, setOpen] = React.useState(false);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [search, setSearch] = React.useState("");
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -39,6 +44,19 @@ export const CommandMenu = ({ links }: Props) => {
     setIsModalOpen(true);
   };
 
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/Curriculum_Vitae_BSE_Julian.pdf";
+    link.download = "Julian_Amoah_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+  };
+
   return (
     <>
       <div className="fixed bottom-0 left-0 right-0 border-t border-gray-800 p-1 text-center text-xs bg-black text-gray-400 print:hidden">
@@ -52,13 +70,62 @@ export const CommandMenu = ({ links }: Props) => {
         </kbd>{" "}
         to access the command menu
       </div>
-      <CommandDialog 
+      <CommandDialog
         open={open} 
         onOpenChange={setOpen}
       >
-        <CommandInput placeholder="Type a command or search..." className="text-white" />
+        <CommandInput 
+          placeholder="Type a command or search..." 
+          className="text-white"
+          value={search}
+          onValueChange={setSearch}
+        />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
+
+          <CommandGroup heading="Navigation">
+            <CommandItem
+              onSelect={() => {
+                setOpen(false);
+                router.push("/");
+              }}
+              className="text-gray-300 hover:bg-gray-900 hover:text-white"
+            >
+              <span>Home</span>
+              <CommandShortcut>H</CommandShortcut>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                setOpen(false);
+                router.push("/about");
+              }}
+              className="text-gray-300 hover:bg-gray-900 hover:text-white"
+            >
+              <span>About</span>
+              <CommandShortcut>A</CommandShortcut>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                setOpen(false);
+                router.push("/work");
+              }}
+              className="text-gray-300 hover:bg-gray-900 hover:text-white"
+            >
+              <span>Work History</span>
+              <CommandShortcut>W</CommandShortcut>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                setOpen(false);
+                router.push("/contact");
+              }}
+              className="text-gray-300 hover:bg-gray-900 hover:text-white"
+            >
+              <span>Contact</span>
+              <CommandShortcut>C</CommandShortcut>
+            </CommandItem>
+          </CommandGroup>
+
           <CommandGroup heading="Actions">
             <CommandItem
               onSelect={() => {
@@ -67,7 +134,8 @@ export const CommandMenu = ({ links }: Props) => {
               }}
               className="text-gray-300 hover:bg-gray-900 hover:text-white"
             >
-              <span>Print</span>
+              <span>Print Page</span>
+              <CommandShortcut>P</CommandShortcut>
             </CommandItem>
             <CommandItem
               onSelect={() => {
@@ -77,9 +145,94 @@ export const CommandMenu = ({ links }: Props) => {
               className="text-gray-300 hover:bg-gray-900 hover:text-white"
             >
               <span>View Resume</span>
+              <CommandShortcut>V</CommandShortcut>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                setOpen(false);
+                downloadResume();
+              }}
+              className="text-gray-300 hover:bg-gray-900 hover:text-white"
+            >
+              <span>Download Resume</span>
+              <CommandShortcut>D</CommandShortcut>
             </CommandItem>
           </CommandGroup>
-          <CommandGroup heading="Links">
+
+          <CommandGroup heading="Contact">
+            <CommandItem
+              onSelect={() => {
+                setOpen(false);
+                window.location.href = `mailto:${RESUME_DATA.contact.email}`;
+              }}
+              className="text-gray-300 hover:bg-gray-900 hover:text-white"
+            >
+              <span>Send Email</span>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                setOpen(false);
+                copyToClipboard(RESUME_DATA.contact.email);
+                alert("Email copied to clipboard!");
+              }}
+              className="text-gray-300 hover:bg-gray-900 hover:text-white"
+            >
+              <span>Copy Email</span>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                setOpen(false);
+                window.location.href = `tel:${RESUME_DATA.contact.tel}`;
+              }}
+              className="text-gray-300 hover:bg-gray-900 hover:text-white"
+            >
+              <span>Call Phone Number</span>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                setOpen(false);
+                copyToClipboard(RESUME_DATA.contact.tel);
+                alert("Phone number copied to clipboard!");
+              }}
+              className="text-gray-300 hover:bg-gray-900 hover:text-white"
+            >
+              <span>Copy Phone Number</span>
+            </CommandItem>
+          </CommandGroup>
+
+          <CommandGroup heading="Skills">
+            {RESUME_DATA.skills.map((skill) => (
+              <CommandItem
+                key={skill.name}
+                onSelect={() => {
+                  setOpen(false);
+                  window.open(skill.url, "_blank");
+                }}
+                className="text-gray-300 hover:bg-gray-900 hover:text-white"
+              >
+                <span>{skill.name}</span>
+              </CommandItem>
+            ))}
+          </CommandGroup>
+
+          <CommandGroup heading="Projects">
+            {RESUME_DATA.projects.map((project) => (
+              <CommandItem
+                key={project.title}
+                onSelect={() => {
+                  setOpen(false);
+                  if (project.link) {
+                    window.open(project.link.href, "_blank");
+                  }
+                }}
+                className="text-gray-300 hover:bg-gray-900 hover:text-white"
+              >
+                <span>{project.title}</span>
+              </CommandItem>
+            ))}
+          </CommandGroup>
+
+          <CommandGroup heading="Social Links">
             {links.map(({ url, title }) => (
               <CommandItem
                 key={url}
@@ -132,7 +285,7 @@ export const CommandMenu = ({ links }: Props) => {
           </button>
         </div>
         <iframe
-          src="/Julian-Amoah-Resume.pdf"
+          src="/Curriculum_Vitae_BSE_Julian.pdf"
           width="100%"
           height="95%"
           style={{ border: "none" }}

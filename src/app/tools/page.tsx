@@ -15,19 +15,19 @@ export default function ToolsPage() {
       
       <p>
         My primary expertise is in{" "}
-        {RESUME_DATA.skills.slice(0, 3).map((skill, index) => (
+        {RESUME_DATA.skills.slice(0, 4).map((skill, index) => (
           <span key={skill.name}>
             <a href={skill.url} target="_blank" className="text-white hover:text-gray-300">
               {skill.name}
             </a>
-            {index < 2 ? ", " : ""}
+            {index < 3 ? ", " : ""}
           </span>
         ))}.
       </p>
       
       <p>
         I&apos;m also proficient with{" "}
-        {RESUME_DATA.skills.slice(3, 6).map((skill, index) => (
+        {RESUME_DATA.skills.slice(4, 7).map((skill, index) => (
           <span key={skill.name}>
             <a href={skill.url} target="_blank" className="text-white hover:text-gray-300">
               {skill.name}

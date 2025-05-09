@@ -10,29 +10,29 @@ export default function WorkPage() {
   return (
     <div className="space-y-5">
       <p>
-        I worked as a Backend Developer at {" "}
+        I recently worked at {" "}
+        <a href="https://plendify.com" target="_blank" className="text-white hover:text-gray-300">
+          Plendify
+        </a>
+        {" "}as a Backend Engineer, where I rebuilt their ecommerce webapp with new features
+        using {" "}
+        <a href={"https://www.typescriptlang.org/"} target="_blank" className="text-white">TypeScript</a>,{" "}
+        <a href={"https://nodejs.org/"} target="_blank" className="text-white">Node.js</a>, and{" "}
+        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank" className="text-white">PostgreSQL</a>.
+      </p>
+
+      <p>
+        Before that I worked as the same role at {" "}
         <a href="https://enyata.com" target="_blank" className="text-white hover:text-gray-300">
           Enyata
         </a>
         {", "}
         where I developed applications using{" "}
-        <span className="text-white">TypeScript</span>,{" "}
-        <span className="text-white">GraphQL</span>,{" "}
-        <span className="text-white">Node.js</span>,{" "}
-        <span className="text-white">MongoDB</span>, and{" "}
-        <span className="text-white">PostgreSQL</span>.
-      </p>
-      
-      <p>
-        Shortly after that, I worked at {" "}
-        <a href="https://plendify.com" target="_blank" className="text-white hover:text-gray-300">
-          Plendify
-        </a>
-        {" "}as a Backend Developer, where I rebuilt their ecommerce webapp with new features 
-        using {" "}
-        <span className="text-white">TypeScript</span>,{" "}
-        <span className="text-white">Node.js</span>, and{" "}
-        <span className="text-white">PostgreSQL</span>.
+        <a href={"https://www.typescriptlang.org/"} target={"_blank"} className="text-white">TypeScript</a>,{" "}
+        <a href={"https://graphql.org/"} target={"_blank"} className="text-white">GraphQL</a>,{" "}
+        <a href={"https://nodejs.org/"} target={"_blank"} className="text-white">Node.js</a>,{" "}
+        <a href={"https://www.mongodb.com/docs/"} target={"_blank"} className="text-white">MongoDB</a>, and{" "}
+        <a href={"https://www.postgresql.org/docs/current/index.html"} target={"_blank"} className="text-white">PostgreSQL</a>.
       </p>
       
       <h2 className="text-lg font-semibold mt-8 mb-4 text-white">Work History</h2>
