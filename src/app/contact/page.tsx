@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { RESUME_DATA } from "@/data/resume-data";
 import { TopNavigation } from "@/components/top-navigation";
-import { CommandMenu } from "@/components/command-menu";
 import FloatingButton from "@/components/floating-button";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: `Contact | ${RESUME_DATA.name}`,
@@ -57,25 +57,8 @@ export default function ContactPage() {
         </section>
 
         {/* Footer */}
-        <footer className="py-8 text-center text-sm text-gray-600">
-          <p>
-            © {new Date().getFullYear()} {RESUME_DATA.name}
-          </p>
-        </footer>
+        <Footer />
       </div>
-
-      <CommandMenu
-        links={[
-          {
-            url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
-          },
-          ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
-            url: socialMediaLink.url,
-            title: socialMediaLink.name,
-          })),
-        ]}
-      />
 
       <FloatingButton />
     </main>

@@ -1,8 +1,5 @@
 import { Metadata } from "next";
 import { RESUME_DATA } from "@/data/resume-data";
-import { TopNavigation } from "@/components/top-navigation";
-import { CommandMenu } from "@/components/command-menu";
-import FloatingButton from "@/components/floating-button";
 
 export const metadata: Metadata = {
   title: `Tools | ${RESUME_DATA.name}`,
@@ -11,50 +8,50 @@ export const metadata: Metadata = {
 
 export default function ToolsPage() {
   return (
-    <main className="min-h-screen bg-black font-sans text-white antialiased">
-      <TopNavigation />
-      <div className="mx-auto max-w-screen-md p-6 md:p-10">
-        {/* Skills */}
-        <section className="mb-16">
-          <h2 className="mb-6 border-b border-gray-800 pb-2 text-base uppercase tracking-widest">
-            Tools
-          </h2>
-          <div className="flex flex-wrap gap-x-4 gap-y-2">
-            {RESUME_DATA.skills.map((skill) => (
-              <a
-                key={skill.name}
-                href={skill.url}
-                target="_blank"
-                className="text-sm text-gray-400 transition-colors duration-200 hover:text-white"
-              >
-                {skill.name}
-              </a>
-            ))}
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="py-8 text-center text-sm text-gray-600">
-          <p>
-            © {new Date().getFullYear()} {RESUME_DATA.name}
-          </p>
-        </footer>
+    <div className="space-y-5">
+      <p>
+        I work with a variety of tools and technologies to build high-quality software solutions.
+      </p>
+      
+      <p>
+        My primary expertise is in{" "}
+        {RESUME_DATA.skills.slice(0, 4).map((skill, index) => (
+          <span key={skill.name}>
+            <a href={skill.url} target="_blank" className="text-white hover:text-gray-300">
+              {skill.name}
+            </a>
+            {index < 3 ? ", " : ""}
+          </span>
+        ))}.
+      </p>
+      
+      <p>
+        I&apos;m also proficient with{" "}
+        {RESUME_DATA.skills.slice(4, 7).map((skill, index) => (
+          <span key={skill.name}>
+            <a href={skill.url} target="_blank" className="text-white hover:text-gray-300">
+              {skill.name}
+            </a>
+            {index < 2 ? ", " : ""}
+          </span>
+        ))}.
+      </p>
+      
+      <div className="mt-8">
+        <h2 className="text-lg font-semibold mb-4 text-white">All Tools & Technologies</h2>
+        <div className="flex flex-wrap gap-2">
+          {RESUME_DATA.skills.map((skill) => (
+            <a
+              key={skill.name}
+              href={skill.url}
+              target="_blank"
+              className="px-2 py-1 bg-gray-900 text-gray-300 rounded text-xs hover:bg-gray-800 hover:text-white transition-colors"
+            >
+              {skill.name}
+            </a>
+          ))}
+        </div>
       </div>
-
-      <CommandMenu
-        links={[
-          {
-            url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
-          },
-          ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
-            url: socialMediaLink.url,
-            title: socialMediaLink.name,
-          })),
-        ]}
-      />
-
-      <FloatingButton />
-    </main>
+    </div>
   );
 }

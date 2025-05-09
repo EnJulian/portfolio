@@ -4,32 +4,32 @@
 
 @layer base {
   :root {
-    --background: 0 0% 12%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 14%;
+    --card: 0 0% 3%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 14%;
+    --popover: 0 0% 3%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 12%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 16%;
+    --secondary: 0 0% 7%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 16%;
+    --muted: 0 0% 7%;
     --muted-foreground: 0 0% 64%;
 
-    --accent: 0 0% 16%;
+    --accent: 0 0% 7%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
+    --border: 0 0% 15%;
+    --input: 0 0% 7%;
     --ring: 0 0% 83.9%;
 
     --radius: 0.5rem;
@@ -45,4 +45,8 @@
 
 .print-force-new-page {
   page-break-before: always;
+}
+
+.nimbus {
+  font-family: "Nimbus Sans", system-ui, sans-serif;
 }

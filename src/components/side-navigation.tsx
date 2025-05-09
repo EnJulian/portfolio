@@ -10,7 +10,6 @@ export function SideNavigation() {
     { name: "Work", href: "/work" },
     { name: "Tools", href: "/tools" },
     { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
   ];
 
   return (
