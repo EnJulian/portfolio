@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { RESUME_DATA } from "@/data/resume-data";
 import { MailIcon } from "@/components/icons/MailIcon";

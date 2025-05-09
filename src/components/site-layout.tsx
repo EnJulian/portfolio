@@ -1,69 +1,105 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { RESUME_DATA } from "@/data/resume-data";
+"use client";
 
-export function SiteLayout({ children }: { children: React.ReactNode }) {
-  // Navigation items with links to separate pages
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { RESUME_DATA } from "@/data/resume-data";
+import { Footer } from "./footer";
+
+interface SiteLayoutProps {
+  children: React.ReactNode;
+}
+
+export function SiteLayout({ children }: SiteLayoutProps) {
+  const pathname = usePathname();
+  
   const navItems = [
     { name: "About", href: "/about" },
-    { name: "Work", href: "/work" },
+    { name: "History", href: "/work" },
     { name: "Tools", href: "/tools" },
     { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <div className="min-h-screen bg-black font-sans text-white antialiased">
-      <div className="max-w-5xl mx-auto flex pt-12">
-        {/* Left navigation column */}
-        <div className="w-48 shrink-0 mr-12">
-          <div className="mb-8">
-            <Image
-              src="/Julian-Amoah-Logo.png"
-              alt="Julian Amoah Logo"
-              width={48}
-              height={48}
-              className="mb-3"
-            />
-            <h1 className="text-lg font-semibold text-white">
-              {RESUME_DATA.name}
+    <div className="min-h-screen bg-black font-sans text-white antialiased overflow-hidden">
+      <div className="fixed top-[15vh] left-1/2 transform -translate-x-1/2 w-full max-w-5xl h-[75vh]">
+        <div className="flex flex-col md:flex-row w-full h-full">
+          {/* Logo and Name header for mobile */}
+          <div className="w-full flex justify-between items-center p-6 md:hidden">
+            <div className="inline-block">
+              <Link href="/about" className="inline-flex">
+                <Image
+                  src="/Julian-Amoah-Logo.png"
+                  alt="Julian Amoah Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+              </Link>
+            </div>
+            <h1 className="text-lg font-bold tracking-wide text-white">
+              {RESUME_DATA.name.toUpperCase()}
             </h1>
           </div>
-          
-          {/* Navigation */}
-          <nav className="flex flex-col space-y-3 mb-auto">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-              >
-                {item.name}
+
+          {/* Sidebar for larger screens - fixed position */}
+          <aside className="md:w-1/4 p-6 h-full">
+            <div className="md:mb-10 hidden md:block">
+              <Link href="/about" className="inline-flex">
+                <Image
+                  src="/Julian-Amoah-Logo.png"
+                  alt="Julian Amoah Logo"
+                  width={50}
+                  height={50}
+                  className="rounded-full"
+                />
               </Link>
-            ))}
-          </nav>
+            </div>
+            
+            <nav className="mt-6">
+              <ul className="space-y-3">
+                {navItems.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <li key={item.name} className="flex items-center">
+                      <span className={`mr-2 ${isActive ? "text-white" : "text-gray-600"}`}>
+                        {isActive ? "•" : "◦"}
+                      </span>
+                      <Link
+                        href={item.href}
+                        className={`transition-colors duration-200 text-sm ${
+                          isActive 
+                            ? "text-white font-medium" 
+                            : "text-gray-400 hover:text-white"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+          </aside>
 
-          {/* Social Links */}
-          <div className="mt-8 flex space-x-3">
-            {RESUME_DATA.contact.social.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label={social.name}
-              >
-                <social.icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Main content area */}
-        <div className="flex-1 max-w-2xl">
-          {children}
+          {/* Main content */}
+          <main className="md:w-3/4 p-6 h-full overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-transparent">
+            {/* Name header for larger screens */}
+            <div className="hidden md:block mb-8">
+              <h1 className="text-xl font-bold tracking-wide text-white">
+                {RESUME_DATA.name.toUpperCase()}
+              </h1>
+            </div>
+            
+            {/* Page content with extra bottom padding to show scrollability */}
+            <div className="text-gray-400 text-sm pb-12">
+              {children}
+            </div>
+            
+            {/* Footer */}
+            <Footer />
+          </main>
         </div>
       </div>
     </div>

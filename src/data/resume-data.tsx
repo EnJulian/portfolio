@@ -75,18 +75,18 @@ export const RESUME_DATA = {
     {
       company: "Plendify",
       link: "https://plendify.com",
-      badges: ["Remote/On-Site"],
+      badges: ["Contract"],
       title: "Backend Developer",
       logo: ParabolLogo,
-      start: "2025",
-      // end: "2025",
+      start: "April 2025",
+      end: "May 2025",
       description:
         "Rebuilt ecommerce webapp with new features Technologies: TypeScript, Node.js, PostgresQL",
     },
     {
       company: "Enyata",
       link: "https://enyata.com",
-      badges: ["Remote/On-Site"],
+      badges: ["Full Time"],
       title: "Backend Developer",
       logo: ParabolLogo,
       start: "2023",

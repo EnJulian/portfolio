@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { IoIosFiling } from "react-icons/io";
 import { useState } from "react";
 import Modal from "react-modal";
+
 const FloatingButton = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -18,11 +19,11 @@ const FloatingButton = () => {
   return (
     <>
       <Button
-        className="fixed bottom-12 right-4 h-16 w-16 rounded-lg bg-green-800 shadow-2xl transition-transform duration-300 transform hover:scale-105 focus:outline-none" // Adjusted bottom position
+        className="fixed bottom-12 right-4 h-12 w-12 rounded-full bg-gray-800 shadow-md transition-all duration-200 transform hover:scale-105 hover:bg-gray-700 focus:outline-none border border-gray-700"
         onClick={handleClick}
       >
-        <div className="h-full w-full flex items-center justify-center rounded-lg">
-          <IoIosFiling className="text-white h-full w-full" />
+        <div className="h-full w-full flex items-center justify-center">
+          <IoIosFiling className="text-white h-6 w-6" />
         </div>
       </Button>
 
@@ -30,8 +31,12 @@ const FloatingButton = () => {
         <Modal
           isOpen={isModalOpen}
           onRequestClose={closeModal}
-          contentLabel="Document Preview"
+          contentLabel="Resume Preview"
           style={{
+            overlay: {
+              backgroundColor: 'rgba(0, 0, 0, 0.75)',
+              zIndex: 1000
+            },
             content: {
               top: '50%',
               left: '50%',
@@ -41,16 +46,27 @@ const FloatingButton = () => {
               transform: 'translate(-50%, -50%)',
               width: '80%',
               height: '80%',
-              backgroundColor: '#323639',
-              color: '#fff',
+              background: '#111',
+              border: '1px solid #333',
+              borderRadius: '4px',
+              padding: '10px',
             },
           }}
         >
-          <button onClick={closeModal}>Close</button>
+          <div className="flex justify-between items-center mb-2">
+            <h3 className="text-white text-sm">Resume</h3>
+            <button 
+              onClick={closeModal}
+              className="px-3 py-1 text-sm text-gray-300 bg-gray-800 hover:bg-gray-700 rounded transition-colors"
+            >
+              Close
+            </button>
+          </div>
           <iframe
             src="/Julian-Amoah-Resume.pdf"
             width="100%"
-            height="97%"
+            height="95%"
+            style={{ border: "none" }}
           />
         </Modal>
       )}
