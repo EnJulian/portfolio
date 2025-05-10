@@ -12,12 +12,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-black font-sans text-white antialiased">
-      <TopNavigation />
       <div className="mx-auto max-w-screen-md p-6 md:p-10">
         {/* Contact */}
         <section className="mb-16">
           <h2 className="mb-6 border-b border-gray-800 pb-2 text-base uppercase tracking-widest">
-            Contact
+            Get in touch with me.
           </h2>
           <div className="space-y-4">
             <div className="flex items-center">
@@ -55,11 +54,7 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-
-        {/* Footer */}
-        <Footer />
       </div>
-
       <FloatingButton />
     </main>
   );

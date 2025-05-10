@@ -50,3 +50,25 @@
 .nimbus {
   font-family: "Nimbus Sans", system-ui, sans-serif;
 }
+
+@keyframes toast-slide-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-fade-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+}

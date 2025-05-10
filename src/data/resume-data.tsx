@@ -116,7 +116,7 @@ export const RESUME_DATA = {
     {
       title: "Plendify Marketplace",
       techStack: ["TypeScript", "React", "Node.js", "PostgresQL"],
-      description: "An ecommerce website used to shop and ship items outside Ghana.",
+      description: "Ecommerce website used to shop various products globally. Now with a new design and new features.",
       logo: MonitoLogo,
       link: {
         label: "plendify.com",
@@ -124,23 +124,23 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Enyata Hackathon",
-      techStack: ["Typescript", "Node.js", "React"],
-      description: "Hackathon registration platform by Enyata",
-      logo: YearProgressLogo,
-      link: {
-        label: "hack.enyata.com",
-        href: "https://hack.enyata.com",
-      },
-    },
-    {
       title: "MyPurplePay",
       techStack: ["TypeScript", "React", "PostgresQL", "Node.js"],
-      description: "App for creating and managing savings groups.",
+      description: "Mobile application for creating and managing savings groups. Now with loan management.",
       logo: MonitoLogo,
       link: {
         label: "purple-vest.enyata.com",
         href: "https://purple-vest.enyata.com/",
+      },
+    },
+    {
+      title: "Enyata Hackathon",
+      techStack: ["Typescript", "Node.js", "React"],
+      description: "Hackathon registration platform by Enyata Ghana.",
+      logo: YearProgressLogo,
+      link: {
+        label: "hack.enyata.com",
+        href: "https://hack.enyata.com",
       },
     },
     {
@@ -176,7 +176,7 @@ export const RESUME_DATA = {
     {
       title: "Digital Devhub",
       techStack: ["C#", ".NET Core", "React", "PostgresQL"],
-      description: "Website for signing up and training Digital Devhub Scrum Masters.",
+      description: "Website for onboarding to train Digital Devhub Scrum Masters.",
       logo: MonitoLogo,
       link: {
         label: "digital-devhub.onrender.com",

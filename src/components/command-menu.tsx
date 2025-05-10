@@ -4,6 +4,7 @@ import * as React from "react";
 import Modal from "react-modal";
 import { useRouter } from "next/navigation";
 import { RESUME_DATA } from "@/data/resume-data";
+import { useToastContext } from "@/components/ui/toast";
 
 Modal.setAppElement("html");
 
@@ -27,6 +28,7 @@ export const CommandMenu = ({ links }: Props) => {
   const [open, setOpen] = React.useState(false);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [search, setSearch] = React.useState("");
+  const { toast } = useToastContext();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -47,7 +49,7 @@ export const CommandMenu = ({ links }: Props) => {
   const downloadResume = () => {
     const link = document.createElement("a");
     link.href = "/Curriculum_Vitae_BSE_Julian.pdf";
-    link.download = "Julian_Amoah_Resume.pdf";
+    link.download = "/Curriculum_Vitae_BSE_Julian.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -82,50 +84,6 @@ export const CommandMenu = ({ links }: Props) => {
         />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-
-          <CommandGroup heading="Navigation">
-            <CommandItem
-              onSelect={() => {
-                setOpen(false);
-                router.push("/");
-              }}
-              className="text-gray-300 hover:bg-gray-900 hover:text-white"
-            >
-              <span>Home</span>
-              <CommandShortcut>H</CommandShortcut>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                setOpen(false);
-                router.push("/about");
-              }}
-              className="text-gray-300 hover:bg-gray-900 hover:text-white"
-            >
-              <span>About</span>
-              <CommandShortcut>A</CommandShortcut>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                setOpen(false);
-                router.push("/work");
-              }}
-              className="text-gray-300 hover:bg-gray-900 hover:text-white"
-            >
-              <span>Work History</span>
-              <CommandShortcut>W</CommandShortcut>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                setOpen(false);
-                router.push("/contact");
-              }}
-              className="text-gray-300 hover:bg-gray-900 hover:text-white"
-            >
-              <span>Contact</span>
-              <CommandShortcut>C</CommandShortcut>
-            </CommandItem>
-          </CommandGroup>
-
           <CommandGroup heading="Actions">
             <CommandItem
               onSelect={() => {
@@ -163,6 +121,21 @@ export const CommandMenu = ({ links }: Props) => {
             <CommandItem
               onSelect={() => {
                 setOpen(false);
+                copyToClipboard(RESUME_DATA.contact.email);
+                toast({
+                  title: "Copied!",
+                  description: "Email address copied to clipboard",
+                  variant: "success",
+                  duration: 3000
+                });
+              }}
+              className="text-gray-300 hover:bg-gray-900 hover:text-white"
+            >
+              <span>Copy Email</span>
+            </CommandItem>
+            <CommandItem
+              onSelect={() => {
+                setOpen(false);
                 window.location.href = `mailto:${RESUME_DATA.contact.email}`;
               }}
               className="text-gray-300 hover:bg-gray-900 hover:text-white"
@@ -172,12 +145,17 @@ export const CommandMenu = ({ links }: Props) => {
             <CommandItem
               onSelect={() => {
                 setOpen(false);
-                copyToClipboard(RESUME_DATA.contact.email);
-                alert("Email copied to clipboard!");
+                copyToClipboard(RESUME_DATA.contact.tel);
+                toast({
+                  title: "Copied!",
+                  description: "Phone number copied to clipboard",
+                  variant: "success",
+                  duration: 3000
+                });
               }}
               className="text-gray-300 hover:bg-gray-900 hover:text-white"
             >
-              <span>Copy Email</span>
+              <span>Copy Phone Number</span>
             </CommandItem>
             <CommandItem
               onSelect={() => {
@@ -188,63 +166,6 @@ export const CommandMenu = ({ links }: Props) => {
             >
               <span>Call Phone Number</span>
             </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                setOpen(false);
-                copyToClipboard(RESUME_DATA.contact.tel);
-                alert("Phone number copied to clipboard!");
-              }}
-              className="text-gray-300 hover:bg-gray-900 hover:text-white"
-            >
-              <span>Copy Phone Number</span>
-            </CommandItem>
-          </CommandGroup>
-
-          <CommandGroup heading="Skills">
-            {RESUME_DATA.skills.map((skill) => (
-              <CommandItem
-                key={skill.name}
-                onSelect={() => {
-                  setOpen(false);
-                  window.open(skill.url, "_blank");
-                }}
-                className="text-gray-300 hover:bg-gray-900 hover:text-white"
-              >
-                <span>{skill.name}</span>
-              </CommandItem>
-            ))}
-          </CommandGroup>
-
-          <CommandGroup heading="Projects">
-            {RESUME_DATA.projects.map((project) => (
-              <CommandItem
-                key={project.title}
-                onSelect={() => {
-                  setOpen(false);
-                  if (project.link) {
-                    window.open(project.link.href, "_blank");
-                  }
-                }}
-                className="text-gray-300 hover:bg-gray-900 hover:text-white"
-              >
-                <span>{project.title}</span>
-              </CommandItem>
-            ))}
-          </CommandGroup>
-
-          <CommandGroup heading="Social Links">
-            {links.map(({ url, title }) => (
-              <CommandItem
-                key={url}
-                onSelect={() => {
-                  setOpen(false);
-                  window.open(url, "_blank");
-                }}
-                className="text-gray-300 hover:bg-gray-900 hover:text-white"
-              >
-                <span>{title}</span>
-              </CommandItem>
-            ))}
           </CommandGroup>
           <CommandSeparator />
         </CommandList>

@@ -5,6 +5,7 @@ import { SiteLayout } from "@/components/site-layout";
 import { CommandMenu } from "@/components/command-menu";
 import { RESUME_DATA } from "@/data/resume-data";
 import FloatingButton from "@/components/floating-button";
+import { ToastProvider } from "@/components/ui/toast";
 
 import "./globals.css";
 import React from "react";
@@ -52,25 +53,27 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest?v=2" />
       </head>
       <body>
-        <SiteLayout>
-          {children}
-        </SiteLayout>
-        
-        <CommandMenu
-          links={[
-            {
-              url: RESUME_DATA.personalWebsiteUrl,
-              title: "Personal Website",
-            },
-            ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
-              url: socialMediaLink.url,
-              title: socialMediaLink.name,
-            })),
-          ]}
-        />
-        
-        <FloatingButton />
-        <Analytics />
+        <ToastProvider>
+          <SiteLayout>
+            {children}
+          </SiteLayout>
+
+          <CommandMenu
+            links={[
+              {
+                url: RESUME_DATA.personalWebsiteUrl,
+                title: "Personal Website",
+              },
+              ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
+                url: socialMediaLink.url,
+                title: socialMediaLink.name,
+              })),
+            ]}
+          />
+
+          <FloatingButton />
+          <Analytics />
+        </ToastProvider>
       </body>
     </html>
   );
