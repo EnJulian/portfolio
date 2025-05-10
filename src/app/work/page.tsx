@@ -22,7 +22,7 @@ export default function WorkPage() {
       </p>
 
       <p>
-        Before that I worked as the same role at {" "}
+        Before that, I worked as the same role at {" "}
         <a href="https://enyata.com" target="_blank" className="text-white hover:text-gray-300">
           Enyata
         </a>

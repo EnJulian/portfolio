@@ -104,12 +104,16 @@ export const RESUME_DATA = {
     { name: "React/Next.js", url: "https://nextjs.org/" },
     { name: "PostgreSQL", url: "https://www.postgresql.org/docs/current/index.html" },
     { name: "GraphQL", url: "https://graphql.org/" },
+    { name: "Amazon Web Services", url: "https://docs.aws.amazon.com" },
+    { name: "Amazon Route 53", url: "https://docs.aws.amazon.com/route53/" },
+    { name: "Amazon CloudFront", url: "https://docs.aws.amazon.com/cloudfront/" },
+    { name: "Amazon EC2", url: "https://docs.aws.amazon.com/ec2/?icmpid=docs_homepage_featuredsvcs" },
     { name: "LINQ", url: "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/" },
     { name: "Entity Framework", url: "https://docs.microsoft.com/en-us/ef/" },
   ],
   projects: [
     {
-      title: "Plendify",
+      title: "Plendify Marketplace",
       techStack: ["TypeScript", "React", "Node.js", "PostgresQL"],
       description: "An ecommerce website used to shop and ship items outside Ghana.",
       logo: MonitoLogo,
