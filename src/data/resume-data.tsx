@@ -100,6 +100,8 @@ export const RESUME_DATA = {
     { name: ".NET Core", url: "https://dotnet.microsoft.com/" },
     { name: "TypeScript", url: "https://www.typescriptlang.org/" },
     { name: "Node.js", url: "https://nodejs.org/" },
+    { name: "LINQ", url: "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/" },
+    { name: "Entity Framework", url: "https://docs.microsoft.com/en-us/ef/" },
     { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
     { name: "React/Next.js", url: "https://nextjs.org/" },
     { name: "PostgreSQL", url: "https://www.postgresql.org/docs/current/index.html" },
@@ -108,8 +110,7 @@ export const RESUME_DATA = {
     { name: "Amazon Route 53", url: "https://docs.aws.amazon.com/route53/" },
     { name: "Amazon CloudFront", url: "https://docs.aws.amazon.com/cloudfront/" },
     { name: "Amazon EC2", url: "https://docs.aws.amazon.com/ec2/?icmpid=docs_homepage_featuredsvcs" },
-    { name: "LINQ", url: "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/" },
-    { name: "Entity Framework", url: "https://docs.microsoft.com/en-us/ef/" },
+    { name: "Amazon S3", url: "https://docs.aws.amazon.com/s3/" },
   ],
   projects: [
     {
