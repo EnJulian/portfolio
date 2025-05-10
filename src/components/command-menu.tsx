@@ -85,16 +85,16 @@ export const CommandMenu = ({ links }: Props) => {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Actions">
-            <CommandItem
-              onSelect={() => {
-                setOpen(false);
-                window.print();
-              }}
-              className="text-gray-300 hover:bg-gray-900 hover:text-white"
-            >
-              <span>Print Page</span>
-              <CommandShortcut>P</CommandShortcut>
-            </CommandItem>
+            {/*<CommandItem*/}
+            {/*  onSelect={() => {*/}
+            {/*    setOpen(false);*/}
+            {/*    window.print();*/}
+            {/*  }}*/}
+            {/*  className="text-gray-300 hover:bg-gray-900 hover:text-white"*/}
+            {/*>*/}
+            {/*  <span>Print Page</span>*/}
+            {/*  <CommandShortcut>P</CommandShortcut>*/}
+            {/*</CommandItem>*/}
             <CommandItem
               onSelect={() => {
                 setOpen(false);
