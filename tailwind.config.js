@@ -60,7 +60,8 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ["var(--font-nimbus-sans)", ...fontFamily.sans],
+        inconsolata: ["var(--font-inconsolata)", "monospace"],
       },
       keyframes: {
         "accordion-down": {

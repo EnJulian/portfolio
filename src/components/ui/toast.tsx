@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { cn } from "@/lib/utils"
-import { X } from "lucide-react"
+import { Loader, X } from "lucide-react"
 
 interface ToastProps {
   title?: string
@@ -11,6 +11,7 @@ interface ToastProps {
   duration?: number
   onClose?: () => void
   className?: string
+  loading?: boolean
 }
 
 export const Toast: React.FC<ToastProps> = ({
@@ -20,11 +21,30 @@ export const Toast: React.FC<ToastProps> = ({
   duration = 3000,
   onClose,
   className,
+  loading = false,
 }) => {
   const [isVisible, setIsVisible] = React.useState(true)
   const [isFading, setIsFading] = React.useState(false)
+  const [progress, setProgress] = React.useState(100)
 
   React.useEffect(() => {
+    // Start progress animation immediately
+    const startTime = Date.now()
+    const endTime = startTime + duration
+
+    // Update progress every 10ms
+    const progressInterval = setInterval(() => {
+      const now = Date.now()
+      const remaining = Math.max(0, endTime - now)
+      const newProgress = (remaining / duration) * 100
+      setProgress(newProgress)
+
+      if (newProgress <= 0) {
+        clearInterval(progressInterval)
+      }
+    }, 10)
+
+    // Set timer for fading out
     const timer = setTimeout(() => {
       setIsFading(true)
 
@@ -37,7 +57,10 @@ export const Toast: React.FC<ToastProps> = ({
       return () => clearTimeout(fadeTimer)
     }, duration)
 
-    return () => clearTimeout(timer)
+    return () => {
+      clearTimeout(timer)
+      clearInterval(progressInterval)
+    }
   }, [duration, onClose])
 
   if (!isVisible) return null
@@ -51,7 +74,7 @@ export const Toast: React.FC<ToastProps> = ({
   return (
     <div
       className={cn(
-        "flex w-full max-w-sm items-center justify-between space-x-2 overflow-hidden rounded-md border p-3 pr-6 shadow-md transition-all duration-300",
+        "flex w-full max-w-sm items-center justify-between space-x-2 overflow-hidden rounded-md border p-3 pr-6 shadow-md transition-all duration-300 relative",
         variantClasses[variant],
         className
       )}
@@ -63,7 +86,7 @@ export const Toast: React.FC<ToastProps> = ({
     >
       <div className="grid gap-0.5">
         {title && <div className="text-xs font-medium">{title}</div>}
-        {description && <div className="text-xs opacity-80">{description}</div>}
+        {description && <div className="text-gray-400 text-xs">{description}</div>}
       </div>
       <button
         onClick={() => {
@@ -78,6 +101,15 @@ export const Toast: React.FC<ToastProps> = ({
       >
         <X className="h-3 w-3" />
       </button>
+      {loading && (
+        <div 
+          className={cn(
+            "absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-100 origin-left",
+            "bg-gray-300"
+          )}
+          style={{ transform: `scaleX(${progress / 100})` }} 
+        />
+      )}
     </div>
   )
 }

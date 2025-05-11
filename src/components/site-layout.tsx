@@ -13,7 +13,7 @@ interface SiteLayoutProps {
 
 export function SiteLayout({ children }: SiteLayoutProps) {
   const pathname = usePathname();
-  
+
   const navItems = [
     { name: "About", href: "/about" },
     { name: "History", href: "/work" },
@@ -22,11 +22,11 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-black font-sans text-white antialiased overflow-hidden">
-      <div className="fixed top-[15vh] left-1/2 transform -translate-x-1/2 w-full max-w-5xl h-[75vh]">
+    <div className="min-h-screen bg-black font-sans text-white antialiased">
+      <div className="mx-auto w-full max-w-5xl min-h-screen py-[15vh]">
         <div className="flex flex-col md:flex-row w-full h-full">
           {/* Logo and Name header for mobile */}
-          <div className="w-full flex justify-between items-center p-6 md:hidden">
+          <div className="w-full flex justify-between items-center p-6 md:hidden sticky top-0 z-10 bg-black">
             <div className="inline-block">
               <Link href="/about" className="inline-flex">
                 <Image
@@ -38,13 +38,11 @@ export function SiteLayout({ children }: SiteLayoutProps) {
                 />
               </Link>
             </div>
-            <h1 className="text-lg font-bold tracking-wide text-white">
-              {RESUME_DATA.name.toUpperCase()}
-            </h1>
+            <h1 className="jakarta-sans uppercase tracking-wide mt-[9px]"><a href="/">{RESUME_DATA.name}</a></h1>
           </div>
 
-          {/* Sidebar for larger screens - fixed position */}
-          <aside className="md:w-1/4 p-6 h-full">
+          {/* Sidebar for larger screens - sticky position */}
+          <aside className="md:w-1/4 p-6 md:sticky md:top-0 md:z-10 self-start">
             <div className="md:mb-10 hidden md:block">
               <Link href="/about" className="inline-flex">
                 <Image
@@ -56,7 +54,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
                 />
               </Link>
             </div>
-            
+
             <nav className="mt-6">
               <ul className="space-y-3">
                 {navItems.map((item) => {
@@ -84,19 +82,19 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           </aside>
 
           {/* Main content */}
-          <main className="md:w-3/4 p-6 h-full overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-transparent">
+          <main className="md:w-3/4 p-6 overflow-y-visible">
             {/* Name header for larger screens */}
             <div className="hidden md:block mb-8">
-              <h1 className="text-xl font-bold tracking-wide text-white">
+              <h1 className="text-xl font-bold tracking-wide text-white jakarta-sans">
                 {RESUME_DATA.name.toUpperCase()}
               </h1>
             </div>
-            
+
             {/* Page content with extra bottom padding to show scrollability */}
             <div className="text-gray-400 text-sm pb-12">
               {children}
             </div>
-            
+
             {/* Footer */}
             <Footer />
           </main>

@@ -24,11 +24,11 @@ export default function ProjectsPage() {
           // Create card content
           const cardContent = (
             <>
-              <h3 className="text-base font-medium mb-2 text-white group-hover:text-gray-200">
+              <h3 className="text-base font-medium mb-2 text-white group-hover:text-gray-200 jakarta-sans">
                 {project.title}
               </h3>
 
-              <p className="text-gray-450 text-[13px] mb-2 line-clamp-3">{project.description}</p>
+              <p className="text-gray-400 text-[13px] mb-2 line-clamp-3">{project.description}</p>
 
               <div className="flex flex-wrap gap-1.5 mt-auto">
                 {project.techStack.map((tech) => (
@@ -49,7 +49,7 @@ export default function ProjectsPage() {
                 <a 
                   href={projectUrl} 
                   target="_blank"
-                  className="block border border-gray-800 bg-gradient-to-b from-gray-800/20 to-gray-900/30 rounded-md p-3 hover:bg-gray-900/60 transition-all hover:border-gray-700 hover:translate-y-[-2px] hover:shadow-md h-[135px] flex flex-col relative"
+                  className="block border border-gray-800 bg-gradient-to-b from-gray-800/20 to-gray-900/30 rounded-md p-3 hover:bg-gray-900/60 transition-all hover:border-gray-700 hover:translate-y-[-2px] hover:shadow-md h-[155px] flex flex-col relative glass-shine-effect"
                 >
                   <div className="absolute top-2 right-2 text-gray-500 group-hover:text-gray-300 transition-colors">
                     <FiExternalLink size={16} />
@@ -57,7 +57,7 @@ export default function ProjectsPage() {
                   {cardContent}
                 </a>
               ) : (
-                <div className="border border-gray-800 bg-gradient-to-b from-gray-800/20 to-gray-900/30 rounded-md p-3 hover:bg-gray-900/60 transition-all hover:border-gray-700 hover:translate-y-[-2px] hover:shadow-md h-[135px] flex flex-col">
+                <div className="border border-gray-800 bg-gradient-to-b from-gray-800/20 to-gray-900/30 rounded-md p-3 hover:bg-gray-900/60 transition-all hover:border-gray-700 hover:translate-y-[-2px] hover:shadow-md h-[155px] flex flex-col glass-shine-effect">
                   {cardContent}
                 </div>
               )}

@@ -47,8 +47,28 @@
   page-break-before: always;
 }
 
+.jakarta-sans {
+  font-family: var(--font-jakarta-sans), Arial, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 .nimbus {
-  font-family: "Nimbus Sans", system-ui, sans-serif;
+  font-family: var(--font-nimbus-sans), Arial, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-inconsolata {
+  font-family: monospace;
 }
 
 @keyframes toast-slide-in {
@@ -71,4 +91,42 @@
     transform: translateY(10%);
     opacity: 0;
   }
+}
+
+@keyframes glass-shine {
+  0% {
+    left: -100%;
+  }
+  30% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.glass-shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shine-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+
+.glass-shine-effect:hover::before {
+  animation: glass-shine 3s ease-in-out infinite;
 }

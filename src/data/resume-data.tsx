@@ -20,7 +20,7 @@ import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { XIcon } from "@/components/icons/XIcon";
 
 export const RESUME_DATA = {
-  name: "Julian Amoah",
+  name: "Julian A. Amoah",
   initials: "JAA",
   location: "Accra, Ghana",
   locationLink: "https://www.google.com/maps/place/Accra",
@@ -81,7 +81,7 @@ export const RESUME_DATA = {
       start: "April 2025",
       end: "May 2025",
       description:
-        "Rebuilt ecommerce webapp with new features Technologies: TypeScript, Node.js, PostgresQL",
+        "Rebuilt ecommerce web-app with new features Technologies: TypeScript, Node.js, PostgresQL",
     },
     {
       company: "Enyata",
@@ -103,6 +103,7 @@ export const RESUME_DATA = {
     { name: "Amazon Web Services", url: "https://docs.aws.amazon.com" },
     { name: "React/Next.js", url: "https://nextjs.org/" },
     { name: "GraphQL", url: "https://graphql.org/" },
+    { name: "Redis", url: "https://redis.io/docs/latest/" },
     { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
     { name: "LINQ", url: "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/" },
     { name: "Entity Framework", url: "https://docs.microsoft.com/en-us/ef/" },
@@ -115,8 +116,8 @@ export const RESUME_DATA = {
   projects: [
     {
       title: "Plendify Marketplace",
-      techStack: ["TypeScript", "React", "Node.js", "PostgresQL"],
-      description: "Ecommerce website used to shop various products globally. Now with a new design and new features.",
+      techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
+      description: "Ecommerce web-app for shopping globally. Now with a new design and new features.",
       logo: MonitoLogo,
       link: {
         label: "plendify.com",
@@ -125,7 +126,7 @@ export const RESUME_DATA = {
     },
     {
       title: "MyPurplePay",
-      techStack: ["TypeScript", "React", "PostgresQL", "Node.js"],
+      techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
       description: "Mobile application for creating and managing savings groups. Now with loan management.",
       logo: MonitoLogo,
       link: {
@@ -134,9 +135,19 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Enyata Hackathon",
-      techStack: ["Typescript", "Node.js", "React"],
-      description: "Hackathon registration platform by Enyata Ghana.",
+      title: "Clearline",
+      techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
+      description: "Health maintenance organization (HMO) that provides various health insurance plans with comprehensive healthcare coverage options.",
+      logo: MonitoLogo,
+      link: {
+        label: "clearlinehmo.com",
+        href: "https://clearlinehmo.com",
+      },
+    },
+    {
+      title: "Build-A-Thon",
+      techStack: ["Typescript", "Node.js", "PostgreSQL", "Redis", "AWS"],
+      description: "Enyata Build-a-thon is a hackathon where tech creatives collaborate to build innovative solutions and compete for prizes.",
       logo: YearProgressLogo,
       link: {
         label: "hack.enyata.com",
@@ -145,7 +156,7 @@ export const RESUME_DATA = {
     },
     {
       title: "HRMS by Enyata",
-      techStack: ["TypeScript", "React", "GraphQL", "MongoDB", "Node.js"],
+      techStack: ["TypeScript", "Node.js", "MongoDB", "GraphQL", "AWS"],
       description: "SaaS for Human Resource Management.",
       logo: MonitoLogo,
       link: {
@@ -154,19 +165,19 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "FluxTribe",
-      techStack: ["Typescript", "Node.js", "React"],
-      description: "Social app for collaborating on goals",
+      title: "Fluxtribe",
+      techStack: ["Typescript", "Node.js", "PostgreSQL", "Redis", "GraphQL", "AWS"],
+      description: "Social app for collaborating on goals.",
       logo: YearProgressLogo,
       link: {
         label: "merifot.enyata.com",
-        href: "https://merifot.enyata.com",
+        href: "https://merifot.enyata.com/auth/create-account",
       },
     },
     {
       title: "Campus Care",
-      techStack: ["TypeScript", "React", "PostgresQL", "Node.js"],
-      description: "Platform for managing student health.",
+      techStack: ["Typescript", "Node.js", "PostgreSQL"],
+      description: "Platform for managing student health. Including a dashboard for students and physicians.",
       logo: MonitoLogo,
       link: {
         label: "campus-care.onrender.com",
@@ -175,8 +186,8 @@ export const RESUME_DATA = {
     },
     {
       title: "Digital Devhub",
-      techStack: ["C#", ".NET Core", "React", "PostgresQL"],
-      description: "Website for onboarding to train Digital Devhub Scrum Masters.",
+      techStack: ["C#", ".NET Core", "PostgresQL", "Redis"],
+      description: "Website for onboarding and training Digital Devhub Scrum Masters.",
       logo: MonitoLogo,
       link: {
         label: "digital-devhub.onrender.com",

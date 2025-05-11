@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter } from "next/font/google";
+import { Inconsolata } from "next/font/google";
+import { nimbusSans, jakartaSans } from './fonts';
 import { SiteLayout } from "@/components/site-layout";
 import { CommandMenu } from "@/components/command-menu";
 import { RESUME_DATA } from "@/data/resume-data";
@@ -12,7 +13,7 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "Julian Amoah",
-  description: "Portfolio and personal website of Julian Amoah",
+  description: "Portfolio and personal website of Julian A. Amoah",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -31,10 +32,14 @@ export const metadata: Metadata = {
   }
 };
 
-// If loading a variable font, you don't need to specify the font weight
-const inter = Inter({
+// Define a variable for the font
+const fontSansClassName = "font-sans";
+
+// Initialize Inconsolata font for specific elements
+const inconsolata = Inconsolata({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-inconsolata",
 });
 
 export default function RootLayout({
@@ -43,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={`${fontSansClassName} ${inconsolata.variable} ${nimbusSans.variable} ${jakartaSans.variable}`}>
       <head>
         {/* Force favicon reload by adding version parameter */}
         <link rel="icon" href="/favicon.ico?v=2" />
@@ -51,6 +56,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" sizes="180x180" />
         <link rel="manifest" href="/site.webmanifest?v=2" />
+
+
       </head>
       <body>
         <ToastProvider>

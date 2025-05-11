@@ -126,7 +126,8 @@ export const CommandMenu = ({ links }: Props) => {
                   title: "Copied!",
                   description: "Email address copied to clipboard",
                   variant: "success",
-                  duration: 3000
+                  duration: 3000,
+                  loading: true,
                 });
               }}
               className="text-gray-300 hover:bg-gray-900 hover:text-white"
@@ -150,7 +151,8 @@ export const CommandMenu = ({ links }: Props) => {
                   title: "Copied!",
                   description: "Phone number copied to clipboard",
                   variant: "success",
-                  duration: 3000
+                  duration: 3000,
+                  loading: true,
                 });
               }}
               className="text-gray-300 hover:bg-gray-900 hover:text-white"

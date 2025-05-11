@@ -14,7 +14,7 @@ export default function WorkPage() {
         <a href="https://plendify.com" target="_blank" className="text-white hover:text-gray-300">
           Plendify
         </a>
-        {" "}as a Backend Engineer, where I rebuilt their ecommerce webapp with new features
+        {" "}as a Backend Engineer, where I rebuilt their ecommerce web-app with new features
         using {" "}
         <a href={"https://www.typescriptlang.org/"} target="_blank" className="text-white">TypeScript</a>,{" "}
         <a href={"https://nodejs.org/"} target="_blank" className="text-white">Node.js</a>, and{" "}

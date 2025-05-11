@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="py-8 text-sm text-gray-600">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
-          <p>© {new Date().getFullYear()} {RESUME_DATA.name}</p>
+          <p>© {new Date().getFullYear()} {RESUME_DATA.name}.</p>
         </div>
         
         <div className="flex items-center space-x-3">
