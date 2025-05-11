@@ -56,8 +56,8 @@ export const RESUME_DATA = {
       badges: ["Contract"],
       title: "Backend Software Engineer",
       logo: ParabolLogo,
-      start: "April 2025",
-      end: "May 2025",
+      start: "2025",
+      end: "Present",
       description:
         "Rebuilt ecommerce web-app with new features Technologies: TypeScript, Node.js, PostgreSQL",
     },
