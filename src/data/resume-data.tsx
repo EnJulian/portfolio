@@ -19,6 +19,7 @@ export const RESUME_DATA = {
   avatarUrl: "",
     // "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1724425353/36317786_hkw9f9.png",
   personalWebsiteUrl: "https://enjulian.vercel.app",
+  resumeUrl: "/Curriculum_Vitae_BSE_Julian.pdf",
   contact: {
     email: "envern.julian@gmail.com",
     tel: "+233 553220656",
@@ -51,7 +52,7 @@ export const RESUME_DATA = {
   work: [
     {
       company: "Plendify",
-      link: "https://plendify.com",
+      link: "https://www.linkedin.com/company/plendify/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3B8sYnlGc6SXSvIlvv8XZTLw%3D%3D",
       badges: ["Contract"],
       title: "Backend Software Engineer",
       logo: ParabolLogo,
@@ -62,7 +63,7 @@ export const RESUME_DATA = {
     },
     {
       company: "Enyata",
-      link: "https://enyata.com",
+      link: "https://www.linkedin.com/company/enyata/",
       badges: ["Full Time"],
       title: "Backend Software Engineer",
       logo: ParabolLogo,
@@ -178,7 +179,7 @@ export const RESUME_DATA = {
       title: "Portfolio Website",
       techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
       description: "My personal portfolio website showcasing my projects and skills.",
-      badgeIconTypes: ["clock"],
+      badgeIconTypes: ["none"],
       logo: JarockiMeLogo,
       link: {
         label: "enjulian.vercel.app",

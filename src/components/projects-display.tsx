@@ -29,7 +29,24 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const filterRef = useRef<HTMLDivElement>(null);
+  
+  // Check if we're on mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   // Get all unique tech stack items across all projects
   const allProjects = [...projects, ...personalProjects];
@@ -87,7 +104,8 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
           </button>
         </div>
         
-        <div className="relative" ref={filterRef}>
+        {/* Filter by Tech - Only visible on sm screens and above */}
+        <div className="relative hidden sm:block" ref={filterRef}>
           <button
             onClick={() => setIsFilterOpen(!isFilterOpen)}
             className="flex items-center px-3 py-1 text-xs rounded-md bg-gray-800 hover:bg-gray-700 transition-colors"
@@ -130,7 +148,7 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
       </div>
 
       {selectedTechs.length > 0 && (
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="hidden sm:flex flex-wrap items-center gap-2">
           <span className="text-xs text-gray-400">Filtered by:</span>
           {selectedTechs.map(tech => (
             <span 
@@ -199,15 +217,18 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
                     {project.techStack.map((tech) => (
                       <span 
                         key={tech} 
-                        className={`text-xs px-1.5 py-0.5 rounded cursor-pointer transition-colors ${
+                        className={`text-xs px-1.5 py-0.5 rounded transition-colors ${
                           selectedTechs.includes(tech) 
                             ? 'bg-gray-700 text-white' 
                             : 'bg-black text-gray-500 hover:bg-gray-800 hover:text-gray-300'
-                        }`}
+                        } ${!isMobile ? 'cursor-pointer' : ''}`}
                         onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          toggleTech(tech);
+                          // Only allow filtering on non-mobile screens
+                          if (!isMobile) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            toggleTech(tech);
+                          }
                         }}
                       >
                         {tech}

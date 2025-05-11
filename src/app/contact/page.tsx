@@ -79,6 +79,7 @@ export default function ContactPage() {
           href="/Curriculum_Vitae_BSE_Julian.pdf" 
           text="Download Resume" 
           icon="download" 
+          download={true}
         />
       </div>
     </div>
