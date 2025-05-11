@@ -42,7 +42,7 @@ const FloatingButton = () => {
   return (
     <>
       <GlowingButton
-        className="fixed bottom-12 right-4 h-12 w-12 rounded-full bg-gray-800 shadow-md transition-all duration-200 transform hover:scale-105 hover:bg-gray-700 focus:outline-none border border-gray-700"
+        className="fixed bottom-12 right-4 h-12 w-12 rounded-full bg-gray-800 shadow-md transition-all duration-200 transform hover:scale-105 hover:bg-gray-700 focus:outline-none border border-gray-700 hidden md:flex"
         onClick={handleClick}
       >
         <div className="h-full w-full flex items-center justify-center">

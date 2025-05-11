@@ -61,7 +61,7 @@ export const CommandMenu = ({ links }: Props) => {
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 border-t border-gray-800 p-1 text-center text-xs bg-black text-gray-400 print:hidden">
+      <div className="fixed bottom-0 left-0 right-0 border-t border-gray-800 p-1 text-center text-xs bg-black text-gray-400 print:hidden hidden md:block">
         Press{" "}
         <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border border-gray-700 bg-gray-900 px-1.5 font-mono text-xs text-gray-300 opacity-100">
           <span className="text-xs">⌘</span>K

@@ -1,32 +1,20 @@
-import ConsultlyLogo from "../images/logos/consultly.svg";
-import AmbitLogo from "../images/logos/ambit.png";
-import BarepapersLogo from "../images/logos/barepapers.svg";
-import BimLogo from "../images/logos/bim.png";
-import CDGOLogo from "../images/logos/cdgo.png";
-import ClevertechLogo from "../images/logos/clevertech.png";
-import EvercastLogo from "../images/logos/evercast.svg";
-import Howdy from "../images/logos/howdy.png";
 import JarockiMeLogo from "../images/logos/jarocki.svg";
-import JojoMobileLogo from "../images/logos/jojomobile.png";
 import MonitoLogo from "../images/logos/monito.svg";
-import MobileVikingsLogo from "../images/logos/mv.png";
 import NSNLogo from "../images/logos/nsn.svg";
 import ParabolLogo from "../images/logos/parabol.svg";
-import TastyCloudLogo from "../images/logos/tastycloud.png";
 import YearProgressLogo from "../images/logos/yearprogress.svg";
-import Minimal from "../images/logos/minimal.svg";
 import { GitHubIcon } from "@/components/icons/GitHubIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { XIcon } from "@/components/icons/XIcon";
+import { ClockIcon } from "@/components/icons/ClockIcon";
 
 export const RESUME_DATA = {
   name: "Julian A. Amoah",
   initials: "JAA",
   location: "Accra, Ghana",
   locationLink: "https://www.google.com/maps/place/Accra",
-  // about: "Software development thrills me.",
   summary:
-    "I'm a Backend Software Engineer with a proven ability to turn concepts into high-performance, fully realized backend solutions. I specialize in C#, .NET Core, TypeScript, Node.js and Python focusing on scalability, reliability, and clean architecture."
+    "I'm a developer with a proven ability to turn concepts into high-performance, fully realized backend solutions. I specialize in C#, .NET Core, TypeScript, Node.js and Python focusing on scalability, reliability, and clean architecture."
 ,
   avatarUrl: "",
     // "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1724425353/36317786_hkw9f9.png",
@@ -61,17 +49,6 @@ export const RESUME_DATA = {
     },
   ],
   work: [
-    // {
-    //   company: "Hubtel",
-    //   link: "https://hubtel.com",
-    //   badges: ["On-Site"],
-    //   title: "Lead Backend Engineer",
-    //   logo: ParabolLogo,
-    //   start: "2024",
-    //   end: "Present",
-    //   description:
-    //     "Built highly scalable applications. Contributed to the growth and success of Hubtel, recently recognized as the 30th fastest-growing company in Africa. Technologies: C#, PostgresQL, Kafka, AKKA.NET",
-    // },
     {
       company: "Plendify",
       link: "https://plendify.com",
@@ -81,7 +58,7 @@ export const RESUME_DATA = {
       start: "April 2025",
       end: "May 2025",
       description:
-        "Rebuilt ecommerce web-app with new features Technologies: TypeScript, Node.js, PostgresQL",
+        "Rebuilt ecommerce web-app with new features Technologies: TypeScript, Node.js, PostgreSQL",
     },
     {
       company: "Enyata",
@@ -92,7 +69,7 @@ export const RESUME_DATA = {
       start: "2023",
       end: "2025",
       description:
-        "Implemented new features, still developing applications. Technologies: TypeScript, GraphQL, Node.js, MongoDB, PostgresQL",
+        "Implemented new features, still developing applications. Technologies: TypeScript, GraphQL, Node.js, MongoDB, PostgreSQL",
     },
   ],
   skills: [
@@ -100,7 +77,7 @@ export const RESUME_DATA = {
     { name: ".NET Core", url: "https://dotnet.microsoft.com/" },
     { name: "TypeScript", url: "https://www.typescriptlang.org/" },
     { name: "Node.js", url: "https://nodejs.org/" },
-    { name: "Amazon Web Services", url: "https://docs.aws.amazon.com" },
+    { name: "AWS", url: "https://docs.aws.amazon.com" },
     { name: "React/Next.js", url: "https://nextjs.org/" },
     { name: "GraphQL", url: "https://graphql.org/" },
     { name: "Redis", url: "https://redis.io/docs/latest/" },
@@ -123,6 +100,7 @@ export const RESUME_DATA = {
         label: "plendify.com",
         href: "https://plendify.com",
       },
+      // githubLink: "https://github.com/EnJulian/plendify-marketplace",
     },
     {
       title: "MyPurplePay",
@@ -137,7 +115,7 @@ export const RESUME_DATA = {
     {
       title: "Clearline",
       techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
-      description: "Health maintenance organization (HMO) that provides various health insurance plans with comprehensive healthcare coverage options.",
+      description: "Health maintenance organization (HMO) that provides various health insurance plans.",
       logo: MonitoLogo,
       link: {
         label: "clearlinehmo.com",
@@ -146,8 +124,8 @@ export const RESUME_DATA = {
     },
     {
       title: "Build-A-Thon",
-      techStack: ["Typescript", "Node.js", "PostgreSQL", "Redis", "AWS"],
-      description: "Enyata Build-a-thon is a hackathon where tech creatives collaborate to build innovative solutions and compete for prizes.",
+      techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
+      description: "A hackathon where tech creatives collaborate to build innovative solutions and compete for prizes.",
       logo: YearProgressLogo,
       link: {
         label: "hack.enyata.com",
@@ -166,7 +144,7 @@ export const RESUME_DATA = {
     },
     {
       title: "Fluxtribe",
-      techStack: ["Typescript", "Node.js", "PostgreSQL", "Redis", "GraphQL", "AWS"],
+      techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "GraphQL", "AWS"],
       description: "Social app for collaborating on goals.",
       logo: YearProgressLogo,
       link: {
@@ -176,7 +154,7 @@ export const RESUME_DATA = {
     },
     {
       title: "Campus Care",
-      techStack: ["Typescript", "Node.js", "PostgreSQL"],
+      techStack: ["TypeScript", "Node.js", "PostgreSQL"],
       description: "Platform for managing student health. Including a dashboard for students and physicians.",
       logo: MonitoLogo,
       link: {
@@ -186,13 +164,51 @@ export const RESUME_DATA = {
     },
     {
       title: "Digital Devhub",
-      techStack: ["C#", ".NET Core", "PostgresQL", "Redis"],
+      techStack: ["C#", ".NET Core", "PostgreSQL", "Redis"],
       description: "Website for onboarding and training Digital Devhub Scrum Masters.",
       logo: MonitoLogo,
       link: {
         label: "digital-devhub.onrender.com",
         href: "https://digitaldevhub.org",
       },
+    },
+  ],
+  personalProjects: [
+    {
+      title: "Portfolio Website",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      description: "My personal portfolio website showcasing my projects and skills.",
+      badgeIconTypes: ["clock"],
+      logo: JarockiMeLogo,
+      link: {
+        label: "enjulian.vercel.app",
+        href: "https://enjulian.vercel.app",
+      },
+      githubLink: "https://github.com/EnJulian/portfolio",
+    },
+    {
+      title: "Task Manager API",
+      techStack: ["C#", ".NET Core", "Entity Framework", "PostgreSQL"],
+      description: "A RESTful API for managing tasks and projects with user authentication.",
+      badgeIconTypes: ["clock"],
+      logo: NSNLogo,
+      link: {
+        label: "github.com/EnJulian/TaskManagerAPI",
+        href: "https://github.com/EnJulian/TaskManagerAPI",
+      },
+      githubLink: "https://github.com/EnJulian/TaskManagerAPI",
+    },
+    {
+      title: "Weather Dashboard",
+      techStack: ["React", "JavaScript", "OpenWeather API"],
+      description: "A weather dashboard that displays current weather and forecasts for multiple locations.",
+      badgeIconTypes: ["clock"],
+      logo: YearProgressLogo,
+      link: {
+        label: "github.com/EnJulian/WeatherDashboard",
+        href: "https://github.com/EnJulian/WeatherDashboard",
+      },
+      githubLink: "https://github.com/EnJulian/WeatherDashboard",
     },
   ],
 } as const;

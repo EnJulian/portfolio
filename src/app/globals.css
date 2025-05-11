@@ -71,6 +71,17 @@
   font-family: monospace;
 }
 
+.mitchell-font {
+  font-family: var(--font-mitchell), Arial, sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* Adjustments to make Archivo Black look more like Nimbus Sans Bold Extended */
+  font-stretch: expanded;
+  line-height: 1.2;
+}
+
 @keyframes toast-slide-in {
   from {
     transform: translateY(-100%);
