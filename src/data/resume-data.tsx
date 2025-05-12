@@ -178,7 +178,7 @@ export const RESUME_DATA = {
     {
       title: "Portfolio Website",
       techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-      description: "My personal portfolio website showcasing my projects and skills.",
+      description: "My personal portfolio website.",
       badgeIconTypes: ["none"],
       logo: JarockiMeLogo,
       link: {
@@ -186,6 +186,18 @@ export const RESUME_DATA = {
         href: "https://enjulian.vercel.app",
       },
       githubLink: "https://github.com/EnJulian/portfolio",
+    },
+    {
+      title: "Nodejs Typescript Template",
+      techStack: ["TypeScript", "Node.js", "PostgreSQL"],
+      description: "A scalable and modular Node.js TypeScript API template for quickly bootstrapping new projects.",
+      badgeIconTypes: ["none"],
+      logo: JarockiMeLogo,
+      link: {
+        label: "github.com/EnJulian/nodejs-typescript-template",
+        href: "",
+      },
+      githubLink: "https://github.com/EnJulian/nodejs-typescript-template",
     },
     {
       title: "Task Manager API",

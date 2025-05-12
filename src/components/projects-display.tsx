@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { FiExternalLink, FiFilter, FiInfo, FiX } from "react-icons/fi";
+import { FiExternalLink, FiFilter, FiInfo, FiX, FiCode } from "react-icons/fi";
 import { ClockIcon } from "@/components/icons/ClockIcon";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -12,7 +12,7 @@ type Project = {
   logo: any;
   link?: {
     label: string;
-    href: string;
+    href?: string;
   };
   githubLink?: string;
   badges?: readonly string[];
@@ -171,9 +171,11 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 pb-6">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project) => {
-              // Determine if project has a link
-              const hasLink = "link" in project && project.link?.href;
-              const projectUrl = hasLink ? project.link?.href : "#";
+              // Determine if project has a link or GitHub link
+              const hasRegularLink = "link" in project && project.link?.href;
+              const hasGithubLink = project.githubLink && project.githubLink.length > 0;
+              const hasAnyLink = hasRegularLink || hasGithubLink;
+              const projectUrl = hasRegularLink ? project.link?.href : (hasGithubLink ? project.githubLink : "#");
               const isExpanded = expandedProject === project.title;
 
               // Create card content
@@ -252,10 +254,10 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
                       href={projectUrl} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`block border border-gray-800 bg-gradient-to-b from-gray-800/20 to-gray-900/30 rounded-md p-3 hover:bg-gray-900/60 transition-all hover:border-gray-700 hover:translate-y-[-2px] hover:shadow-md ${isExpanded ? 'min-h-[155px]' : 'h-[155px]'} flex flex-col relative glass-shine-effect ${hasLink ? 'cursor-pointer' : 'cursor-default'}`}
+                      className={`block border border-gray-800 bg-gradient-to-b from-gray-800/20 to-gray-900/30 rounded-md p-3 hover:bg-gray-900/60 transition-all hover:border-gray-700 hover:translate-y-[-2px] hover:shadow-md ${isExpanded ? 'min-h-[155px]' : 'h-[155px]'} flex flex-col relative glass-shine-effect ${hasAnyLink ? 'cursor-pointer' : 'cursor-default'}`}
                       onClick={(e) => {
                         // If no link, prevent default behavior
-                        if (!hasLink) {
+                        if (!hasAnyLink) {
                           e.preventDefault();
                           setExpandedProject(isExpanded ? null : project.title);
                           return;
@@ -286,13 +288,13 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
                             }}
                             className={`text-gray-500 hover:text-gray-300 transition-colors ${!project.githubLink ? 'cursor-default' : 'cursor-pointer'}`}
                           >
-                            <FiInfo size={16} />
+                            <FiCode size={16} />
                           </a>
                           <div className="absolute mt-1 right-0 opacity-0 group-hover/info:opacity-100 bg-black border border-gray-800 text-xs text-white px-2 py-1 rounded whitespace-nowrap z-[999] pointer-events-none transition-opacity duration-200">
                             {project.githubLink ? "View Source Code" : "No Source Code Available"}
                           </div>
                         </div>
-                        {hasLink && (
+                        {hasRegularLink && (
                           <div className="relative group/link">
                             <span className="text-gray-500 group-hover:text-gray-300 transition-colors">
                               <FiExternalLink size={16} />
