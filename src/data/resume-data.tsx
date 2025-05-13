@@ -68,7 +68,7 @@ export const RESUME_DATA = {
       title: "Backend Software Engineer",
       logo: ParabolLogo,
       start: "2023",
-      end: "2025",
+      end: "Present",
       description:
         "Implemented new features, still developing applications. Technologies: TypeScript, GraphQL, Node.js, MongoDB, PostgreSQL",
     },

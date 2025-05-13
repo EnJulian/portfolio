@@ -29,11 +29,11 @@ export default function AboutPage() {
         </p>
         
         <p>
-          Today I spend most of my time doing research {" "}
+          Today I spend my time doing research {" "}
           {/*<a href="https://enyata.com" target="_blank" className="text-white hover:text-gray-300">*/}
           {/*  Enyata*/}
           {/*</a>*/}
-          and building templates for my next high-performance application.
+          and building templates and APIs for my next high-performance application.
         </p>
         
         <p>I am passionate about crafting clean, robust code that drives performance and reliability in complex systems.

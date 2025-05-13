@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     <div className="space-y-6">
       <div className="border-b border-gray-800 pb-4">
         <p className="text-gray-300">
-          Selected work across e-commerce, fintech, healthcare, and enterprise solutions.
+          Exploring problems through code—a selection of work I’ve contributed to or built while learning and solving problems in different industries.
         </p>
       </div>
 

@@ -11,7 +11,7 @@ export default function WorkPage() {
   return (
     <div className="space-y-5">
       <p>
-        I recently worked at {" "}
+        I recently joined {" "}
         <a href="https://plendify.com" target="_blank" className="text-white hover:text-gray-300">
           Plendify
         </a>
@@ -23,10 +23,10 @@ export default function WorkPage() {
       </p>
 
       <p>
-        Before that, I worked as the same role at {" "}
+        Before that, I joined {" "}
         <a href="https://enyata.com" target="_blank" className="text-white hover:text-gray-300">
           Enyata
-        </a>
+        </a> as the same role
         {", "}
         where I developed applications using{" "}
         <a href={"https://www.typescriptlang.org/"} target={"_blank"} className="text-white">TypeScript</a>,{" "}
