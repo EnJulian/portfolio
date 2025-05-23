@@ -5,7 +5,7 @@ import ParabolLogo from "../images/logos/parabol.svg";
 import YearProgressLogo from "../images/logos/yearprogress.svg";
 import { GitHubIcon } from "@/components/icons/GitHubIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
-import { XIcon } from "@/components/icons/XIcon";
+import { MastodonIcon } from "@/components/icons/MastodonIcon";
 import { ClockIcon } from "@/components/icons/ClockIcon";
 
 export const RESUME_DATA = {
@@ -35,9 +35,9 @@ export const RESUME_DATA = {
         icon: LinkedInIcon,
       },
       {
-        name: "X",
-        url: "https://x.com/lisentwig",
-        icon: XIcon,
+        name: "Mastodon",
+        url: "https://mastodon.social/@enjulian",
+        icon: MastodonIcon,
       },
     ],
   },
