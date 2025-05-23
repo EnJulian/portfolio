@@ -30,7 +30,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           {/* Logo and Name header for mobile */}
           <div className="w-full flex justify-between items-center px-4 py-3 sm:p-6 md:hidden sticky top-0 z-20 bg-black border-b border-gray-800">
             <div className="inline-block">
-              <Link href="/about" className="inline-flex">
+              <Link href="/about" className="inline-flex comet-glow">
                 <Image
                   src="/Julian-Amoah-Logo.png"
                   alt="Julian Amoah Logo"
@@ -42,7 +42,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
               </Link>
             </div>
             <h1 className="jakarta-sans uppercase tracking-wide text-sm sm:text-base">
-              <Link href="/" className="hover:text-gray-300 transition-colors">
+              <Link href="/">
                 {RESUME_DATA.name}
               </Link>
             </h1>
@@ -52,7 +52,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           {/* Sidebar for larger screens - sticky position */}
           <aside className="md:w-1/4 p-4 sm:p-6 md:sticky md:top-0 md:z-10 self-start">
             <div className="md:mb-10 hidden md:block">
-              <Link href="/about" className="inline-flex">
+              <Link href="/about" className="inline-flex comet-glow">
                 <Image
                   src="/Julian-Amoah-Logo.png"
                   alt="Julian Amoah Logo"
@@ -94,13 +94,13 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           <main className="md:w-3/4 p-4 sm:p-6 overflow-y-visible">
             {/* Name header for larger screens */}
             <div className="hidden md:block mb-8">
-              <h1 className="text-xl font-bold tracking-wide text-white jakarta-sans">
+              <h1 className="text-xl font-bold tracking-wide text-white mitchell-font">
                 {RESUME_DATA.name.toUpperCase()}
               </h1>
             </div>
 
             {/* Page content with extra bottom padding to show scrollability */}
-            <div className="text-gray-400 text-base sm:text-sm pb-20 sm:pb-16 md:pb-12">
+            <div className="text-gray-400 text-[1.08rem] sm:text-[0.972rem] pb-20 sm:pb-16 md:pb-12">
               {children}
             </div>
 

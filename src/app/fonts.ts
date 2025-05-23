@@ -1,24 +1,23 @@
-import { Plus_Jakarta_Sans, Inter, Archivo_Black } from 'next/font/google'
+import { Space_Grotesk, Montserrat, Archivo } from 'next/font/google'
 
-export const jakartaSans = Plus_Jakarta_Sans({
+export const jakartaSans = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-jakarta-sans',
   display: 'swap',
 })
 
-export const nimbusSans = Inter({
+export const nimbusSans = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-nimbus-sans',
   display: 'swap',
 })
 
-// Temporary replacement for Mitchell Hashimoto's Nimbus Sans Bold Extended font
-// Using Archivo Black which has similar characteristics to Nimbus Sans Bold Extended
-export const mitchellFont = Archivo_Black({
+// Using Archivo for headings and important text elements
+export const mitchellFont = Archivo({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-mitchell',
   display: 'swap',
 })

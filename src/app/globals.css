@@ -49,20 +49,20 @@
 
 .jakarta-sans {
   font-family: var(--font-jakarta-sans), Arial, sans-serif;
-  font-size: 17px;
-  font-weight: bold;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 .nimbus {
   font-family: var(--font-nimbus-sans), Arial, sans-serif;
-  font-size: 17px;
-  font-weight: bold;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -74,12 +74,10 @@
 .mitchell-font {
   font-family: var(--font-mitchell), Arial, sans-serif;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-weight: 600;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* Adjustments to make Archivo Black look more like Nimbus Sans Bold Extended */
-  font-stretch: expanded;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 @keyframes toast-slide-in {
@@ -140,4 +138,76 @@
 
 .glass-shine-effect:hover::before {
   animation: glass-shine 3s ease-in-out infinite;
+}
+
+/* Comet-inspired styles */
+.comet-card {
+  background: linear-gradient(135deg, hsl(222, 47%, 11%), hsl(220, 40%, 8%));
+  border: 1px solid rgba(99, 179, 237, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.comet-card:hover {
+  border-color: rgba(99, 179, 237, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(66, 153, 225, 0.15);
+  transform: translateY(-2px);
+}
+
+.comet-glow {
+  position: relative;
+}
+
+.comet-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 20px rgba(66, 153, 225, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.comet-glow:hover::after {
+  opacity: 1;
+}
+
+.comet-link {
+  position: relative;
+  color: hsl(210, 100%, 66%);
+  transition: color 0.2s ease;
+}
+
+.comet-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: hsl(210, 100%, 66%);
+  transition: width 0.3s ease;
+}
+
+.comet-link:hover {
+  color: hsl(114, 100%, 67%);
+}
+
+.comet-link:hover::after {
+  width: 100%;
+}
+
+/* White links with hover effect */
+a {
+  color: white;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #d1d5db; /* gray-300 from Tailwind */
 }

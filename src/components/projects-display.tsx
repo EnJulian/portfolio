@@ -182,7 +182,7 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
               const cardContent = (
                 <>
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-base font-medium text-white group-hover:text-gray-200 jakarta-sans flex items-center">
+                    <h3 className="text-base font-medium text-white group-hover:text-gray-200 mitchell-font flex items-center">
                       {project.title}
                       {project.badgeIconTypes?.includes("clock") && (
                         <div className="ml-1.5 text-amber-400 relative inline-block group/clock">
