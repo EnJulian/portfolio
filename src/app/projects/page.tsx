@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <div className="space-y-6">
-      <div className="border-b border-gray-800 pb-4">
-        <p className="text-gray-300">
+      <div>
+        <p className="border-b border-gray-800 pb-4">
           Exploring problems through code—a selection of work I’ve contributed to or built while learning and solving problems in different industries.
         </p>
       </div>
@@ -21,7 +21,7 @@ export default function ProjectsPage() {
         projects={RESUME_DATA.projects} 
         personalProjects={RESUME_DATA.personalProjects} 
       />
-      
+
       <div className="border-t border-gray-800 pt-6 mt-8">
         <MobileCTA href="/contact" text="Get in touch" />
       </div>

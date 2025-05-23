@@ -12,32 +12,32 @@ export default function WorkPage() {
     <div className="space-y-5">
       <p>
         I recently joined {" "}
-        <a href="https://plendify.com" target="_blank" className="text-white hover:text-gray-300">
+        <a href="https://plendify.com" target="_blank">
           Plendify
         </a>
         {" "}as a Backend Engineer, where I rebuilt their ecommerce web-app with new features
         using {" "}
-        <a href={"https://www.typescriptlang.org/"} target="_blank" className="text-white">TypeScript</a>,{" "}
-        <a href={"https://nodejs.org/"} target="_blank" className="text-white">Node.js</a>, and{" "}
-        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank" className="text-white">PostgreSQL</a>.
+        <a href={"https://www.typescriptlang.org/"} target="_blank">TypeScript</a>,{" "}
+        <a href={"https://nodejs.org/"} target="_blank">Node.js</a>, and{" "}
+        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank">PostgreSQL</a>.
       </p>
 
       <p>
         Before that, I joined {" "}
-        <a href="https://enyata.com" target="_blank" className="text-white hover:text-gray-300">
+        <a href="https://enyata.com" target="_blank">
           Enyata
         </a> as the same role
         {", "}
         where I developed applications using{" "}
-        <a href={"https://www.typescriptlang.org/"} target={"_blank"} className="text-white">TypeScript</a>,{" "}
-        <a href={"https://graphql.org/"} target={"_blank"} className="text-white">GraphQL</a>,{" "}
-        <a href={"https://nodejs.org/"} target={"_blank"} className="text-white">Node.js</a>,{" "}
-        <a href={"https://www.mongodb.com/docs/"} target={"_blank"} className="text-white">MongoDB</a>, and{" "}
-        <a href={"https://www.postgresql.org/docs/current/index.html"} target={"_blank"} className="text-white">PostgreSQL</a>.
+        <a href={"https://www.typescriptlang.org/"} target={"_blank"}>TypeScript</a>,{" "}
+        <a href={"https://graphql.org/"} target={"_blank"}>GraphQL</a>,{" "}
+        <a href={"https://nodejs.org/"} target={"_blank"}>Node.js</a>,{" "}
+        <a href={"https://www.mongodb.com/docs/"} target={"_blank"}>MongoDB</a>, and{" "}
+        <a href={"https://www.postgresql.org/docs/current/index.html"} target={"_blank"}>PostgreSQL</a>.
       </p>
       
       <div className="mt-8 pt-4 border-t border-gray-800">
-        <h2 className="text-lg font-semibold mb-4 text-white">Work History</h2>
+        <h2 className="text-lg font-semibold mb-4 text-white mitchell-font">Work History</h2>
         
         <div className="space-y-6">
           {RESUME_DATA.work.map((work) => (
@@ -47,7 +47,6 @@ export default function WorkPage() {
                   <a
                     href={work.link}
                     target="_blank"
-                    className="text-white hover:text-gray-300"
                   >
                     {work.company}
                   </a>
@@ -68,7 +67,7 @@ export default function WorkPage() {
                   href={work.link} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-md bg-gray-800 text-white hover:bg-gray-700 transition-colors"
+                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-md bg-gray-800 hover:bg-gray-700 transition-colors"
                 >
                   Visit {work.company}
                   <svg className="ml-1.5 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
