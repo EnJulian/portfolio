@@ -29,14 +29,10 @@ export default function AboutPage() {
         </p>
         
         <p>
-          Today I spend my time doing research {" "}
-          {/*<a href="https://enyata.com" target="_blank" className="text-white hover:text-gray-300">*/}
-          {/*  Enyata*/}
-          {/*</a>*/}
-          and building templates and APIs for my next high-performance application.
-        </p>
-        
-        <p>I am passionate about crafting clean, robust code that drives performance and reliability in complex systems.
+          Today I spend my time building obscure digital tools like{" "}
+          <a href="https://github.com/EnJulian/shadowbox" target="_blank" className="text-white hover:text-gray-300">
+            shadowbox.
+          </a>
         </p>
       </div>
       <div className="mt-6 pt-4">

@@ -52,25 +52,25 @@ export const RESUME_DATA = {
   work: [
     {
       company: "Plendify",
-      link: "https://www.linkedin.com/company/plendify/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3B8sYnlGc6SXSvIlvv8XZTLw%3D%3D",
+      link: "https://www.plendify.com",
       badges: ["Contract"],
       title: "Backend Software Engineer",
       logo: ParabolLogo,
       start: "2025",
       end: "Present",
       description:
-        "Rebuilt ecommerce web-app with new features Technologies: TypeScript, Node.js, PostgreSQL",
+        "Rebuilt ecommerce web-app with new features.",
     },
     {
       company: "Enyata",
-      link: "https://www.linkedin.com/company/enyata/",
+      link: "https://www.enyata.com",
       badges: ["Full Time"],
       title: "Backend Software Engineer",
       logo: ParabolLogo,
       start: "2023",
       end: "Present",
       description:
-        "Implemented new features, still developing applications. Technologies: TypeScript, GraphQL, Node.js, MongoDB, PostgreSQL",
+        "Implemented new features, still developing applications.",
     },
   ],
   skills: [
@@ -78,18 +78,12 @@ export const RESUME_DATA = {
     { name: ".NET Core", url: "https://dotnet.microsoft.com/" },
     { name: "TypeScript", url: "https://www.typescriptlang.org/" },
     { name: "Node.js", url: "https://nodejs.org/" },
-    { name: "AWS", url: "https://docs.aws.amazon.com" },
+    { name: "Python", url: "https://www.python.org/doc/" },
     { name: "React/Next.js", url: "https://nextjs.org/" },
+    { name: "AWS", url: "https://docs.aws.amazon.com" },
     { name: "GraphQL", url: "https://graphql.org/" },
     { name: "Redis", url: "https://redis.io/docs/latest/" },
-    { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-    { name: "LINQ", url: "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/" },
-    { name: "Entity Framework", url: "https://docs.microsoft.com/en-us/ef/" },
     { name: "PostgreSQL", url: "https://www.postgresql.org/docs/current/index.html" },
-    { name: "Amazon Route 53", url: "https://docs.aws.amazon.com/route53/" },
-    { name: "Amazon CloudFront", url: "https://docs.aws.amazon.com/cloudfront/" },
-    { name: "Amazon EC2", url: "https://docs.aws.amazon.com/ec2/?icmpid=docs_homepage_featuredsvcs" },
-    { name: "Amazon S3", url: "https://docs.aws.amazon.com/s3/" },
   ],
   projects: [
     {
@@ -176,8 +170,20 @@ export const RESUME_DATA = {
   ],
   personalProjects: [
     {
+      title: "Shadowbox",
+      techStack: ["Python"],
+      description: "Command line tool for ripping audio from various sources, converting to high-def formats and injecting metadata + album art.",
+      badgeIconTypes: ["none"],
+      logo: JarockiMeLogo,
+      link: {
+        label: "github.com/lsnen/shadowbox",
+        href: "",
+      },
+      githubLink: "https://github.com/lsnen/shadowbox",
+    },
+    {
       title: "Portfolio Website",
-      techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      techStack: ["React/Next.js", "TypeScript"],
       description: "My personal portfolio website.",
       badgeIconTypes: ["none"],
       logo: JarockiMeLogo,
@@ -201,7 +207,7 @@ export const RESUME_DATA = {
     },
     {
       title: "Task Manager API",
-      techStack: ["C#", ".NET Core", "Entity Framework", "PostgreSQL"],
+      techStack: ["C#", ".NET Core", "PostgreSQL"],
       description: "A RESTful API for managing tasks and projects with user authentication.",
       badgeIconTypes: ["clock"],
       logo: NSNLogo,
@@ -213,7 +219,7 @@ export const RESUME_DATA = {
     },
     {
       title: "Weather Dashboard",
-      techStack: ["React", "JavaScript", "OpenWeather API"],
+      techStack: ["React/Next.js"],
       description: "A weather dashboard that displays current weather and forecasts for multiple locations.",
       badgeIconTypes: ["clock"],
       logo: YearProgressLogo,

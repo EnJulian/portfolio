@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { FiExternalLink, FiFilter, FiInfo, FiX, FiCode } from "react-icons/fi";
+import { FiExternalLink, FiFilter, FiX, FiCode } from "react-icons/fi";
 import { ClockIcon } from "@/components/icons/ClockIcon";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -111,7 +111,7 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
             className="flex items-center px-3 py-1 text-xs rounded-md bg-gray-800 hover:bg-gray-700 transition-colors"
           >
             <FiFilter className="mr-1.5" size={12} />
-            {selectedTechs.length > 0 ? `Filters (${selectedTechs.length})` : "Filter by Tech"}
+            {selectedTechs.length > 0 ? `Filters (${selectedTechs.length})` : "Filter by Skill"}
           </button>
           
           {isFilterOpen && (
