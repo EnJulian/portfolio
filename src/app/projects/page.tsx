@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     <div className="space-y-6">
       <div>
         <p className="border-b border-gray-800 pb-4">
-          Exploring problems through code—a selection of work I’ve contributed to or built while learning and solving problems in different industries.
+          A selection of work I’ve contributed to or built while learning and solving problems in different industries.
         </p>
       </div>
 

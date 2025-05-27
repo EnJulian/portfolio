@@ -12,28 +12,28 @@ export default function WorkPage() {
     <div className="space-y-5">
       <p>
         I recently joined {" "}
-        <a href="https://www.linkedin.com/company/plendify/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3B8sYnlGc6SXSvIlvv8XZTLw%3D%3D" target="_blank">
+        <a href="https://www.linkedin.com/company/plendify/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3B8sYnlGc6SXSvIlvv8XZTLw%3D%3D" target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">
           Plendify
         </a>
         {" "}as a Backend Developer, where I rebuilt their ecommerce web-app with new features
         using {" "}
-        <a href={"https://www.typescriptlang.org/"} target="_blank">TypeScript</a>,{" "}
-        <a href={"https://nodejs.org/"} target="_blank">Node.js</a>,{" "}
-        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank">PostgreSQL</a>{" "}
+        <a href={"https://www.typescriptlang.org/"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">TypeScript</a>,{" "}
+        <a href={"https://nodejs.org/"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">Node.js</a>,{" "}
+        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">PostgreSQL</a>{" "}
         and {" "}
-        <a href={"https://docs.aws.amazon.com"} target={"_blank"}>AWS</a>.
+        <a href={"https://docs.aws.amazon.com"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">AWS</a>.
       </p>
 
       <p>
         Before that, I joined {" "}
-        <a href="https://www.linkedin.com/company/enyata/" target="_blank">
+        <a href="https://www.linkedin.com/company/enyata/" target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">
           Enyata
         </a> as the same role
         {", "}
         where I developed applications using{" "}
-        <a href={"https://www.typescriptlang.org/"} target={"_blank"}>TypeScript</a>,{" "}
-        <a href={"https://nodejs.org/"} target={"_blank"}>Node.js</a> and{" "}
-        <a href={"https://www.postgresql.org/docs/current/index.html"} target={"_blank"}>PostgreSQL</a>.
+        <a href={"https://www.typescriptlang.org/"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">TypeScript</a>,{" "}
+        <a href={"https://nodejs.org/"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">Node.js</a> and{" "}
+        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">PostgreSQL</a>.
       </p>
       
       <div className="mt-8 pt-4 border-t border-gray-800">

@@ -12,7 +12,7 @@ interface FooterProps {
 
 export function Footer({ className = "" }: FooterProps) {
   return (
-    <footer className={`py-4 sm:py-6 md:py-8 text-sm text-gray-600 ${className}`}>
+    <footer className={`py-4 sm:py-5 md:py-4 text-sm text-gray-600 ${className}`}>
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="mb-5 md:mb-0 text-center md:text-left">
           <p>© {new Date().getFullYear()} {RESUME_DATA.name}.</p>
