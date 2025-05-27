@@ -8,20 +8,32 @@ export function TopNavigation() {
   const navItems = [
     { name: "About", href: "/about" },
     { name: "Work", href: "/work" },
-    { name: "Tools", href: "/tools" },
     { name: "Projects", href: "/projects" },
   ];
 
   return (
     <header className="w-full max-w-screen-md mx-auto py-6 px-4">
       <div className="flex flex-col items-center mb-8">
-        <Image
-          src="/Julian-Amoah-Logo.png"
-          alt="Julian Amoah Logo"
-          width={60}
-          height={60}
-          className="rounded-full hover:opacity-80 transition-opacity duration-200 mb-4"
-        />
+        <div className="relative mb-4 group">
+          <Image
+            src="/Liso-static.png"
+            alt="Julian Amoah Logo"
+            width={60}
+            height={60}
+            className="rounded-full"
+          />
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <Image
+              src="/Liso.gif"
+              alt="Julian Amoah Logo (Animated)"
+              width={60}
+              height={60}
+              className="rounded-full"
+              unoptimized
+              loading="lazy"
+            />
+          </div>
+        </div>
         <h1 className="nimbus font-bold uppercase tracking-wide text-white text-center">
           {RESUME_DATA.name}
         </h1>

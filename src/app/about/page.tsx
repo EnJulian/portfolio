@@ -12,7 +12,7 @@ export default function AboutPage() {
     <div className="space-y-6">
       <div className="space-y-6">
         <p>
-          I&apos;m a software developer living in {" "}
+          I&apos;m a developer living in {" "}
           <a href={RESUME_DATA.locationLink} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">
             {RESUME_DATA.location}
           </a>
@@ -29,16 +29,40 @@ export default function AboutPage() {
         </p>
         
         <p>
-          Today I spend my time doing research {" "}
-          {/*<a href="https://enyata.com" target="_blank" className="text-white hover:text-gray-300">*/}
-          {/*  Enyata*/}
-          {/*</a>*/}
-          and building templates and APIs for my next high-performance application.
-        </p>
-        
-        <p>I am passionate about crafting clean, robust code that drives performance and reliability in complex systems.
+          Today I spend my time building obscure digital tools like{" "}
+          <a href="https://github.com/EnJulian/shadowbox" target="_blank" className="text-white hover:text-gray-300 underline-offset-2 hover:underline">
+            Shadowbox.
+          </a>
         </p>
       </div>
+      
+      {/* Tools Section */}
+      <div className="mt-8 pt-6 border-t border-gray-800">
+        <h2 className="text-base font-medium text-white mb-4">Expertise</h2>
+        <div className="flex flex-wrap gap-2">
+          {/* Display only specific skills - you can customize this array to show exactly which skills you want */}
+          {RESUME_DATA.skills
+            .filter(skill => [
+              "C#", 
+              ".NET Core", 
+              "TypeScript", 
+              "Node.js", 
+              "Python", 
+              "AWS"
+            ].includes(skill.name))
+            .map((skill) => (
+              <a
+                key={skill.name}
+                href={skill.url}
+                target="_blank"
+                className="px-2 py-1 bg-gray-900 text-gray-300 rounded text-xs hover:bg-gray-800 hover:text-white transition-colors"
+              >
+                {skill.name}
+              </a>
+            ))}
+        </div>
+      </div>
+      
       <div className="mt-6 pt-4">
         <MobileCTA href="/work" text="View my work history" />
       </div>

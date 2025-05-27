@@ -12,27 +12,27 @@ export default function WorkPage() {
     <div className="space-y-5">
       <p>
         I recently joined {" "}
-        <a href="https://plendify.com" target="_blank">
+        <a href="https://www.linkedin.com/company/plendify/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3B8sYnlGc6SXSvIlvv8XZTLw%3D%3D" target="_blank">
           Plendify
         </a>
-        {" "}as a Backend Engineer, where I rebuilt their ecommerce web-app with new features
+        {" "}as a Backend Developer, where I rebuilt their ecommerce web-app with new features
         using {" "}
         <a href={"https://www.typescriptlang.org/"} target="_blank">TypeScript</a>,{" "}
-        <a href={"https://nodejs.org/"} target="_blank">Node.js</a>, and{" "}
-        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank">PostgreSQL</a>.
+        <a href={"https://nodejs.org/"} target="_blank">Node.js</a>,{" "}
+        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank">PostgreSQL</a>{" "}
+        and {" "}
+        <a href={"https://docs.aws.amazon.com"} target={"_blank"}>AWS</a>.
       </p>
 
       <p>
         Before that, I joined {" "}
-        <a href="https://enyata.com" target="_blank">
+        <a href="https://www.linkedin.com/company/enyata/" target="_blank">
           Enyata
         </a> as the same role
         {", "}
         where I developed applications using{" "}
         <a href={"https://www.typescriptlang.org/"} target={"_blank"}>TypeScript</a>,{" "}
-        <a href={"https://graphql.org/"} target={"_blank"}>GraphQL</a>,{" "}
-        <a href={"https://nodejs.org/"} target={"_blank"}>Node.js</a>,{" "}
-        <a href={"https://www.mongodb.com/docs/"} target={"_blank"}>MongoDB</a>, and{" "}
+        <a href={"https://nodejs.org/"} target={"_blank"}>Node.js</a> and{" "}
         <a href={"https://www.postgresql.org/docs/current/index.html"} target={"_blank"}>PostgreSQL</a>.
       </p>
       
@@ -45,7 +45,6 @@ export default function WorkPage() {
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                 <h3 className="text-base font-medium">
                   <a
-                    href={work.link}
                     target="_blank"
                   >
                     {work.company}
@@ -58,7 +57,7 @@ export default function WorkPage() {
               <div className="flex flex-wrap gap-2 mb-2">
                 <span className="text-gray-300 text-sm bg-gray-900 px-2 py-0.5 rounded">{work.title}</span>
                 {work.badges && work.badges.map((badge) => (
-                  <span key={badge} className="text-amber-400 text-xs bg-gray-900 px-2 py-0.5 rounded">{badge}</span>
+                  <span key={badge} className="text-green-600 text-xs bg-gray-900 px-2 py-0.5 rounded">{badge}</span>
                 ))}
               </div>
               <p className="text-gray-400 text-sm">{work.description}</p>

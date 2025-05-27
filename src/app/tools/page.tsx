@@ -34,10 +34,10 @@ export default function ToolsPage() {
             </div>
           </div>
         </div>
-        
+
         <div className="space-y-4">
           <div className="border-l-2 border-blue-500 pl-4">
-            <h2 className="text-base font-medium text-white mb-3">Cloud & Infrastructure</h2>
+            <h2 className="text-base font-medium text-white mb-3">Cloud & Database</h2>
             <div className="flex flex-wrap gap-2">
               {RESUME_DATA.skills.slice(6, 12).map((skill) => (
                 <a

@@ -123,7 +123,7 @@ export function MobileNav({ navItems }: MobileNavProps) {
                   setTimeout(() => setIsMenuOpen(false), 10);
                 }}
               >
-                Download CV
+                Download Resume
                 <Download size={18} />
               </a>
             </div>
