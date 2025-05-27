@@ -77,7 +77,7 @@ export default function ContactPage() {
       <div>
         <MobileCTA 
           href="/Curriculum_Vitae_BSE_Julian.pdf" 
-          text="Download Resume" 
+          text="Download Resume"
           icon="download" 
           download={true}
         />

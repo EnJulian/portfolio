@@ -30,11 +30,29 @@ export default function AboutPage() {
         
         <p>
           Today I spend my time building obscure digital tools like{" "}
-          <a href="https://github.com/EnJulian/shadowbox" target="_blank" className="text-white hover:text-gray-300">
-            shadowbox.
+          <a href="https://github.com/EnJulian/shadowbox" target="_blank" className="text-white hover:text-gray-300 underline-offset-2 hover:underline">
+            Shadowbox.
           </a>
         </p>
       </div>
+      
+      {/* Tools Section */}
+      <div className="mt-8 pt-6 border-t border-gray-800">
+        <h2 className="text-base font-medium text-white mb-4">Expertise</h2>
+        <div className="flex flex-wrap gap-2">
+          {RESUME_DATA.skills.map((skill) => (
+            <a
+              key={skill.name}
+              href={skill.url}
+              target="_blank"
+              className="px-2 py-1 bg-gray-900 text-gray-300 rounded text-xs hover:bg-gray-800 hover:text-white transition-colors"
+            >
+              {skill.name}
+            </a>
+          ))}
+        </div>
+      </div>
+      
       <div className="mt-6 pt-4">
         <MobileCTA href="/work" text="View my work history" />
       </div>

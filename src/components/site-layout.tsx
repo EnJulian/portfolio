@@ -15,12 +15,19 @@ interface SiteLayoutProps {
 export function SiteLayout({ children }: SiteLayoutProps) {
   const pathname = usePathname();
 
-  const navItems = [
+  // Navigation items for mobile view (includes Contact)
+  const mobileNavItems = [
     { name: "About", href: "/about" },
     { name: "History", href: "/work" },
-    { name: "Tools", href: "/tools" },
     { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/contact" },
+  ];
+
+  // Navigation items for desktop view (excludes Contact)
+  const desktopNavItems = [
+    { name: "About", href: "/about" },
+    { name: "History", href: "/work" },
+    { name: "Projects", href: "/projects" },
   ];
 
   return (
@@ -30,15 +37,26 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           {/* Logo and Name header for mobile */}
           <div className="w-full flex justify-between items-center px-4 py-3 sm:p-6 md:hidden sticky top-0 z-20 bg-black border-b border-gray-800">
             <div className="inline-block">
-              <Link href="/about" className="inline-flex comet-glow">
+              <Link href="/about" className="inline-flex comet-glow relative group">
                 <Image
-                  src="/Julian-Amoah-Logo.png"
+                  src="/Liso-static.png"
                   alt="Julian Amoah Logo"
                   width={36}
                   height={36}
                   className="rounded-full"
                   priority
                 />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <Image
+                    src="/Liso.gif"
+                    alt="Julian Amoah Logo (Animated)"
+                    width={36}
+                    height={36}
+                    className="rounded-full"
+                    unoptimized
+                    loading="lazy"
+                  />
+                </div>
               </Link>
             </div>
             <h1 className="jakarta-sans uppercase tracking-wide text-sm sm:text-base">
@@ -46,27 +64,38 @@ export function SiteLayout({ children }: SiteLayoutProps) {
                 {RESUME_DATA.name}
               </Link>
             </h1>
-            <MobileNav navItems={navItems} />
+            <MobileNav navItems={mobileNavItems} />
           </div>
 
           {/* Sidebar for larger screens - sticky position */}
           <aside className="md:w-1/4 p-4 sm:p-6 md:sticky md:top-0 md:z-10 self-start">
             <div className="md:mb-10 hidden md:block">
-              <Link href="/about" className="inline-flex comet-glow">
+              <Link href="/about" className="inline-flex comet-glow relative group">
                 <Image
-                  src="/Julian-Amoah-Logo.png"
+                  src="/Liso-static.png"
                   alt="Julian Amoah Logo"
                   width={50}
                   height={50}
                   className="rounded-full"
                   priority
                 />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <Image
+                    src="/Liso.gif"
+                    alt="Julian Amoah Logo (Animated)"
+                    width={50}
+                    height={50}
+                    className="rounded-full"
+                    unoptimized
+                    loading="lazy"
+                  />
+                </div>
               </Link>
             </div>
 
             <nav className="mt-6 hidden md:block">
               <ul className="space-y-3">
-                {navItems.map((item) => {
+                {desktopNavItems.map((item) => {
                   const isActive = pathname === item.href;
                   return (
                     <li key={item.name} className="flex items-center">
@@ -108,7 +137,6 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             <Footer 
               className={
                 pathname === "/work" || 
-                pathname === "/tools" || 
                 pathname === "/projects" || 
                 pathname === "/contact" 
                   ? "mb-16 md:mb-0" : ""

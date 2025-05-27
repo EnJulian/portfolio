@@ -272,28 +272,24 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
                       }}
                     >
                       <div className="absolute top-2 right-2 flex space-x-2 z-10">
-                        <div className="relative group/info">
-                          <a
-                            href={project.githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => {
-                              if (!project.githubLink) {
-                                e.preventDefault();
+                        {project.githubLink && (
+                          <div className="relative group/info">
+                            <a
+                              href={project.githubLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => {
                                 e.stopPropagation();
-                                setExpandedProject(isExpanded ? null : project.title);
-                              } else {
-                                e.stopPropagation();
-                              }
-                            }}
-                            className={`text-gray-500 hover:text-gray-300 transition-colors ${!project.githubLink ? 'cursor-default' : 'cursor-pointer'}`}
-                          >
-                            <FiCode size={16} />
-                          </a>
-                          <div className="absolute mt-1 right-0 opacity-0 group-hover/info:opacity-100 bg-black border border-gray-800 text-xs text-white px-2 py-1 rounded whitespace-nowrap z-[999] pointer-events-none transition-opacity duration-200">
-                            {project.githubLink ? "View Source Code" : "No Source Code Available"}
+                              }}
+                              className="text-gray-500 hover:text-gray-300 transition-colors cursor-pointer"
+                            >
+                              <FiCode size={16} />
+                            </a>
+                            <div className="absolute mt-1 right-0 opacity-0 group-hover/info:opacity-100 bg-black border border-gray-800 text-xs text-white px-2 py-1 rounded whitespace-nowrap z-[999] pointer-events-none transition-opacity duration-200">
+                              View Source Code
+                            </div>
                           </div>
-                        </div>
+                        )}
                         {hasRegularLink && (
                           <div className="relative group/link">
                             <span className="text-gray-500 group-hover:text-gray-300 transition-colors">
