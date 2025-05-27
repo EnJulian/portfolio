@@ -103,8 +103,8 @@ export const RESUME_DATA = {
       description: "Mobile application for creating and managing savings groups. Now with loan management.",
       logo: MonitoLogo,
       link: {
-        label: "purple-vest.enyata.com",
-        href: "https://purple-vest.enyata.com/",
+        label: "www.mypurplepay.com",
+        href: "https://www.mypurplepay.com/",
       },
     },
     {
@@ -147,26 +147,26 @@ export const RESUME_DATA = {
         href: "https://merifot.enyata.com/auth/create-account",
       },
     },
-    {
-      title: "Campus Care",
-      techStack: ["TypeScript", "Node.js", "PostgreSQL"],
-      description: "Platform for managing student health. Including a dashboard for students and physicians.",
-      logo: MonitoLogo,
-      link: {
-        label: "campus-care.onrender.com",
-        href: "https://campus-care.onrender.com/",
-      },
-    },
-    {
-      title: "Digital Devhub",
-      techStack: ["C#", ".NET Core", "PostgreSQL", "Redis"],
-      description: "Website for onboarding and training Digital Devhub Scrum Masters.",
-      logo: MonitoLogo,
-      link: {
-        label: "digital-devhub.onrender.com",
-        href: "https://digitaldevhub.org",
-      },
-    },
+    // {
+    //   title: "Campus Care",
+    //   techStack: ["TypeScript", "Node.js", "PostgreSQL"],
+    //   description: "Platform for managing student health. Including a dashboard for students and physicians.",
+    //   logo: MonitoLogo,
+    //   link: {
+    //     label: "campus-care.onrender.com",
+    //     href: "https://campus-care.onrender.com/",
+    //   },
+    // },
+    // {
+    //   title: "Digital Devhub",
+    //   techStack: ["C#", ".NET Core", "PostgreSQL", "Redis"],
+    //   description: "Website for onboarding and training Digital Devhub Scrum Masters.",
+    //   logo: MonitoLogo,
+    //   link: {
+    //     label: "digitaldevhub.org",
+    //     href: "https://digitaldevhub.org",
+    //   },
+    // },
   ],
   personalProjects: [
     {
@@ -205,29 +205,29 @@ export const RESUME_DATA = {
       },
       githubLink: "https://github.com/EnJulian/nodejs-typescript-template",
     },
-    {
-      title: "Task Manager API",
-      techStack: ["C#", ".NET Core", "PostgreSQL"],
-      description: "A RESTful API for managing tasks and projects with user authentication.",
-      badgeIconTypes: ["clock"],
-      logo: NSNLogo,
-      link: {
-        label: "github.com/EnJulian/TaskManagerAPI",
-        href: "https://github.com/EnJulian/TaskManagerAPI",
-      },
-      githubLink: "https://github.com/EnJulian/TaskManagerAPI",
-    },
-    {
-      title: "Weather Dashboard",
-      techStack: ["React/Next.js"],
-      description: "A weather dashboard that displays current weather and forecasts for multiple locations.",
-      badgeIconTypes: ["clock"],
-      logo: YearProgressLogo,
-      link: {
-        label: "github.com/EnJulian/WeatherDashboard",
-        href: "https://github.com/EnJulian/WeatherDashboard",
-      },
-      githubLink: "https://github.com/EnJulian/WeatherDashboard",
-    },
+    // {
+    //   title: "Task Manager API",
+    //   techStack: ["C#", ".NET Core", "PostgreSQL"],
+    //   description: "A RESTful API for managing tasks and projects with user authentication.",
+    //   badgeIconTypes: ["clock"],
+    //   logo: NSNLogo,
+    //   link: {
+    //     label: "github.com/EnJulian/TaskManagerAPI",
+    //     href: "https://github.com/EnJulian/TaskManagerAPI",
+    //   },
+    //   githubLink: "https://github.com/EnJulian/TaskManagerAPI",
+    // },
+    // {
+    //   title: "Weather Dashboard",
+    //   techStack: ["React/Next.js"],
+    //   description: "A weather dashboard that displays current weather and forecasts for multiple locations.",
+    //   badgeIconTypes: ["clock"],
+    //   logo: YearProgressLogo,
+    //   link: {
+    //     label: "github.com/EnJulian/WeatherDashboard",
+    //     href: "https://github.com/EnJulian/WeatherDashboard",
+    //   },
+    //   githubLink: "https://github.com/EnJulian/WeatherDashboard",
+    // },
   ],
 } as const;

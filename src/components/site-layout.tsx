@@ -129,7 +129,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             </div>
 
             {/* Page content with extra bottom padding to show scrollability */}
-            <div className="text-gray-400 text-[1.08rem] sm:text-[0.972rem] pb-20 sm:pb-16 md:pb-12">
+            <div className="text-gray-400 text-[1.08rem] sm:text-[0.972rem] pb-20 sm:pb-16 md:pb-6">
               {children}
             </div>
 
