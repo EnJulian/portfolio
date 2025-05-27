@@ -219,10 +219,10 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
                     {project.techStack.map((tech) => (
                       <span 
                         key={tech} 
-                        className={`text-xs px-1.5 py-0.5 rounded transition-colors ${
+                        className={`text-xs px-1.5 py-0.5 rounded-md border transition-colors ${
                           selectedTechs.includes(tech) 
                             ? 'bg-gray-700 text-white' 
-                            : 'bg-black text-gray-500 hover:bg-gray-800 hover:text-gray-300'
+                            : 'bg-gray-900 text-gray-300  hover:bg-gray-800 hover:text-white hover:border-gray-700'
                         } ${!isMobile ? 'cursor-pointer' : ''}`}
                         onClick={(e) => {
                           // Only allow filtering on non-mobile screens
