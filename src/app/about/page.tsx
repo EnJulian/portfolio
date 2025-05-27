@@ -40,16 +40,26 @@ export default function AboutPage() {
       <div className="mt-8 pt-6 border-t border-gray-800">
         <h2 className="text-base font-medium text-white mb-4">Expertise</h2>
         <div className="flex flex-wrap gap-2">
-          {RESUME_DATA.skills.map((skill) => (
-            <a
-              key={skill.name}
-              href={skill.url}
-              target="_blank"
-              className="px-2 py-1 bg-gray-900 text-gray-300 rounded text-xs hover:bg-gray-800 hover:text-white transition-colors"
-            >
-              {skill.name}
-            </a>
-          ))}
+          {/* Display only specific skills - you can customize this array to show exactly which skills you want */}
+          {RESUME_DATA.skills
+            .filter(skill => [
+              "C#", 
+              ".NET Core", 
+              "TypeScript", 
+              "Node.js", 
+              "Python", 
+              "AWS"
+            ].includes(skill.name))
+            .map((skill) => (
+              <a
+                key={skill.name}
+                href={skill.url}
+                target="_blank"
+                className="px-2 py-1 bg-gray-900 text-gray-300 rounded text-xs hover:bg-gray-800 hover:text-white transition-colors"
+              >
+                {skill.name}
+              </a>
+            ))}
         </div>
       </div>
       
