@@ -12,7 +12,7 @@ export default function AboutPage() {
     <div className="space-y-6">
       <div className="space-y-6">
         <p>
-          I&apos;m a software developer living in {" "}
+          I&apos;m a developer living in {" "}
           <a href={RESUME_DATA.locationLink} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">
             {RESUME_DATA.location}
           </a>

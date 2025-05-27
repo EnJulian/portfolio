@@ -48,8 +48,8 @@ export const CommandMenu = ({ links }: Props) => {
 
   const downloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/Curriculum_Vitae_BSE_Julian.pdf";
-    link.download = "/Curriculum_Vitae_BSE_Julian.pdf";
+    link.href = "/Resume_Julian_A_A.pdf";
+    link.download = "/Resume_Julian_A_A.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -208,7 +208,7 @@ export const CommandMenu = ({ links }: Props) => {
           </button>
         </div>
         <iframe
-          src="/Curriculum_Vitae_BSE_Julian.pdf"
+          src="/Resume_Julian_A_A.pdf"
           width="100%"
           height="95%"
           style={{ border: "none" }}

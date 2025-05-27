@@ -14,12 +14,12 @@ export const RESUME_DATA = {
   location: "Accra, Ghana",
   locationLink: "https://www.google.com/maps/place/Accra",
   summary:
-    "I'm a developer with a proven ability to turn concepts into high-performance, fully realized backend solutions. I specialize in C#, .NET Core, TypeScript, Node.js and Python focusing on scalability, reliability, and clean architecture."
+    ""
 ,
   avatarUrl: "",
     // "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1724425353/36317786_hkw9f9.png",
   personalWebsiteUrl: "https://enjulian.vercel.app",
-  resumeUrl: "/Curriculum_Vitae_BSE_Julian.pdf",
+  resumeUrl: "/Resume_Julian_A_A.pdf",
   contact: {
     email: "envern.julian@gmail.com",
     tel: "+233 553220656",
@@ -54,7 +54,7 @@ export const RESUME_DATA = {
       company: "Plendify",
       link: "https://www.plendify.com",
       badges: ["Contract"],
-      title: "Backend Software Engineer",
+      title: "Backend Developer",
       logo: ParabolLogo,
       start: "2025",
       end: "Present",
@@ -65,7 +65,7 @@ export const RESUME_DATA = {
       company: "Enyata",
       link: "https://www.enyata.com",
       badges: ["Full Time"],
-      title: "Backend Software Engineer",
+      title: "Backend Developer",
       logo: ParabolLogo,
       start: "2023",
       end: "Present",
