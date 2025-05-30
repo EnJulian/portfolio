@@ -24,9 +24,9 @@ export function SideNavigation() {
             className="rounded-full"
           />
         </div>
-        <h1 className="nimbus font-bold uppercase tracking-wide text-white">
+        <a href="/about" className="nimbus font-bold uppercase tracking-wide text-white">
           {RESUME_DATA.name}
-        </h1>
+        </a>
       </div>
 
       {/* Vertical Navigation */}

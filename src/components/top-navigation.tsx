@@ -34,11 +34,11 @@ export function TopNavigation() {
             />
           </div>
         </div>
-        <h1 className="nimbus font-bold uppercase tracking-wide text-white text-center">
+        <Link href="/about" className="nimbus font-bold uppercase tracking-wide text-white text-center">
           {RESUME_DATA.name}
-        </h1>
+        </Link>
       </div>
-      
+
       {/* Horizontal Navigation */}
       <nav className="flex justify-center space-x-8 mb-8">
         {navItems.map((item) => (

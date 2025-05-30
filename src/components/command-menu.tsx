@@ -127,7 +127,7 @@ export const CommandMenu = ({ links }: Props) => {
                   description: "Email address copied to clipboard",
                   variant: "success",
                   duration: 3000,
-                  loading: true,
+                  loading: false,
                 });
               }}
               className="text-gray-300 hover:bg-gray-900 hover:text-white"
@@ -152,7 +152,7 @@ export const CommandMenu = ({ links }: Props) => {
                   description: "Phone number copied to clipboard",
                   variant: "success",
                   duration: 3000,
-                  loading: true,
+                  loading: false,
                 });
               }}
               className="text-gray-300 hover:bg-gray-900 hover:text-white"

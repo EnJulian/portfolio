@@ -140,6 +140,34 @@
   animation: glass-shine 3s ease-in-out infinite;
 }
 
+/* Button line glow animation */
+@keyframes button-line-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.button-highlight {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  animation: button-line-glow 4s ease-in-out infinite;
+}
+
+.button-highlight:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.15);
+}
+
 /* Comet-inspired styles */
 .comet-card {
   background: linear-gradient(135deg, hsl(222, 47%, 11%), hsl(220, 40%, 8%));

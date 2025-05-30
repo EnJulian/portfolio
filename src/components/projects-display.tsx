@@ -98,7 +98,7 @@ export default function ProjectsDisplay({ projects, personalProjects }: Projects
           </span>
           <button
             onClick={() => setShowPersonalProjects(!showPersonalProjects)}
-            className="px-3 py-1 text-xs rounded-md bg-gray-800 hover:bg-gray-700 transition-colors"
+            className="px-3 py-1 text-xs rounded-md bg-gray-800 hover:bg-gray-700 transition-colors button-highlight"
           >
             {showPersonalProjects ? "Show Professional" : "Show Personal"}
           </button>

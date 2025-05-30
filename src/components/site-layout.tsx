@@ -49,9 +49,9 @@ export function SiteLayout({ children }: SiteLayoutProps) {
               </Link>
             </div>
             <h1 className="jakarta-sans uppercase tracking-wide text-sm sm:text-base">
-              <Link href="/">
+              <a href="/about">
                 {RESUME_DATA.name}
-              </Link>
+              </a>
             </h1>
             <MobileNav navItems={mobileNavItems} />
           </div>
@@ -102,7 +102,9 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             {/* Name header for larger screens */}
             <div className="hidden md:block mb-8">
               <h1 className="text-xl font-bold tracking-wide text-white mitchell-font">
-                {RESUME_DATA.name.toUpperCase()}
+                <Link href="/about" className="hover:text-gray-300 transition-colors duration-200">
+                  {RESUME_DATA.name.toUpperCase()}
+                </Link>
               </h1>
             </div>
 
