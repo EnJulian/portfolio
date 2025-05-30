@@ -39,24 +39,13 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             <div className="inline-block">
               <Link href="/about" className="inline-flex comet-glow relative group">
                 <Image
-                  src="/Liso-static.png"
+                  src="/Julian-Amoah-Favicon-Black.png"
                   alt="Julian Amoah Logo"
-                  width={36}
-                  height={36}
+                  width={31}
+                  height={31}
                   className="rounded-full"
                   priority
                 />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <Image
-                    src="/Liso.gif"
-                    alt="Julian Amoah Logo (Animated)"
-                    width={36}
-                    height={36}
-                    className="rounded-full"
-                    unoptimized
-                    loading="lazy"
-                  />
-                </div>
               </Link>
             </div>
             <h1 className="jakarta-sans uppercase tracking-wide text-sm sm:text-base">
@@ -72,24 +61,13 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             <div className="md:mb-10 hidden md:block">
               <Link href="/about" className="inline-flex comet-glow relative group">
                 <Image
-                  src="/Liso-static.png"
+                  src="/Julian-Amoah-Favicon-Black.png"
                   alt="Julian Amoah Logo"
-                  width={50}
-                  height={50}
+                  width={31}
+                  height={31}
                   className="rounded-full"
                   priority
                 />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <Image
-                    src="/Liso.gif"
-                    alt="Julian Amoah Logo (Animated)"
-                    width={50}
-                    height={50}
-                    className="rounded-full"
-                    unoptimized
-                    loading="lazy"
-                  />
-                </div>
               </Link>
             </div>
 

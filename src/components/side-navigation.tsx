@@ -15,25 +15,14 @@ export function SideNavigation() {
     <div className="fixed left-0 top-0 h-full w-64 bg-black flex flex-col items-start p-8 border-r border-gray-800 z-50">
       {/* Logo and Name */}
       <div className="flex flex-col items-start mb-12">
-        <div className="relative mb-4 group">
+        <div className="mb-4">
           <Image
-            src="/Liso-static.png"
+            src="/Julian-Amoah-Favicon-Black.png"
             alt="Julian Amoah Logo"
             width={60}
             height={60}
             className="rounded-full"
           />
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            <Image
-              src="/Liso.gif"
-              alt="Julian Amoah Logo (Animated)"
-              width={60}
-              height={60}
-              className="rounded-full"
-              unoptimized
-              loading="lazy"
-            />
-          </div>
         </div>
         <h1 className="nimbus font-bold uppercase tracking-wide text-white">
           {RESUME_DATA.name}

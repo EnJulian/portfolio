@@ -16,7 +16,7 @@ export function TopNavigation() {
       <div className="flex flex-col items-center mb-8">
         <div className="relative mb-4 group">
           <Image
-            src="/Liso-static.png"
+            src="/Julian-Amoah-Favicon-Black.png"
             alt="Julian Amoah Logo"
             width={60}
             height={60}
@@ -24,7 +24,7 @@ export function TopNavigation() {
           />
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <Image
-              src="/Liso.gif"
+              src="/Julian-Amoah-Favicon-Black.png"
               alt="Julian Amoah Logo (Animated)"
               width={60}
               height={60}
