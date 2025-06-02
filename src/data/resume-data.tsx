@@ -98,7 +98,7 @@ export const RESUME_DATA = {
       // githubLink: "https://github.com/EnJulian/plendify-marketplace",
     },
     {
-      title: "MyPurplePay",
+      title: "Mypurplepay",
       techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
       description: "Mobile application for creating and managing savings groups. Now with loan management.",
       logo: MonitoLogo,
