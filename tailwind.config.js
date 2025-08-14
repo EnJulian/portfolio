@@ -62,6 +62,8 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-nimbus-sans)", ...fontFamily.sans],
         inconsolata: ["var(--font-inconsolata)", "monospace"],
+        terminus: ["var(--font-terminus)", "monospace"],
+        nimbus: ["var(--font-nimbus-sans)", ...fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {

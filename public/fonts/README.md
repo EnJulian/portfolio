@@ -1,9 +1,26 @@
-# Mitchell Hashimoto Font Implementation
+# Fonts Directory
 
-## Current Implementation
+This directory contains custom fonts used in the project.
+
+## Available Fonts
+
+### Terminus TTF
+- **Files**: TerminusTTF-4.49.3.ttf, TerminusTTF-Bold-4.49.3.ttf, TerminusTTF-Italic-4.49.3.ttf, TerminusTTF-Bold-Italic-4.49.3.ttf
+- **Usage**: Monospace font perfect for terminal/code displays
+- **CSS Classes**: `font-terminus`, `terminus-sm`, `terminus-lg`
+- **Tailwind Class**: `font-terminus`
+- **Variable**: `--font-terminus`
+
+### Nimbus Sans Bold Extended
+- **Files**: NimbusSansDOT-BoldExte.otf
+- **Usage**: Display font for headings and emphasis
+
+## Mitchell Hashimoto Font Implementation
+
+### Current Implementation
 Currently, we're using Google's Archivo Black font as a temporary replacement for Mitchell Hashimoto's Nimbus Sans Bold Extended font. This is configured in `src/app/fonts.ts`.
 
-## Using the Actual Nimbus Sans Bold Extended Font
+### Using the Actual Nimbus Sans Bold Extended Font
 
 If you want to use the exact Nimbus Sans Bold Extended font that Mitchell Hashimoto uses:
 

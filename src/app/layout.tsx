@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Inconsolata } from "next/font/google";
-import { nimbusSans, jakartaSans, mitchellFont } from './fonts';
+import { nimbusSans, jakartaSans, mitchellFont, terminusFont } from './fonts';
 import { SiteLayout } from "@/components/site-layout";
 import { CommandMenu } from "@/components/command-menu";
 import { RESUME_DATA } from "@/data/resume-data";
@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fontSansClassName} ${inconsolata.variable} ${nimbusSans.variable} ${jakartaSans.variable} ${mitchellFont.variable}`}>
+    <html lang="en" className={`${fontSansClassName} ${inconsolata.variable} ${nimbusSans.variable} ${jakartaSans.variable} ${mitchellFont.variable} ${terminusFont.variable}`}>
       <head>
         {/* Force favicon reload by adding version parameter */}
         <link rel="icon" href="/favicon.ico?v=2" />
@@ -56,6 +56,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" sizes="180x180" />
         <link rel="manifest" href="/site.webmanifest?v=2" />
+        {/* Theme color for mobile browsers */}
+        <meta name="theme-color" content="#000000" />
+        <meta name="msapplication-TileColor" content="#000000" />
       </head>
       <body>
         <ToastProvider>
