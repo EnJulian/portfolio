@@ -3,7 +3,7 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { MobileCTA } from "@/components/mobile-cta";
 
 export const metadata: Metadata = {
-  title: `About | ${RESUME_DATA.name}`,
+  title: `${RESUME_DATA.name}`,
   description: RESUME_DATA.summary,
 };
 
