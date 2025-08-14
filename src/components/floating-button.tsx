@@ -86,7 +86,7 @@ const FloatingButton = () => {
             </button>
           </div>
           <iframe
-            src="/Resume_Julian_A_A.pdf"
+            src="/Resume_Julian_A.pdf"
             width="100%"
             height="95%"
             style={{ border: "none" }}

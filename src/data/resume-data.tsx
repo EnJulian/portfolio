@@ -9,7 +9,7 @@ import { MastodonIcon } from "@/components/icons/MastodonIcon";
 import { ClockIcon } from "@/components/icons/ClockIcon";
 
 export const RESUME_DATA = {
-  name: "Julian A. Amoah",
+  name: "Julian Amoah",
   initials: "JAA",
   location: "Accra, Ghana",
   locationLink: "https://www.google.com/maps/place/Accra",
@@ -19,7 +19,7 @@ export const RESUME_DATA = {
   avatarUrl: "",
     // "https://res.cloudinary.com/dgtjf8v4b/image/upload/v1724425353/36317786_hkw9f9.png",
   personalWebsiteUrl: "https://enjulian.vercel.app",
-  resumeUrl: "/Resume_Julian_A_A.pdf",
+  resumeUrl: "/Resume_Julian_A.pdf",
   contact: {
     email: "envern.julian@gmail.com",
     tel: "+233 553220656",
