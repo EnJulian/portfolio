@@ -57,7 +57,7 @@ export const RESUME_DATA = {
       title: "Backend Developer",
       logo: ParabolLogo,
       start: "2025",
-      end: "Present",
+      end: "2026",
       description:
         "Rebuilt ecommerce web-app with new features.",
     },
@@ -68,7 +68,7 @@ export const RESUME_DATA = {
       title: "Backend Developer",
       logo: ParabolLogo,
       start: "2023",
-      end: "Present",
+      end: "2026",
       description:
         "Implemented new features, still developing applications.",
     },

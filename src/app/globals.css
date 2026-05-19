@@ -68,7 +68,7 @@
 }
 
 .font-inconsolata {
-  font-family: monospace;
+  font-family: var(--font-inconsolata), monospace;
 }
 
 .mitchell-font {

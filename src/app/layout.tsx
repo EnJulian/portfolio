@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Inconsolata } from "next/font/google";
-import { nimbusSans, jakartaSans, mitchellFont, terminusFont } from './fonts';
+import { inconsolataFont, nimbusSans, jakartaSans, mitchellFont, terminusFont } from './fonts';
 import { SiteLayout } from "@/components/site-layout";
 import { CommandMenu } from "@/components/command-menu";
 import { RESUME_DATA } from "@/data/resume-data";
@@ -35,20 +34,13 @@ export const metadata: Metadata = {
 // Define a variable for the font
 const fontSansClassName = "font-sans";
 
-// Initialize Inconsolata font for specific elements
-const inconsolata = Inconsolata({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inconsolata",
-});
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fontSansClassName} ${inconsolata.variable} ${nimbusSans.variable} ${jakartaSans.variable} ${mitchellFont.variable} ${terminusFont.variable}`}>
+    <html lang="en" className={`${fontSansClassName} ${inconsolataFont.variable} ${nimbusSans.variable} ${jakartaSans.variable} ${mitchellFont.variable} ${terminusFont.variable}`}>
       <head>
         {/* Force favicon reload by adding version parameter */}
         <link rel="icon" href="/favicon.ico?v=2" />
