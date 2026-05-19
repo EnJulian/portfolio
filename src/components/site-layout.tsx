@@ -41,8 +41,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
                 <Image
                   src="/Julian-Amoah-Favicon-Black.png"
                   alt="Julian Amoah Logo"
-                  width={31}
-                  height={31}
+                  width={50}
+                  height={50}
                   className="rounded-full"
                   priority
                 />
@@ -63,8 +63,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
                 <Image
                   src="/Julian-Amoah-Favicon-Black.png"
                   alt="Julian Amoah Logo"
-                  width={31}
-                  height={31}
+                  width={50}
+                  height={50}
                   className="rounded-full"
                   priority
                 />
