@@ -5,6 +5,7 @@ import { FiFilter, FiX } from "react-icons/fi";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ProjectCard, type Project } from "@/components/project-card";
 import { SkillChip } from "@/components/ui/skill-chip";
+import { ScrollRegion } from "@/components/ui/scroll-region";
 import { focusRing } from "@/lib/focus-ring";
 import { cn } from "@/lib/utils";
 
@@ -162,7 +163,7 @@ export default function ProjectsDisplay({
       )}
 
       <AnimatePresence>
-        <div className="scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent grid min-h-0 flex-1 grid-cols-1 content-start items-start gap-3 pb-1 pt-3 md:grid-cols-2 md:overflow-y-auto md:overscroll-y-contain md:pr-1">
+        <ScrollRegion className="grid grid-cols-1 content-start items-start gap-3 pb-1 pt-3 md:grid-cols-2 md:overflow-y-auto md:overscroll-y-contain md:pr-1">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project) => (
               <motion.div
@@ -197,7 +198,7 @@ export default function ProjectsDisplay({
               </button>
             </div>
           )}
-        </div>
+        </ScrollRegion>
       </AnimatePresence>
     </div>
   );
