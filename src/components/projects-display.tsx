@@ -6,15 +6,18 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ProjectCard, type Project } from "@/components/project-card";
 import { SkillChip } from "@/components/ui/skill-chip";
 import { focusRing } from "@/lib/focus-ring";
+import { cn } from "@/lib/utils";
 
 type ProjectsDisplayProps = {
   projects: readonly Project[];
   personalProjects: readonly Project[];
+  className?: string;
 };
 
 export default function ProjectsDisplay({
   projects,
   personalProjects,
+  className,
 }: ProjectsDisplayProps) {
   const [showPersonalProjects, setShowPersonalProjects] = useState(false);
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
@@ -80,8 +83,8 @@ export default function ProjectsDisplay({
       };
 
   return (
-    <div className="space-y-5">
-      <div className="mb-4 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+    <div className={cn("flex min-h-0 flex-col gap-5", className)}>
+      <div className="flex shrink-0 flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
         <div className="flex items-center">
           <span className="mr-2 text-sm text-muted-foreground">
             {showPersonalProjects ? "Personal Projects" : "Professional Projects"}
@@ -141,7 +144,7 @@ export default function ProjectsDisplay({
       </div>
 
       {selectedTechs.length > 0 && (
-        <div className="hidden flex-wrap items-center gap-2 sm:flex">
+        <div className="hidden shrink-0 flex-wrap items-center gap-2 sm:flex">
           <span className="text-xs text-muted-foreground">Filtered by:</span>
           {selectedTechs.map((tech) => (
             <SkillChip key={tech} as="span" variant="filter">
@@ -159,12 +162,12 @@ export default function ProjectsDisplay({
       )}
 
       <AnimatePresence>
-        <div className="mt-6 grid grid-cols-1 gap-4 pb-6 md:grid-cols-2">
+        <div className="scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent grid min-h-0 flex-1 grid-cols-1 content-start items-start gap-3 pb-1 pt-3 md:grid-cols-2 md:overflow-y-auto md:overscroll-y-contain md:pr-1">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project) => (
               <motion.div
                 key={project.title}
-                className="group relative h-full"
+                className="group relative"
                 {...motionProps}
               >
                 <ProjectCard
