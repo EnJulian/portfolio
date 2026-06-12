@@ -37,13 +37,13 @@ export default function WorkPage() {
       </p>
       
       <div className="mt-8 pt-4 border-t border-gray-800">
-        <h2 className="text-lg font-semibold mb-4 text-white mitchell-font">Work History</h2>
+        <h2 className="text-header-lg font-semibold mb-4 text-white mitchell-font">Work History</h2>
         
         <div className="space-y-6">
           {RESUME_DATA.work.map((work) => (
             <div key={work.company} className="border border-gray-800 rounded-lg p-4 hover:border-gray-700 transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                <h3 className="text-base font-medium">
+                <h3 className="text-header-base font-medium">
                   <a
                     target="_blank"
                   >

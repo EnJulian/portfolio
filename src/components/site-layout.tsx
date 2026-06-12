@@ -48,7 +48,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
                 />
               </Link>
             </div>
-            <h1 className="jakarta-sans uppercase tracking-wide text-sm sm:text-base">
+            <h1 className="jakarta-sans uppercase tracking-wide text-header-sm sm:text-header-base">
               <a href="/about">
                 {RESUME_DATA.name}
               </a>
@@ -101,7 +101,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           <main className="md:w-3/4 p-4 sm:p-6 overflow-y-visible">
             {/* Name header for larger screens */}
             <div className="hidden md:block mb-8">
-              <h1 className="text-xl font-bold tracking-wide text-white mitchell-font">
+              <h1 className="text-header-xl font-bold tracking-wide text-white mitchell-font">
                 <Link href="/about" className="hover:text-gray-300 transition-colors duration-200">
                   {RESUME_DATA.name.toUpperCase()}
                 </Link>
@@ -109,7 +109,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             </div>
 
             {/* Page content with extra bottom padding to show scrollability */}
-            <div className="text-gray-400 text-[1.08rem] sm:text-[0.972rem] pb-20 sm:pb-16 md:pb-6">
+            <div className="text-gray-400 text-[1.134rem] sm:text-[1.021rem] pb-20 sm:pb-16 md:pb-6">
               {children}
             </div>
 

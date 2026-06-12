@@ -19,7 +19,7 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Contact Info Card */}
         <div className="rounded-lg border border-gray-800 p-4 bg-gray-950/50 hover:border-gray-700 transition-colors">
-          <h2 className="text-base font-medium text-white mb-4">Direct Contact</h2>
+          <h2 className="text-header-base font-medium text-white mb-4">Direct Contact</h2>
           <div className="space-y-4">
             <div className="flex flex-col p-2 rounded hover:bg-black/30 transition-colors">
               <span className="text-gray-400 mb-1 text-xs">EMAIL</span>
@@ -55,7 +55,7 @@ export default function ContactPage() {
         
         {/* Social Media Card */}
         <div className="rounded-lg border border-gray-800 p-4 bg-gray-950/50 hover:border-gray-700 transition-colors">
-          <h2 className="text-base font-medium text-white mb-4">Social Profiles</h2>
+          <h2 className="text-header-base font-medium text-white mb-4">Social Profiles</h2>
           <div className="grid grid-cols-2 gap-3">
             {RESUME_DATA.contact.social.map((social) => (
               <a

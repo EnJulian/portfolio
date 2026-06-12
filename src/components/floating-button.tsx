@@ -77,7 +77,7 @@ const FloatingButton = () => {
           }}
         >
           <div className="flex justify-between items-center mb-2">
-            <h3 className="text-white text-sm">Resume</h3>
+            <h3 className="text-white text-header-sm">Resume</h3>
             <button 
               onClick={closeModal}
               className="px-3 py-1 text-sm text-gray-300 bg-gray-800 hover:bg-gray-700 rounded transition-colors"

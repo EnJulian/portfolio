@@ -19,7 +19,7 @@ export default function ToolsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div className="border-l-2 border-purple-500 pl-4">
-            <h2 className="text-base font-medium text-white mb-3">Primary Expertise</h2>
+            <h2 className="text-header-base font-medium text-white mb-3">Primary Expertise</h2>
             <div className="flex flex-wrap gap-2">
               {RESUME_DATA.skills.slice(0, 6).map((skill) => (
                 <a
@@ -37,7 +37,7 @@ export default function ToolsPage() {
 
         <div className="space-y-4">
           <div className="border-l-2 border-blue-500 pl-4">
-            <h2 className="text-base font-medium text-white mb-3">Cloud & Database</h2>
+            <h2 className="text-header-base font-medium text-white mb-3">Cloud & Database</h2>
             <div className="flex flex-wrap gap-2">
               {RESUME_DATA.skills.slice(6, 12).map((skill) => (
                 <a
@@ -55,7 +55,7 @@ export default function ToolsPage() {
       </div>
       
       <div className="mt-8 pt-6 border-t border-gray-800">
-        <h2 className="text-lg font-semibold mb-4 text-white">All Technologies</h2>
+        <h2 className="text-header-lg font-semibold mb-4 text-white">All Technologies</h2>
         <div className="flex flex-wrap gap-2">
           {RESUME_DATA.skills.map((skill) => (
             <a

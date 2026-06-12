@@ -38,7 +38,7 @@ export default function AboutPage() {
       
       {/* Tools Section */}
       <div className="mt-8 pt-6 border-t border-gray-800">
-        <h2 className="text-base font-medium text-white mb-4">Expertise</h2>
+        <h2 className="text-header-base font-medium text-white mb-4">Expertise</h2>
         <div className="flex flex-wrap gap-2">
           {/* Display only specific skills - you can customize this array to show exactly which skills you want */}
           {RESUME_DATA.skills

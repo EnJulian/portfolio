@@ -61,7 +61,7 @@ export function MobileNav({ navItems }: MobileNavProps) {
           >
             {/* Header with close button */}
             <div className="flex justify-between items-center px-6 py-5 border-b border-gray-800">
-              <h2 className="text-white font-medium text-lg">Menu</h2>
+              <h2 className="text-white font-medium text-header-lg">Menu</h2>
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="p-2 text-gray-400 hover:text-white transition-colors focus:outline-none"
