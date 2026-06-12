@@ -1,6 +1,9 @@
+import React from "react";
 import { Metadata } from "next";
 import { RESUME_DATA } from "@/data/resume-data";
 import { MobileCTA } from "@/components/mobile-cta";
+import { SkillChip } from "@/components/ui/skill-chip";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name}`,
@@ -12,57 +15,60 @@ export default function AboutPage() {
     <div className="space-y-6">
       <div className="space-y-6">
         <p>
-          I&apos;m a developer living in {" "}
-          <a href={RESUME_DATA.locationLink} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">
+          I&apos;m a developer living in{" "}
+          <a
+            href={RESUME_DATA.locationLink}
+            target="_blank"
+            className="text-link font-medium"
+          >
             {RESUME_DATA.location}
           </a>
-          . I specialize in building backend systems focusing on scalability, reliability, and clean architecture using {" "}
+          . I specialize in building backend systems focusing on scalability,
+          reliability, and clean architecture using{" "}
           {RESUME_DATA.skills.slice(0, 4).map((skill, index, array) => (
-            <>
-              <a key={skill.name} href={skill.url} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">
+            <React.Fragment key={skill.name}>
+              <a
+                href={skill.url}
+                target="_blank"
+                className="text-link font-medium"
+              >
                 {skill.name}
               </a>
               {index < array.length - 1 ? ", " : ""}
-            </>
+            </React.Fragment>
           ))}
           .{" "}
         </p>
-        
+
         <p>
           Today I spend my time building obscure digital tools like{" "}
-          <a href="https://github.com/EnJulian/shadowbox" target="_blank" className="text-white hover:text-gray-300 underline-offset-2 hover:underline">
+          <a
+            href="https://github.com/EnJulian/shadowbox"
+            target="_blank"
+            className="text-link"
+          >
             Shadowbox.
           </a>
         </p>
       </div>
-      
-      {/* Tools Section */}
-      <div className="mt-8 pt-6 border-t border-gray-800">
-        <h2 className="text-base font-medium text-white mb-4">Expertise</h2>
+
+      <div className="mt-8 border-t border-border pt-6">
+        <SectionHeading>Expertise</SectionHeading>
         <div className="flex flex-wrap gap-2">
-          {/* Display only specific skills - you can customize this array to show exactly which skills you want */}
           {RESUME_DATA.skills
-            .filter(skill => [
-              "C#", 
-              ".NET Core", 
-              "TypeScript", 
-              "Node.js", 
-              "Python", 
-              "AWS"
-            ].includes(skill.name))
+            .filter((skill) =>
+              ["C#", ".NET Core", "TypeScript", "Node.js", "Python", "AWS"].includes(
+                skill.name,
+              ),
+            )
             .map((skill) => (
-              <a
-                key={skill.name}
-                href={skill.url}
-                target="_blank"
-                className="px-2 py-1 bg-gray-900 text-gray-300 rounded text-xs hover:bg-gray-800 hover:text-white transition-colors"
-              >
+              <SkillChip key={skill.name} href={skill.url}>
                 {skill.name}
-              </a>
+              </SkillChip>
             ))}
         </div>
       </div>
-      
+
       <div className="mt-6 pt-4">
         <MobileCTA href="/work" text="View my work history" />
       </div>

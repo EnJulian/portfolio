@@ -147,6 +147,15 @@ export const RESUME_DATA = {
         href: "https://merifot.enyata.com/auth/create-account",
       },
     },
+    {
+      title: "Vaska",
+      techStack: ["Flutter", "Dart"],
+      description: "Freelance platform for freelancers to find work.",
+      logo: MonitoLogo,
+      link: {
+        label: "vaskafreelancer.com",
+        href: "https://vaskafreelancer.com/",
+      },
     // {
     //   title: "Campus Care",
     //   techStack: ["TypeScript", "Node.js", "PostgreSQL"],
@@ -167,7 +176,7 @@ export const RESUME_DATA = {
     //     href: "https://digitaldevhub.org",
     //   },
     // },
-  ],
+  }],
   personalProjects: [
     {
       title: "Shadowbox",
