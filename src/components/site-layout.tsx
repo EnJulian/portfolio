@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -31,6 +31,28 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   ];
 
   const isProjectsPage = pathname === "/projects";
+
+  useEffect(() => {
+    if (!isProjectsPage) {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+    const syncScrollLock = () => {
+      document.documentElement.style.overflow = mediaQuery.matches
+        ? "hidden"
+        : "";
+    };
+
+    syncScrollLock();
+    mediaQuery.addEventListener("change", syncScrollLock);
+
+    return () => {
+      document.documentElement.style.overflow = "";
+      mediaQuery.removeEventListener("change", syncScrollLock);
+    };
+  }, [isProjectsPage]);
 
   return (
     <div

@@ -18,7 +18,7 @@ export default function ProjectsPage() {
       </div>
 
       <ProjectsDisplay
-        className="min-h-0 flex-1"
+        className="min-h-0 flex-1 md:overflow-hidden"
         projects={RESUME_DATA.projects}
         personalProjects={RESUME_DATA.personalProjects}
       />

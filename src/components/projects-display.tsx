@@ -2,11 +2,16 @@
 
 import { useState, useRef, useEffect } from "react";
 import { FiFilter, FiX } from "react-icons/fi";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ProjectCard, type Project } from "@/components/project-card";
+import { ProjectTypeToggle } from "@/components/project-type-toggle";
+import { ProjectPagination } from "@/components/ui/project-pagination";
 import { SkillChip } from "@/components/ui/skill-chip";
-import { ScrollRegion } from "@/components/ui/scroll-region";
 import { focusRing } from "@/lib/focus-ring";
+import {
+  clampPage,
+  getPaginatedSlice,
+  getTotalPages,
+} from "@/lib/project-pagination";
 import { cn } from "@/lib/utils";
 
 type ProjectsDisplayProps = {
@@ -15,40 +20,70 @@ type ProjectsDisplayProps = {
   className?: string;
 };
 
+const MOBILE_ITEMS_PER_PAGE = 3;
+const DESKTOP_ITEMS_PER_PAGE = 6;
+
 export default function ProjectsDisplay({
   projects,
   personalProjects,
   className,
 }: ProjectsDisplayProps) {
-  const [showPersonalProjects, setShowPersonalProjects] = useState(false);
+  const [projectType, setProjectType] = useState<"professional" | "personal">(
+    "professional",
+  );
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isDesktopGrid, setIsDesktopGrid] = useState(false);
   const filterRef = useRef<HTMLDivElement>(null);
-  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
-    const checkMobile = () => {
+    const checkBreakpoints = () => {
       setIsMobile(window.innerWidth < 640);
+      setIsDesktopGrid(window.innerWidth >= 768);
     };
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    checkBreakpoints();
+    window.addEventListener("resize", checkBreakpoints);
+    return () => window.removeEventListener("resize", checkBreakpoints);
   }, []);
 
   const allProjects = [...projects, ...personalProjects];
   const allTechStacks = allProjects.flatMap((project) => project.techStack);
   const uniqueTechStacks = Array.from(new Set(allTechStacks)).sort();
 
-  const displayProjects = showPersonalProjects ? personalProjects : projects;
+  const displayProjects =
+    projectType === "personal" ? personalProjects : projects;
   const filteredProjects =
     selectedTechs.length > 0
       ? displayProjects.filter((project) =>
           selectedTechs.every((tech) => project.techStack.includes(tech)),
         )
       : displayProjects;
+
+  const itemsPerPage = isDesktopGrid
+    ? DESKTOP_ITEMS_PER_PAGE
+    : MOBILE_ITEMS_PER_PAGE;
+  const totalPages = getTotalPages(filteredProjects.length, itemsPerPage);
+  const safePage = clampPage(currentPage, totalPages);
+  const paginatedProjects = getPaginatedSlice(
+    filteredProjects,
+    safePage,
+    itemsPerPage,
+  );
+
+  useEffect(() => {
+    setCurrentPage(1);
+    setExpandedProject(null);
+  }, [projectType, selectedTechs]);
+
+  useEffect(() => {
+    if (currentPage !== safePage) {
+      setCurrentPage(safePage);
+    }
+  }, [currentPage, safePage]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -74,29 +109,20 @@ export default function ProjectsDisplay({
     setSelectedTechs([]);
   };
 
-  const motionProps = prefersReducedMotion
-    ? {}
-    : {
-        initial: { opacity: 0, y: 20 },
-        animate: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: -20 },
-        transition: { duration: 0.3 },
-      };
+  const handlePageChange = (page: number) => {
+    setCurrentPage(clampPage(page, totalPages));
+    setExpandedProject(null);
+  };
 
   return (
-    <div className={cn("flex min-h-0 flex-col gap-5", className)}>
-      <div className="flex shrink-0 flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-        <div className="flex items-center">
-          <span className="mr-2 text-sm text-muted-foreground">
-            {showPersonalProjects ? "Personal Projects" : "Professional Projects"}
-          </span>
-          <button
-            onClick={() => setShowPersonalProjects(!showPersonalProjects)}
-            className={`rounded-md bg-secondary px-3 py-1 text-xs transition-colors hover:bg-surface-muted button-highlight ${focusRing}`}
-          >
-            {showPersonalProjects ? "Show Professional" : "Show Personal"}
-          </button>
-        </div>
+    <div className={cn("flex flex-col gap-5", className)}>
+      <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <ProjectTypeToggle
+          value={projectType}
+          onChange={setProjectType}
+          professionalCount={projects.length}
+          personalCount={personalProjects.length}
+        />
 
         <div className="relative hidden sm:block" ref={filterRef}>
           <button
@@ -162,44 +188,48 @@ export default function ProjectsDisplay({
         </div>
       )}
 
-      <AnimatePresence>
-        <ScrollRegion className="grid grid-cols-1 content-start items-start gap-3 pb-1 pt-3 md:grid-cols-2 md:overflow-y-auto md:overscroll-y-contain md:pr-1">
-          {filteredProjects.length > 0 ? (
-            filteredProjects.map((project) => (
-              <motion.div
-                key={project.title}
-                className="group relative"
-                {...motionProps}
-              >
-                <ProjectCard
-                  project={project}
-                  isExpanded={expandedProject === project.title}
-                  isMobile={isMobile}
-                  selectedTechs={selectedTechs}
-                  onToggleExpand={() =>
-                    setExpandedProject(
-                      expandedProject === project.title ? null : project.title,
-                    )
-                  }
-                  onToggleTech={toggleTech}
-                />
-              </motion.div>
-            ))
-          ) : (
-            <div className="col-span-2 py-8 text-center">
-              <p className="text-muted-foreground">
-                No projects match the selected filters.
-              </p>
-              <button
-                onClick={clearFilters}
-                className={`mt-2 rounded-md bg-secondary px-3 py-1 text-sm transition-colors hover:bg-surface-muted ${focusRing}`}
-              >
-                Clear Filters
-              </button>
-            </div>
-          )}
-        </ScrollRegion>
-      </AnimatePresence>
+      <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-hidden">
+        <div className="min-h-0 flex-1 md:min-h-[31rem]">
+          <div className="grid grid-cols-1 content-start items-start gap-3 px-0.5 pb-1 pt-3 md:grid-cols-2">
+            {paginatedProjects.length > 0 ? (
+              paginatedProjects.map((project) => (
+                <div key={project.title} className="group relative">
+                  <ProjectCard
+                    project={project}
+                    isExpanded={expandedProject === project.title}
+                    isMobile={isMobile}
+                    selectedTechs={selectedTechs}
+                    onToggleExpand={() =>
+                      setExpandedProject(
+                        expandedProject === project.title ? null : project.title,
+                      )
+                    }
+                    onToggleTech={toggleTech}
+                  />
+                </div>
+              ))
+            ) : (
+              <div className="col-span-2 py-8 text-center">
+                <p className="text-muted-foreground">
+                  No projects match the selected filters.
+                </p>
+                <button
+                  onClick={clearFilters}
+                  className={`mt-2 rounded-md bg-secondary px-3 py-1 text-sm transition-colors hover:bg-surface-muted ${focusRing}`}
+                >
+                  Clear Filters
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <ProjectPagination
+          currentPage={safePage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
     </div>
   );
 }

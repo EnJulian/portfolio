@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "next-themes";
+import { useThemeTransition } from "@/hooks/use-theme-transition";
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ variant = "icon", className }: ThemeToggleProps) {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useThemeTransition();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

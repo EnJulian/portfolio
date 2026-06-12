@@ -163,6 +163,7 @@ export function ProjectCard({
               variant={
                 selectedTechs.includes(tech) ? "selected" : "interactive"
               }
+              className="text-[calc(0.75rem*0.97)] leading-[calc(1rem*0.97)]"
               onClick={(e) => {
                 if (!isMobile) {
                   e.preventDefault();
