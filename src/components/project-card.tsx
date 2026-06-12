@@ -34,6 +34,8 @@ interface ProjectCardProps {
   onToggleTech: (tech: string) => void;
 }
 
+const VISIBLE_SKILL_LIMIT = 3;
+
 export function ProjectCard({
   project,
   isExpanded,
@@ -50,6 +52,10 @@ export function ProjectCard({
     : hasGithubLink
       ? project.githubLink
       : "#";
+  const visibleTechs = isExpanded
+    ? project.techStack
+    : project.techStack.slice(0, VISIBLE_SKILL_LIMIT);
+  const hiddenTechCount = project.techStack.length - VISIBLE_SKILL_LIMIT;
 
   return (
     <div className="relative">
@@ -156,12 +162,12 @@ export function ProjectCard({
         </p>
 
         <div className="mt-auto flex flex-wrap gap-1.5">
-          {project.techStack.map((tech) => (
+          {visibleTechs.map((tech) => (
             <SkillChip
               key={tech}
               as={isMobile ? "span" : "button"}
               variant={
-                selectedTechs.includes(tech) ? "selected" : "interactive"
+                selectedTechs.includes(tech) ? "projectSelected" : "project"
               }
               className="text-[calc(0.75rem*0.97)] leading-[calc(1rem*0.97)]"
               onClick={(e) => {
@@ -175,6 +181,20 @@ export function ProjectCard({
               {tech}
             </SkillChip>
           ))}
+          {!isExpanded && hiddenTechCount > 0 && (
+            <SkillChip
+              as="button"
+              variant="projectOverflow"
+              className="text-[calc(0.75rem*0.97)] leading-[calc(1rem*0.97)]"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onToggleExpand();
+              }}
+            >
+              +{hiddenTechCount} more
+            </SkillChip>
+          )}
         </div>
       </a>
     </div>

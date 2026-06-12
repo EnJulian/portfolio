@@ -12,6 +12,12 @@ const skillChipVariants = cva(
           "cursor-pointer border border-transparent bg-secondary px-1.5 py-0.5 text-secondary-foreground hover:border-border hover:bg-surface-muted hover:text-foreground",
         selected:
           "bg-surface-muted px-1.5 py-0.5 text-foreground",
+        project:
+          "cursor-pointer border border-border/70 bg-surface-muted px-1.5 py-0.5 font-medium text-foreground shadow-sm hover:border-foreground/20 hover:bg-surface-elevated hover:text-foreground",
+        projectSelected:
+          "border border-brand/50 bg-surface-elevated px-1.5 py-0.5 font-medium text-foreground shadow-sm",
+        projectOverflow:
+          "cursor-pointer border border-border/60 bg-surface-muted/90 px-1.5 py-0.5 text-muted-foreground hover:border-foreground/20 hover:bg-surface-elevated hover:text-foreground",
         filter:
           "inline-flex items-center bg-secondary px-2 py-0.5 text-foreground",
       },
