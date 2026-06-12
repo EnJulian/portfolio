@@ -8,6 +8,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { RESUME_DATA } from "@/data/resume-data";
 import { useMobileMenu } from "@/hooks/use-mobile-menu";
 import { NavLink } from "@/components/ui/nav-link";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { focusRing } from "@/lib/focus-ring";
 
 interface MobileNavProps {
@@ -117,7 +118,8 @@ export function MobileNav({ navItems }: MobileNavProps) {
               </ul>
             </motion.nav>
 
-            <div className="border-t border-border px-6 py-8">
+            <div className="space-y-3 border-t border-border px-6 py-6">
+              <ThemeToggle variant="menu" />
               <a
                 href={RESUME_DATA.resumeUrl}
                 download
