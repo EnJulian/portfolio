@@ -39,7 +39,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             <div className="inline-block">
               <Link href="/about" className="inline-flex comet-glow relative group">
                 <Image
-                  src="/Julian-Amoah-Favicon-Black.png"
+                  src="/en.png"
                   alt="Julian Amoah Logo"
                   width={50}
                   height={50}
@@ -61,7 +61,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             <div className="md:mb-10 hidden md:block">
               <Link href="/about" className="inline-flex comet-glow relative group">
                 <Image
-                  src="/Julian-Amoah-Favicon-Black.png"
+                  src="/en.png"
                   alt="Julian Amoah Logo"
                   width={50}
                   height={50}

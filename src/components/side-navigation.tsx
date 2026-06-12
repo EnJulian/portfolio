@@ -17,7 +17,7 @@ export function SideNavigation() {
       <div className="flex flex-col items-start mb-12">
         <div className="mb-4">
           <Image
-            src="/Julian-Amoah-Favicon-Black.png"
+            src="/en.png"
             alt="Julian Amoah Logo"
             width={60}
             height={60}

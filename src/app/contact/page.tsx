@@ -25,7 +25,7 @@ export default function ContactPage() {
               <span className="text-gray-400 mb-1 text-xs">EMAIL</span>
               <a 
                 href={`mailto:${RESUME_DATA.contact.email}`} 
-                className="text-white hover:text-gray-400 break-all"
+                className="text-link break-all"
               >
                 {RESUME_DATA.contact.email}
               </a>
@@ -34,7 +34,7 @@ export default function ContactPage() {
               <span className="text-gray-400 mb-1 text-xs">PHONE</span>
               <a 
                 href={`tel:${RESUME_DATA.contact.tel}`} 
-                className="text-white hover:text-gray-400"
+                className="text-link"
               >
                 {RESUME_DATA.contact.tel}
               </a>
@@ -45,7 +45,7 @@ export default function ContactPage() {
                 href={RESUME_DATA.locationLink} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-400"
+                className="text-link"
               >
                 {RESUME_DATA.location}
               </a>

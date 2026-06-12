@@ -12,28 +12,28 @@ export default function WorkPage() {
     <div className="space-y-5">
       <p>
         I worked with {" "}
-        <a href="https://www.linkedin.com/company/plendify/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3B8sYnlGc6SXSvIlvv8XZTLw%3D%3D" target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">
+        <a href="https://www.linkedin.com/company/plendify/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3B8sYnlGc6SXSvIlvv8XZTLw%3D%3D" target="_blank" className="text-link font-medium">
           Plendify
         </a>
         {" "} in 2025 as a Backend Developer and DevOps Engineer, where I rebuilt their ecommerce web-app with new features
         using {" "}
-        <a href={"https://www.typescriptlang.org/"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">TypeScript</a>,{" "}
-        <a href={"https://nodejs.org/"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">Node.js</a>,{" "}
-        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">PostgreSQL</a>{" "}
+        <a href={"https://www.typescriptlang.org/"} target="_blank" className="text-link font-medium">TypeScript</a>,{" "}
+        <a href={"https://nodejs.org/"} target="_blank" className="text-link font-medium">Node.js</a>,{" "}
+        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank" className="text-link font-medium">PostgreSQL</a>{" "}
         and {" "}
-        <a href={"https://docs.aws.amazon.com"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">AWS</a>.
+        <a href={"https://docs.aws.amazon.com"} target="_blank" className="text-link font-medium">AWS</a>.
       </p>
 
       <p>
         Before Plendify, I joined {" "}
-        <a href="https://www.linkedin.com/company/enyata/" target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">
+        <a href="https://www.linkedin.com/company/enyata/" target="_blank" className="text-link font-medium">
           Enyata
         </a> {" "}in 2023 as a Backend Developer
         {", "}
         where I developed applications using{" "}
-        <a href={"https://www.typescriptlang.org/"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">TypeScript</a>,{" "}
-        <a href={"https://nodejs.org/"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">Node.js</a> and{" "}
-        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">PostgreSQL</a>.
+        <a href={"https://www.typescriptlang.org/"} target="_blank" className="text-link font-medium">TypeScript</a>,{" "}
+        <a href={"https://nodejs.org/"} target="_blank" className="text-link font-medium">Node.js</a> and{" "}
+        <a href={"https://www.postgresql.org/docs/current/index.html"} target="_blank" className="text-link font-medium">PostgreSQL</a>.
       </p>
       
       <div className="mt-8 pt-4 border-t border-gray-800">

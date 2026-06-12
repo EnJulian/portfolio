@@ -15,12 +15,10 @@ export const metadata: Metadata = {
   description: "Portfolio and personal website of Julian A. Amoah",
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-      { url: '/favicon.svg', type: 'image/svg+xml' }
+      { url: '/en-round.svg', type: 'image/svg+xml' }
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180' }
+      { url: '/en-round.svg', type: 'image/svg+xml' }
     ],
     other: [
       {
@@ -42,12 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fontSansClassName} ${inconsolataFont.variable} ${nimbusSans.variable} ${jakartaSans.variable} ${mitchellFont.variable} ${terminusFont.variable}`}>
       <head>
-        {/* Force favicon reload by adding version parameter */}
-        <link rel="icon" href="/favicon.ico?v=2" />
-        <link rel="icon" href="/favicon-96x96.png?v=2" sizes="96x96" type="image/png" />
-        <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" sizes="180x180" />
-        <link rel="manifest" href="/site.webmanifest?v=2" />
+        <link rel="icon" href="/en-round.svg?v=4" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/en-round.svg?v=4" />
+        <link rel="manifest" href="/site.webmanifest?v=4" />
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-TileColor" content="#000000" />

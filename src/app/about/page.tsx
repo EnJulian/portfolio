@@ -13,13 +13,13 @@ export default function AboutPage() {
       <div className="space-y-6">
         <p>
           I&apos;m a developer living in {" "}
-          <a href={RESUME_DATA.locationLink} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">
+          <a href={RESUME_DATA.locationLink} target="_blank" className="text-link font-medium">
             {RESUME_DATA.location}
           </a>
           . I specialize in building backend systems focusing on scalability, reliability, and clean architecture using {" "}
           {RESUME_DATA.skills.slice(0, 4).map((skill, index, array) => (
             <>
-              <a key={skill.name} href={skill.url} target="_blank" className="text-white hover:text-gray-300 font-medium underline-offset-2 hover:underline">
+              <a key={skill.name} href={skill.url} target="_blank" className="text-link font-medium">
                 {skill.name}
               </a>
               {index < array.length - 1 ? ", " : ""}
@@ -30,7 +30,7 @@ export default function AboutPage() {
         
         <p>
           Today I spend my time building obscure digital tools like{" "}
-          <a href="https://github.com/EnJulian/shadowbox" target="_blank" className="text-white hover:text-gray-300 underline-offset-2 hover:underline">
+          <a href="https://github.com/EnJulian/shadowbox" target="_blank" className="text-link">
             Shadowbox.
           </a>
         </p>
