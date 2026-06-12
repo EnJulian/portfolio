@@ -66,9 +66,11 @@ export const Toast: React.FC<ToastProps> = ({
   if (!isVisible) return null
 
   const variantClasses = {
-    default: "bg-black text-gray-300 border-gray-800",
-    destructive: "border-red-400 bg-red-800/80 text-gray-100",
-    success: "bg-black-700 text-gray-100 border-gray-700 shadow-[0_0_15px_rgba(0,200,100,0.4)]",
+    default: "bg-card text-foreground border-border",
+    destructive:
+      "border-destructive bg-destructive/80 text-destructive-foreground",
+    success:
+      "bg-surface-elevated text-foreground border-brand/40 shadow-[0_0_15px_hsl(var(--brand)/0.25)]",
   }
 
   return (
@@ -86,7 +88,9 @@ export const Toast: React.FC<ToastProps> = ({
     >
       <div className="grid gap-0.5">
         {title && <div className="text-xs font-medium">{title}</div>}
-        {description && <div className="text-gray-400 text-xs">{description}</div>}
+        {description && (
+          <div className="text-xs text-muted-foreground">{description}</div>
+        )}
       </div>
       <button
         onClick={() => {
@@ -97,15 +101,14 @@ export const Toast: React.FC<ToastProps> = ({
             if (onClose) onClose()
           }, 300)
         }}
-        className="absolute right-1.5 top-1.5 rounded-md p-0.5 text-gray-500 opacity-60 transition-opacity hover:text-gray-300 hover:opacity-100 focus:opacity-100 focus:outline-none"
+        className="absolute right-1.5 top-1.5 rounded-md p-0.5 text-muted-foreground opacity-60 transition-opacity hover:text-foreground hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <X className="h-3 w-3" />
       </button>
       {loading && (
         <div 
           className={cn(
-            "absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-100 origin-left",
-            "bg-gray-300"
+            "bg-foreground/20 absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-100 origin-left",
           )}
           style={{ transform: `scaleX(${progress / 100})` }} 
         />

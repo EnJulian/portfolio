@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 import { RESUME_DATA } from "@/data/resume-data";
 import { MobileCTA } from "@/components/mobile-cta";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { SurfaceCard } from "@/components/ui/surface-card";
+import { focusRing } from "@/lib/focus-ring";
 
 export const metadata: Metadata = {
   title: `Contact | ${RESUME_DATA.name}`,
@@ -10,40 +13,38 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="space-y-6">
-      <div className="border-b border-gray-800 pb-4 mb-6">
+      <div className="mb-6 border-b border-border pb-4">
         <p>
           Feel free to reach out to me through any of the following channels:
         </p>
       </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Contact Info Card */}
-        <div className="rounded-lg border border-gray-800 p-4 bg-gray-950/50 hover:border-gray-700 transition-colors">
-          <h2 className="text-header-base font-medium text-white mb-4">Direct Contact</h2>
+
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <SurfaceCard>
+          <SectionHeading className="mb-4">Direct Contact</SectionHeading>
           <div className="space-y-4">
-            <div className="flex flex-col p-2 rounded hover:bg-black/30 transition-colors">
-              <span className="text-gray-400 mb-1 text-xs">EMAIL</span>
-              <a 
-                href={`mailto:${RESUME_DATA.contact.email}`} 
+            <div className="flex flex-col rounded p-2 transition-colors hover:bg-secondary/50">
+              <span className="mb-1 text-xs text-muted-foreground">EMAIL</span>
+              <a
+                href={`mailto:${RESUME_DATA.contact.email}`}
                 className="text-link break-all"
               >
                 {RESUME_DATA.contact.email}
               </a>
             </div>
-            <div className="flex flex-col p-2 rounded hover:bg-black/30 transition-colors">
-              <span className="text-gray-400 mb-1 text-xs">PHONE</span>
-              <a 
-                href={`tel:${RESUME_DATA.contact.tel}`} 
-                className="text-link"
-              >
+            <div className="flex flex-col rounded p-2 transition-colors hover:bg-secondary/50">
+              <span className="mb-1 text-xs text-muted-foreground">PHONE</span>
+              <a href={`tel:${RESUME_DATA.contact.tel}`} className="text-link">
                 {RESUME_DATA.contact.tel}
               </a>
             </div>
-            <div className="flex flex-col p-2 rounded hover:bg-black/30 transition-colors">
-              <span className="text-gray-400 mb-1 text-xs">LOCATION</span>
-              <a 
-                href={RESUME_DATA.locationLink} 
-                target="_blank" 
+            <div className="flex flex-col rounded p-2 transition-colors hover:bg-secondary/50">
+              <span className="mb-1 text-xs text-muted-foreground">
+                LOCATION
+              </span>
+              <a
+                href={RESUME_DATA.locationLink}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-link"
               >
@@ -51,11 +52,10 @@ export default function ContactPage() {
               </a>
             </div>
           </div>
-        </div>
-        
-        {/* Social Media Card */}
-        <div className="rounded-lg border border-gray-800 p-4 bg-gray-950/50 hover:border-gray-700 transition-colors">
-          <h2 className="text-header-base font-medium text-white mb-4">Social Profiles</h2>
+        </SurfaceCard>
+
+        <SurfaceCard>
+          <SectionHeading className="mb-4">Social Profiles</SectionHeading>
           <div className="grid grid-cols-2 gap-3">
             {RESUME_DATA.contact.social.map((social) => (
               <a
@@ -63,22 +63,22 @@ export default function ContactPage() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center p-2 rounded-md border border-gray-800 bg-black/30 text-gray-400 hover:text-white hover:border-gray-700 hover:bg-gray-900/30 transition-all"
+                className={`flex items-center rounded-md border border-border bg-secondary/30 p-2 text-muted-foreground transition-all hover:border-foreground/20 hover:bg-secondary hover:text-foreground ${focusRing}`}
                 aria-label={social.name}
               >
-                <social.icon className="h-5 w-5 mr-3" />
+                <social.icon className="mr-3 h-5 w-5" />
                 <span className="text-sm">{social.name}</span>
               </a>
             ))}
           </div>
-        </div>
+        </SurfaceCard>
       </div>
-      
+
       <div>
-        <MobileCTA 
+        <MobileCTA
           href="/Resume_Julian_A.pdf"
           text="Download Resume"
-          icon="download" 
+          icon="download"
           download={true}
         />
       </div>
