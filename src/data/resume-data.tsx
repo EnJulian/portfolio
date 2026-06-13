@@ -87,7 +87,7 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
-      title: "Plendify Marketplace",
+      title: "PLENDIFY MARKETPLACE",
       techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
       description: "Ecommerce web-app for shopping globally. Now with a new design and new features.",
       logo: MonitoLogo,
@@ -98,7 +98,7 @@ export const RESUME_DATA = {
       // githubLink: "https://github.com/EnJulian/plendify-marketplace",
     },
     {
-      title: "Mypurplepay",
+      title: "MYPURPLEPAY",
       techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
       description: "Mobile application for creating and managing savings groups. Now with loan management.",
       logo: MonitoLogo,
@@ -108,7 +108,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Clearline",
+      title: "CLEARLINE",
       techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
       description: "Health maintenance organization (HMO) that provides various health insurance plans.",
       logo: MonitoLogo,
@@ -118,7 +118,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Build-A-Thon",
+      title: "BUILD-A-THON",
       techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
       description: "A hackathon where tech creatives collaborate to build innovative solutions and compete for prizes.",
       logo: YearProgressLogo,
@@ -128,7 +128,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "HRMS by Enyata",
+      title: "HRMS BY ENYATA",
       techStack: ["TypeScript", "Node.js", "MongoDB", "GraphQL", "AWS"],
       description: "SaaS for Human Resource Management.",
       logo: MonitoLogo,
@@ -138,7 +138,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Fluxtribe",
+      title: "FLUXTRIBE",
       techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "GraphQL", "AWS"],
       description: "Social app for collaborating on goals.",
       logo: YearProgressLogo,
@@ -148,7 +148,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Vaska",
+      title: "VASKA",
       techStack: ["Flutter", "Dart"],
       description: "Freelance platform for freelancers to find work.",
       logo: MonitoLogo,
@@ -179,7 +179,7 @@ export const RESUME_DATA = {
   }],
   personalProjects: [
     {
-      title: "Shadowbox",
+      title: "SHADOWBOX",
       techStack: ["Python"],
       description: "Command line tool for ripping audio from various sources, converting to high-def formats and injecting metadata + album art.",
       badgeIconTypes: ["none"],
@@ -190,20 +190,20 @@ export const RESUME_DATA = {
       },
       githubLink: "https://github.com/lsnen/shadowbox",
     },
+    // {
+    //   title: "PORTFOLIO",
+    //   techStack: ["React/Next.js", "TypeScript"],
+    //   description: "My personal portfolio website.",
+    //   badgeIconTypes: ["none"],
+    //   logo: JarockiMeLogo,
+    //   link: {
+    //     label: "enjulian.vercel.app",
+    //     href: "https://enjulian.vercel.app",
+    //   },
+    //   githubLink: "https://github.com/EnJulian/portfolio",
+    // },
     {
-      title: "Portfolio Website",
-      techStack: ["React/Next.js", "TypeScript"],
-      description: "My personal portfolio website.",
-      badgeIconTypes: ["none"],
-      logo: JarockiMeLogo,
-      link: {
-        label: "enjulian.vercel.app",
-        href: "https://enjulian.vercel.app",
-      },
-      githubLink: "https://github.com/EnJulian/portfolio",
-    },
-    {
-      title: "Nodejs Typescript Template",
+      title: "NODEJS TYPESCRIPT TEMPLATE",
       techStack: ["TypeScript", "Node.js", "PostgreSQL"],
       description: "A scalable and modular Node.js TypeScript API template for quickly bootstrapping new projects.",
       badgeIconTypes: ["none"],
