@@ -6,6 +6,9 @@ import { ArrowRight, Download } from "lucide-react";
 import { useMobileMenu } from "@/hooks/use-mobile-menu";
 import { focusRing } from "@/lib/focus-ring";
 
+/** Bottom padding to keep page footers clear of the fixed mobile CTA. */
+export const mobileCtaSafeAreaClassName = "pb-24 sm:pb-20";
+
 interface MobileCTAProps {
   href: string;
   text: string;

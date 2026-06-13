@@ -4,14 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import { FiFilter, FiX } from "react-icons/fi";
 import { ProjectCard, type Project } from "@/components/project-card";
 import { ProjectTypeToggle } from "@/components/project-type-toggle";
-import { ProjectPagination } from "@/components/ui/project-pagination";
 import { SkillChip } from "@/components/ui/skill-chip";
 import { focusRing } from "@/lib/focus-ring";
-import {
-  clampPage,
-  getPaginatedSlice,
-  getTotalPages,
-} from "@/lib/project-pagination";
 import { cn } from "@/lib/utils";
 
 type ProjectsDisplayProps = {
@@ -19,9 +13,6 @@ type ProjectsDisplayProps = {
   personalProjects: readonly Project[];
   className?: string;
 };
-
-const MOBILE_ITEMS_PER_PAGE = 3;
-const DESKTOP_ITEMS_PER_PAGE = 6;
 
 export default function ProjectsDisplay({
   projects,
@@ -33,21 +24,18 @@ export default function ProjectsDisplay({
   );
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isDesktopGrid, setIsDesktopGrid] = useState(false);
   const filterRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const checkBreakpoints = () => {
+    const checkMobile = () => {
       setIsMobile(window.innerWidth < 640);
-      setIsDesktopGrid(window.innerWidth >= 768);
     };
 
-    checkBreakpoints();
-    window.addEventListener("resize", checkBreakpoints);
-    return () => window.removeEventListener("resize", checkBreakpoints);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const allProjects = [...projects, ...personalProjects];
@@ -63,27 +51,9 @@ export default function ProjectsDisplay({
         )
       : displayProjects;
 
-  const itemsPerPage = isDesktopGrid
-    ? DESKTOP_ITEMS_PER_PAGE
-    : MOBILE_ITEMS_PER_PAGE;
-  const totalPages = getTotalPages(filteredProjects.length, itemsPerPage);
-  const safePage = clampPage(currentPage, totalPages);
-  const paginatedProjects = getPaginatedSlice(
-    filteredProjects,
-    safePage,
-    itemsPerPage,
-  );
-
   useEffect(() => {
-    setCurrentPage(1);
     setExpandedProject(null);
   }, [projectType, selectedTechs]);
-
-  useEffect(() => {
-    if (currentPage !== safePage) {
-      setCurrentPage(safePage);
-    }
-  }, [currentPage, safePage]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -107,11 +77,6 @@ export default function ProjectsDisplay({
 
   const clearFilters = () => {
     setSelectedTechs([]);
-  };
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(clampPage(page, totalPages));
-    setExpandedProject(null);
   };
 
   return (
@@ -188,47 +153,37 @@ export default function ProjectsDisplay({
         </div>
       )}
 
-      <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-hidden">
-        <div className="min-h-0 flex-1 md:min-h-[31rem]">
-          <div className="grid grid-cols-1 content-start items-start gap-3 px-0.5 pb-1 pt-3 md:grid-cols-2">
-            {paginatedProjects.length > 0 ? (
-              paginatedProjects.map((project) => (
-                <div key={project.title} className="group relative">
-                  <ProjectCard
-                    project={project}
-                    isExpanded={expandedProject === project.title}
-                    isMobile={isMobile}
-                    selectedTechs={selectedTechs}
-                    onToggleExpand={() =>
-                      setExpandedProject(
-                        expandedProject === project.title ? null : project.title,
-                      )
-                    }
-                    onToggleTech={toggleTech}
-                  />
-                </div>
-              ))
-            ) : (
-              <div className="col-span-2 py-8 text-center">
-                <p className="text-muted-foreground">
-                  No projects match the selected filters.
-                </p>
-                <button
-                  onClick={clearFilters}
-                  className={`mt-2 rounded-md bg-secondary px-3 py-1 text-sm transition-colors hover:bg-surface-muted ${focusRing}`}
-                >
-                  Clear Filters
-                </button>
-              </div>
-            )}
+      <div className="grid grid-cols-1 content-start items-start gap-3 px-0.5 pb-1 pt-3 md:grid-cols-2">
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map((project) => (
+            <div key={project.title} className="group relative">
+              <ProjectCard
+                project={project}
+                isExpanded={expandedProject === project.title}
+                isMobile={isMobile}
+                selectedTechs={selectedTechs}
+                onToggleExpand={() =>
+                  setExpandedProject(
+                    expandedProject === project.title ? null : project.title,
+                  )
+                }
+                onToggleTech={toggleTech}
+              />
+            </div>
+          ))
+        ) : (
+          <div className="col-span-2 py-8 text-center">
+            <p className="text-muted-foreground">
+              No projects match the selected filters.
+            </p>
+            <button
+              onClick={clearFilters}
+              className={`mt-2 rounded-md bg-secondary px-3 py-1 text-sm transition-colors hover:bg-surface-muted ${focusRing}`}
+            >
+              Clear Filters
+            </button>
           </div>
-        </div>
-
-        <ProjectPagination
-          currentPage={safePage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
+        )}
       </div>
     </div>
   );

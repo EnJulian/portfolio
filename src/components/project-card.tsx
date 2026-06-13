@@ -64,7 +64,7 @@ export function ProjectCard({
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
-          "glass-shine-effect group/card relative flex flex-col rounded-md border border-border bg-gradient-to-b from-surface-muted/20 to-secondary/30 p-3 transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-secondary/60 hover:shadow-md",
+          "glass-shine-effect group/card relative flex flex-col rounded-md border border-border bg-gradient-to-b from-card to-secondary/40 p-3 transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-secondary/50 hover:shadow-md",
           isExpanded ? "min-h-[155px]" : "h-[155px]",
           hasAnyLink ? "cursor-pointer" : "cursor-default",
         )}

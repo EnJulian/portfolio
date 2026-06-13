@@ -1,10 +1,10 @@
 import { Metadata } from "next";
+import { FiExternalLink } from "react-icons/fi";
 import { RESUME_DATA } from "@/data/resume-data";
 import { MobileCTA } from "@/components/mobile-cta";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SurfaceCard } from "@/components/ui/surface-card";
 import { SkillChip } from "@/components/ui/skill-chip";
-import { focusRing } from "@/lib/focus-ring";
 
 export const metadata: Metadata = {
   title: `History | ${RESUME_DATA.name}`,
@@ -100,14 +100,27 @@ export default function WorkPage() {
 
         <div className="space-y-6">
           {RESUME_DATA.work.map((work) => (
-            <SurfaceCard key={work.company}>
-              <div className="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <SurfaceCard
+              key={work.company}
+              variant="glass"
+              href={work.link}
+              className="group/card"
+              aria-label={`Visit ${work.company}`}
+            >
+              <div className="mb-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <h3 className="text-header-base font-medium text-foreground">
                   {work.company}
                 </h3>
-                <span className="text-sm text-muted-foreground">
-                  {work.start} — {work.end || "Present"}
-                </span>
+                <div className="flex shrink-0 items-center gap-2">
+                  <span className="text-sm text-muted-foreground">
+                    {work.start} — {work.end || "Present"}
+                  </span>
+                  <FiExternalLink
+                    size={16}
+                    className="text-muted-foreground transition-colors group-hover/card:text-foreground"
+                    aria-hidden
+                  />
+                </div>
               </div>
               <div className="mb-2 flex flex-wrap gap-2">
                 <SkillChip as="span">{work.title}</SkillChip>
@@ -123,30 +136,6 @@ export default function WorkPage() {
                   ))}
               </div>
               <p className="text-sm text-muted-foreground">{work.description}</p>
-              <div className="mt-3">
-                <a
-                  href={work.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center rounded-md bg-secondary px-3 py-1.5 text-xs font-medium transition-colors hover:bg-surface-muted ${focusRing}`}
-                >
-                  Visit {work.company}
-                  <svg
-                    className="ml-1.5 h-3.5 w-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </a>
-              </div>
             </SurfaceCard>
           ))}
         </div>
