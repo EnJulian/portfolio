@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-6 md:overflow-hidden">
+    <div className="flex flex-col gap-6">
       <div className="shrink-0">
         <p className="border-b border-border pb-4">
           A selection of work I’ve contributed to or built while learning and solving problems in different industries.
@@ -18,7 +18,6 @@ export default function ProjectsPage() {
       </div>
 
       <ProjectsDisplay
-        className="min-h-0 flex-1 md:overflow-hidden"
         projects={RESUME_DATA.projects}
         personalProjects={RESUME_DATA.personalProjects}
       />

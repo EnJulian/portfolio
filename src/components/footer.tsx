@@ -5,8 +5,10 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { MailIcon } from "@/components/icons/MailIcon";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
 import { LocationIcon } from "@/components/icons/LocationIcon";
+import { mobileCtaSafeAreaClassName } from "@/components/mobile-cta";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { focusRing } from "@/lib/focus-ring";
+import { cn } from "@/lib/utils";
 
 interface FooterProps {
   className?: string;
@@ -15,7 +17,11 @@ interface FooterProps {
 export function Footer({ className = "" }: FooterProps) {
   return (
     <footer
-      className={`py-4 text-sm text-muted-foreground sm:py-5 md:py-4 ${className}`}
+      className={cn(
+        "pt-4 text-sm text-muted-foreground sm:pt-5 md:py-4",
+        mobileCtaSafeAreaClassName,
+        className,
+      )}
     >
       <div className="flex flex-col items-center justify-between md:flex-row">
         <div className="mb-5 text-center md:mb-0 md:text-left">
