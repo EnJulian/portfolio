@@ -10,6 +10,7 @@ import { Footer } from "./footer";
 import { MobileNav } from "./mobile-nav";
 import { mobileCtaSafeAreaClassName } from "./mobile-cta";
 import { NavLink } from "./ui/nav-link";
+import { ThemeSegmentedToggle } from "./theme-segmented-toggle";
 
 interface SiteLayoutProps {
   children: React.ReactNode;
@@ -92,7 +93,10 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           </aside>
 
           <main className="overflow-y-visible p-4 sm:p-6 md:w-3/4 md:self-start">
-            <div className="mb-8 hidden shrink-0 md:block">
+            <div className="relative mb-8 hidden shrink-0 md:block">
+              <div className="absolute right-0 bottom-full pb-2">
+                <ThemeSegmentedToggle className="shrink-0" />
+              </div>
               <h1 className="font-sans text-header-xl font-bold uppercase tracking-wide">
                 <Link
                   href="/about"

@@ -6,7 +6,6 @@ import { MailIcon } from "@/components/icons/MailIcon";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
 import { LocationIcon } from "@/components/icons/LocationIcon";
 import { mobileCtaSafeAreaClassName } from "@/components/mobile-cta";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { focusRing } from "@/lib/focus-ring";
 import { cn } from "@/lib/utils";
 
@@ -31,8 +30,6 @@ export function Footer({ className = "" }: FooterProps) {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2 md:justify-end md:gap-3">
-          <ThemeToggle />
-
           <a
             href={`mailto:${RESUME_DATA.contact.email}`}
             className={`p-2 text-muted-foreground transition-colors hover:text-foreground sm:p-1.5 ${focusRing}`}
