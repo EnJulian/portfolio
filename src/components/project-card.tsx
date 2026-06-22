@@ -116,8 +116,8 @@ export function ProjectCard({
         </div>
 
         <div className="mb-2 flex items-start justify-between">
-          <h3 className="terminus-project flex items-center text-header-base font-medium text-foreground group-hover/card:text-foreground/90">
-            {project.title}
+          <h3 className="flex items-center text-header-base font-medium text-foreground group-hover/card:text-foreground/90">
+            <span className="terminus-project">{project.title}</span>
             {project.badgeIconTypes?.includes("clock") && (
               <TooltipProvider delayDuration={200}>
                 <Tooltip>

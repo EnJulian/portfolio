@@ -80,7 +80,7 @@ export function ProjectTypeToggle({
               <span className="sm:hidden">{option.shortLabel}</span>
               <span
                 className={cn(
-                  "rounded-full px-1.5 py-0.5 font-mono text-[10px] tabular-nums",
+                  "rounded-full px-1.5 py-0.5 text-[calc(0.75rem*0.97)] leading-[calc(1rem*0.97)]",
                   isActive
                     ? "bg-secondary text-foreground"
                     : "bg-background/70 text-muted-foreground",

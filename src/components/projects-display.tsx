@@ -42,14 +42,20 @@ export default function ProjectsDisplay({
   const allTechStacks = allProjects.flatMap((project) => project.techStack);
   const uniqueTechStacks = Array.from(new Set(allTechStacks)).sort();
 
-  const displayProjects =
-    projectType === "personal" ? personalProjects : projects;
-  const filteredProjects =
+  const filterProjectsByTechs = (projectList: readonly Project[]) =>
     selectedTechs.length > 0
-      ? displayProjects.filter((project) =>
+      ? projectList.filter((project) =>
           selectedTechs.every((tech) => project.techStack.includes(tech)),
         )
-      : displayProjects;
+      : projectList;
+
+  const filteredProfessionalProjects = filterProjectsByTechs(projects);
+  const filteredPersonalProjects = filterProjectsByTechs(personalProjects);
+
+  const filteredProjects =
+    projectType === "personal"
+      ? filteredPersonalProjects
+      : filteredProfessionalProjects;
 
   useEffect(() => {
     setExpandedProject(null);
@@ -85,8 +91,8 @@ export default function ProjectsDisplay({
         <ProjectTypeToggle
           value={projectType}
           onChange={setProjectType}
-          professionalCount={projects.length}
-          personalCount={personalProjects.length}
+          professionalCount={filteredProfessionalProjects.length}
+          personalCount={filteredPersonalProjects.length}
         />
 
         <div className="relative hidden sm:block" ref={filterRef}>
@@ -103,19 +109,9 @@ export default function ProjectsDisplay({
           {isFilterOpen && (
             <div className="absolute right-0 z-50 mt-1 w-48 rounded-md border border-border bg-surface-elevated shadow-lg">
               <div className="p-2">
-                <div className="mb-2 flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground">
-                    Select technologies
-                  </span>
-                  {selectedTechs.length > 0 && (
-                    <button
-                      onClick={clearFilters}
-                      className={`text-xs text-muted-foreground hover:text-foreground ${focusRing}`}
-                    >
-                      Clear all
-                    </button>
-                  )}
-                </div>
+                <p className="mb-2 text-xs text-muted-foreground">
+                  Select technologies
+                </p>
 
                 {uniqueTechStacks.map((tech) => (
                   <button
@@ -136,7 +132,7 @@ export default function ProjectsDisplay({
       </div>
 
       {selectedTechs.length > 0 && (
-        <div className="hidden shrink-0 flex-wrap items-center gap-2 sm:flex">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs text-muted-foreground">Filtered by:</span>
           {selectedTechs.map((tech) => (
             <SkillChip key={tech} as="span" variant="filter">
@@ -150,6 +146,13 @@ export default function ProjectsDisplay({
               </button>
             </SkillChip>
           ))}
+          <button
+            type="button"
+            onClick={clearFilters}
+            className={`text-link text-xs ${focusRing}`}
+          >
+            Clear all
+          </button>
         </div>
       )}
 
@@ -180,7 +183,7 @@ export default function ProjectsDisplay({
               onClick={clearFilters}
               className={`mt-2 rounded-md bg-secondary px-3 py-1 text-sm transition-colors hover:bg-surface-muted ${focusRing}`}
             >
-              Clear Filters
+              Clear all
             </button>
           </div>
         )}

@@ -95,7 +95,7 @@ export const RESUME_DATA = {
         label: "plendify.com",
         href: "https://plendify.com",
       },
-      // githubLink: "https://github.com/EnJulian/plendify-marketplace",
+      // githubLink: "",
     },
     {
       title: "MYPURPLEPAY",
@@ -117,16 +117,16 @@ export const RESUME_DATA = {
         href: "https://clearlinehmo.com",
       },
     },
-    {
-      title: "BUILD-A-THON",
-      techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
-      description: "A hackathon where tech creatives collaborate to build innovative solutions and compete for prizes.",
-      logo: YearProgressLogo,
-      link: {
-        label: "hack.enyata.com",
-        href: "https://hack.enyata.com",
-      },
-    },
+    // {
+    //   title: "BUILD-A-THON",
+    //   techStack: ["TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
+    //   description: "A hackathon where tech creatives collaborate to build innovative solutions and compete for prizes.",
+    //   logo: YearProgressLogo,
+    //   link: {
+    //     label: "hack.enyata.com",
+    //     href: "https://hack.enyata.com",
+    //   },
+    // },
     {
       title: "HRMS BY ENYATA",
       techStack: ["TypeScript", "Node.js", "MongoDB", "GraphQL", "AWS"],
@@ -181,7 +181,7 @@ export const RESUME_DATA = {
     {
       title: "SHADOWBOX",
       techStack: ["Python"],
-      description: "Command line tool for ripping audio from various sources, converting to high-def formats and injecting metadata + album art.",
+      description: "CLI tool that rips audio, converts to HD and injects metadata and art.",
       badgeIconTypes: ["none"],
       logo: JarockiMeLogo,
       link: {
@@ -205,7 +205,7 @@ export const RESUME_DATA = {
     {
       title: "NODEJS TYPESCRIPT TEMPLATE",
       techStack: ["TypeScript", "Node.js", "PostgreSQL"],
-      description: "A scalable and modular Node.js TypeScript API template for quickly bootstrapping new projects.",
+      description: "Scalable, modular Node.js TypeScript API template for quickly bootstrapping projects.",
       badgeIconTypes: ["none"],
       logo: JarockiMeLogo,
       link: {

@@ -133,6 +133,14 @@
   font-family: var(--font-project), monospace;
   font-weight: 600;
   letter-spacing: 0;
+  text-decoration: underline;
+  text-decoration-color: hsl(var(--link-underline));
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.group\/card:hover .terminus-project {
+  text-decoration-color: hsl(var(--link-underline-hover));
 }
 
 .text-link {

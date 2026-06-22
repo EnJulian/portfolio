@@ -13,14 +13,14 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ variant = "icon", className }: ThemeToggleProps) {
-  const { theme, setTheme } = useThemeTransition();
+  const { resolvedTheme, setTheme } = useThemeTransition();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
   const label = isDark ? "Switch to light mode" : "Switch to dark mode";
   const modeLabel = isDark ? "Dark mode" : "Light mode";
 

@@ -79,3 +79,14 @@ npm run test     # Vitest smoke tests
 ## Environment
 
 Runs on Node >= 18.17. WSL2/Ubuntu compatible.
+
+## Git Workflow
+
+Commits and PRs follow a ticket-linked protocol. Branch names stay simple (`feature/oauth-login`); Ticket IDs live in commit messages and PR titles.
+
+| Skill | Command | Purpose |
+|-------|---------|---------|
+| Commit Builder | `/commit-builder` | Stage changes, resolve ticket ID, write commit message |
+| PR Builder | `/pull-request-builder` | Generate PR title and body from branch commits |
+
+**Ticket ID resolution:** IDs are sequential and global across all branches (e.g., `ENG-005` → `ENG-006`). Follow-up commits on the same branch reuse the branch's ticket; new branches pick up the repo-wide latest and increment. Full rules: [docs/commits-and-prs.md](docs/commits-and-prs.md).

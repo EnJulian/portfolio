@@ -11,14 +11,14 @@ interface ThemeSegmentedToggleProps {
 }
 
 export function ThemeSegmentedToggle({ className }: ThemeSegmentedToggleProps) {
-  const { theme, setTheme } = useThemeTransition();
+  const { resolvedTheme, setTheme } = useThemeTransition();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const isDark = theme !== "light";
+  const isDark = resolvedTheme === "dark";
   const label = isDark ? "Switch to light mode" : "Switch to dark mode";
 
   const segmentClass = (active: boolean) =>
