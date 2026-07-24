@@ -1,18 +1,15 @@
 import JarockiMeLogo from "../images/logos/jarocki.svg";
 import MonitoLogo from "../images/logos/monito.svg";
-import NSNLogo from "../images/logos/nsn.svg";
 import ParabolLogo from "../images/logos/parabol.svg";
 import YearProgressLogo from "../images/logos/yearprogress.svg";
 import { GitHubIcon } from "@/components/icons/GitHubIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { MastodonIcon } from "@/components/icons/MastodonIcon";
-import { ClockIcon } from "@/components/icons/ClockIcon";
-
 export const RESUME_DATA = {
   name: "Julian Amoah",
   initials: "JAA",
-  location: "Accra, Ghana",
-  locationLink: "https://www.google.com/maps/place/Accra",
+  location: "Cologne, Germany",
+  locationLink: "https://www.google.com/maps/place/Cologne",
   summary:
     ""
 ,
