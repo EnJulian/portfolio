@@ -19,7 +19,7 @@ export const RESUME_DATA = {
   resumeUrl: "/Resume_Julian_A.pdf",
   contact: {
     email: "envern.julian@gmail.com",
-    tel: "+233 553220656",
+    tel: "+49 177 4685116",
     social: [
       {
         name: "GitHub",
